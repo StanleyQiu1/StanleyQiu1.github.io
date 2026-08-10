@@ -13,7 +13,7 @@
     --bg: #0b0b0b;
     --text: #f3f1ea;
     --muted: #96968f;
-    --accent: #d7ff38;
+    --accent: #ff7a00;
     --line: #292929;
     --panel: #111111;
 }
@@ -76,7 +76,7 @@ a {
     background:
         radial-gradient(
             circle,
-            rgba(215, 255, 56, .07),
+            rgba(255, 122, 0, .08),
             transparent 65%
         );
 
@@ -109,7 +109,7 @@ nav {
     background:
         linear-gradient(
             to bottom,
-            rgba(11,11,11,.8),
+            rgba(11,11,11,.82),
             transparent
         );
 }
@@ -117,9 +117,6 @@ nav {
 .logo {
     font-weight: 900;
     letter-spacing: -.04em;
-
-    position: relative;
-    z-index: 2;
 }
 
 .nav-links {
@@ -468,7 +465,7 @@ section {
 
 
 /* ==================================
-   SKILLS STRIP
+   SKILLS
 ================================== */
 
 .skills {
@@ -505,7 +502,8 @@ section {
 
     transition:
         background .3s ease,
-        color .3s ease;
+        color .3s ease,
+        transform .3s ease;
 }
 
 .skill:last-child {
@@ -515,6 +513,8 @@ section {
 .skill:hover {
     background: var(--accent);
     color: #080808;
+
+    transform: translateY(-6px);
 }
 
 .skill-number {
@@ -533,7 +533,7 @@ section {
 
 
 /* ==================================
-   PROJECTS CTA
+   PROJECTS ENTRY
 ================================== */
 
 .projects-entry {
@@ -612,7 +612,7 @@ section {
 
 .projects-entry-link:hover
 .projects-entry-right p {
-    color: #303030;
+    color: #2c2c2c;
 }
 
 .huge-arrow {
@@ -649,7 +649,7 @@ section {
 }
 
 .process .eyebrow {
-    color: #666;
+    color: #8b4e16;
 }
 
 .steps {
@@ -938,22 +938,14 @@ footer {
 }
 
 </style>
-
 </head>
 
 
 <body>
 
-
 <div id="progress"></div>
-
 <div class="cursor-glow"></div>
 
-
-
-<!-- ==================================
-     NAV
-================================== -->
 
 <nav>
 
@@ -984,10 +976,6 @@ footer {
 </nav>
 
 
-
-<!-- ==================================
-     HERO
-================================== -->
 
 <header class="hero">
 
@@ -1020,18 +1008,17 @@ footer {
 
     <div class="hero-bottom reveal">
 
-
         <p>
 
             I'm <strong>YOUR NAME</strong>.
 
             I'm interested in engineering,
-            electronics, software and building
-            ideas into real things.
+            electronics, software and turning
+            ideas into real systems.
 
-            I use this site to document what
-            I'm learning, what I'm building,
-            and the process behind it.
+            This site is where I document
+            what I'm learning, what I'm building,
+            and how each project evolves.
 
         </p>
 
@@ -1042,83 +1029,35 @@ footer {
 
         </div>
 
-
     </div>
 
 </header>
 
 
 
-<!-- ==================================
-     MARQUEE
-================================== -->
-
 <div class="marquee">
 
     <div class="marquee-track">
 
+        <span>PCB DESIGN <b>+</b></span>
+        <span>EMBEDDED SYSTEMS <b>+</b></span>
+        <span>STM32 <b>+</b></span>
+        <span>SOFTWARE <b>+</b></span>
+        <span>PROTOTYPING <b>+</b></span>
+        <span>ENGINEERING <b>+</b></span>
 
-        <span>
-            PCB DESIGN <b>+</b>
-        </span>
-
-        <span>
-            EMBEDDED SYSTEMS <b>+</b>
-        </span>
-
-        <span>
-            STM32 <b>+</b>
-        </span>
-
-        <span>
-            SOFTWARE <b>+</b>
-        </span>
-
-        <span>
-            PROTOTYPING <b>+</b>
-        </span>
-
-        <span>
-            ENGINEERING <b>+</b>
-        </span>
-
-
-        <!-- duplicate for continuous animation -->
-
-        <span>
-            PCB DESIGN <b>+</b>
-        </span>
-
-        <span>
-            EMBEDDED SYSTEMS <b>+</b>
-        </span>
-
-        <span>
-            STM32 <b>+</b>
-        </span>
-
-        <span>
-            SOFTWARE <b>+</b>
-        </span>
-
-        <span>
-            PROTOTYPING <b>+</b>
-        </span>
-
-        <span>
-            ENGINEERING <b>+</b>
-        </span>
-
+        <span>PCB DESIGN <b>+</b></span>
+        <span>EMBEDDED SYSTEMS <b>+</b></span>
+        <span>STM32 <b>+</b></span>
+        <span>SOFTWARE <b>+</b></span>
+        <span>PROTOTYPING <b>+</b></span>
+        <span>ENGINEERING <b>+</b></span>
 
     </div>
 
 </div>
 
 
-
-<!-- ==================================
-     ABOUT
-================================== -->
 
 <section id="about">
 
@@ -1149,17 +1088,17 @@ footer {
             I like learning by
             <strong>actually building things.</strong>
 
-            Instead of stopping at an idea,
+            Instead of stopping at the idea,
             I want to understand how the hardware,
             software and engineering decisions
             come together.
 
             <br><br>
 
-            Use this space to explain your story:
+            Put your own story here:
             how you became interested in engineering,
-            what you enjoy creating,
-            and where you want to go next.
+            the types of projects you like,
+            and what you want to learn next.
 
         </div>
 
@@ -1168,9 +1107,7 @@ footer {
 
 
             <div class="about-side-title">
-
                 Currently Exploring
-
             </div>
 
 
@@ -1186,31 +1123,22 @@ footer {
 
 
             <div class="about-side-title">
-
                 Location
-
             </div>
 
 
             <p>
-
                 YOUR CITY, STATE
-
             </p>
 
 
             <div class="about-side-title">
-
                 Status
-
             </div>
 
 
             <p>
-
-                Always building
-                something new.
-
+                Always building something new.
             </p>
 
 
@@ -1220,8 +1148,6 @@ footer {
     </div>
 
 
-
-    <!-- SKILLS -->
 
     <div class="skills reveal">
 
@@ -1285,10 +1211,6 @@ footer {
 
 
 
-<!-- ==================================
-     PROJECT LINK
-================================== -->
-
 <section class="projects-entry">
 
 
@@ -1307,7 +1229,6 @@ footer {
 
         <div>
 
-
             <h2 class="projects-entry-title">
 
                 THINGS<br>
@@ -1315,7 +1236,6 @@ footer {
                 BUILT.
 
             </h2>
-
 
         </div>
 
@@ -1332,16 +1252,14 @@ footer {
 
                 Most didn't.
 
-                Click here to see the projects
-                and the engineering behind them.
+                Click here to explore the projects,
+                the design decisions and what I learned.
 
             </p>
 
 
             <div class="huge-arrow">
-
                 ↗
-
             </div>
 
 
@@ -1354,10 +1272,6 @@ footer {
 </section>
 
 
-
-<!-- ==================================
-     PROCESS
-================================== -->
 
 <section class="process">
 
@@ -1384,9 +1298,7 @@ footer {
         <div class="step reveal">
 
             <div class="step-number">
-
                 01 / QUESTION
-
             </div>
 
 
@@ -1413,9 +1325,7 @@ footer {
         <div class="step reveal">
 
             <div class="step-number">
-
                 02 / DESIGN
-
             </div>
 
 
@@ -1442,9 +1352,7 @@ footer {
         <div class="step reveal">
 
             <div class="step-number">
-
                 03 / BUILD
-
             </div>
 
 
@@ -1471,9 +1379,7 @@ footer {
         <div class="step reveal">
 
             <div class="step-number">
-
                 04 / ITERATE
-
             </div>
 
 
@@ -1502,10 +1408,6 @@ footer {
 </section>
 
 
-
-<!-- ==================================
-     CONTACT
-================================== -->
 
 <section
     class="contact"
@@ -1596,10 +1498,6 @@ footer {
 
 
 
-<!-- ==================================
-     FOOTER
-================================== -->
-
 <footer>
 
     <span>
@@ -1620,10 +1518,6 @@ footer {
 
 <script>
 
-
-/* ==================================
-   SCROLL REVEALS
-================================== */
 
 const observer =
 new IntersectionObserver(
@@ -1661,10 +1555,6 @@ document
 
 
 
-/* ==================================
-   SCROLL PROGRESS
-================================== */
-
 window.addEventListener(
     "scroll",
     () => {
@@ -1691,10 +1581,6 @@ window.addEventListener(
 
 
 
-/* ==================================
-   CURSOR GLOW
-================================== */
-
 const glow =
 document.querySelector(".cursor-glow");
 
@@ -1720,5 +1606,4 @@ window.addEventListener(
 
 
 </body>
-
 </html>
