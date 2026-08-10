@@ -1,859 +1,1455 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Your Name | Portfolio</title>
+<title>Your Name — Engineering Portfolio</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+<style>
+
+:root {
+    --bg: #0b0b0b;
+    --text: #f3f1ea;
+    --muted: #9b9b94;
+    --accent: #d7ff38;
+    --line: #292929;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ===========================
+   SCROLL PROGRESS
+=========================== */
+
+#progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    height: 3px;
+    width: 0;
+
+    background: var(--accent);
+
+    z-index: 9999;
+}
+
+
+/* ===========================
+   CURSOR GLOW
+=========================== */
+
+.cursor-glow {
+    position: fixed;
+    pointer-events: none;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(215,255,56,.08),
+            transparent 65%
+        );
+
+    transform: translate(-50%, -50%);
+
+    z-index: 0;
+}
+
+
+/* ===========================
+   NAV
+=========================== */
+
+nav {
+
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 25px 4vw;
+
+    z-index: 100;
+
+    mix-blend-mode: difference;
+}
+
+.logo {
+    font-weight: 800;
+    letter-spacing: -.04em;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+
+    font-size: .85rem;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+}
+
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero {
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    padding:
+        150px 4vw
+        50px;
+
+    position: relative;
+}
+
+.hero-label {
+
+    color: var(--accent);
+
+    text-transform: uppercase;
+    letter-spacing: .18em;
+
+    font-size: .8rem;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+
+    font-size:
+        clamp(4.8rem, 14vw, 13rem);
+
+    line-height: .78;
+
+    letter-spacing: -.075em;
+
+    font-weight: 900;
+
+    max-width: 1400px;
+}
+
+.hero-bottom {
+
+    margin-top: 55px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    border-top: 1px solid var(--line);
+
+    padding-top: 25px;
+}
+
+.hero-bottom p {
+
+    max-width: 560px;
+
+    color: var(--muted);
+
+    font-size: 1.05rem;
+
+    line-height: 1.7;
+}
+
+.hero-scroll {
+
+    text-align: right;
+
+    color: var(--muted);
+
+    font-size: .8rem;
+
+    text-transform: uppercase;
+    letter-spacing: .15em;
+}
+
+
+/* decorative engineering cross */
+
+.cross {
+
+    position: absolute;
+
+    right: 6vw;
+    top: 21%;
+
+    width: 70px;
+    height: 70px;
+
+    opacity: .5;
+}
+
+.cross::before,
+.cross::after {
+
+    content: "";
+
+    position: absolute;
+
+    background: var(--accent);
+}
+
+.cross::before {
+
+    width: 100%;
+    height: 1px;
+
+    top: 50%;
+}
+
+.cross::after {
+
+    height: 100%;
+    width: 1px;
+
+    left: 50%;
+}
+
+
+/* ===========================
+   MARQUEE
+=========================== */
+
+.marquee {
+
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+
+    overflow: hidden;
+
+    padding: 18px 0;
+}
+
+.marquee-track {
+
+    width: max-content;
+
+    display: flex;
+
+    animation: marquee 25s linear infinite;
+}
+
+.marquee span {
+
+    font-size: 1rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: .1em;
+
+    margin-right: 70px;
+}
+
+.marquee b {
+    color: var(--accent);
+}
+
+@keyframes marquee {
+
+    from {
+        transform: translateX(0);
     }
 
-    html {
-      scroll-behavior: smooth;
+    to {
+        transform: translateX(-50%);
     }
+}
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(circle at top right, #17304d 0, transparent 35%),
-        #08111f;
-      color: #f5f7fa;
-      line-height: 1.6;
-    }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+/* ===========================
+   GENERAL
+=========================== */
 
-    /* NAVIGATION */
+section {
+    padding: 130px 4vw;
+}
 
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+.eyebrow {
 
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    color: var(--accent);
 
-      padding: 18px 8%;
+    font-size: .75rem;
 
-      background: rgba(8, 17, 31, 0.85);
-      backdrop-filter: blur(12px);
+    text-transform: uppercase;
 
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
+    letter-spacing: .18em;
 
-    .logo {
-      font-size: 1.25rem;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
+    margin-bottom: 30px;
+}
+
+.big-heading {
+
+    font-size:
+        clamp(3rem, 8vw, 7rem);
+
+    line-height: .9;
+
+    letter-spacing: -.055em;
+
+    max-width: 1000px;
+}
+
+
+/* ===========================
+   ABOUT
+=========================== */
+
+.about-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1.2fr .8fr;
+
+    gap: 100px;
+
+    margin-top: 80px;
+}
+
+.about-text {
+
+    font-size:
+        clamp(1.4rem, 2.6vw, 2.5rem);
+
+    line-height: 1.3;
+
+    letter-spacing: -.025em;
+}
+
+.about-side {
+
+    border-left: 1px solid var(--line);
+
+    padding-left: 35px;
+}
+
+.about-side p {
+
+    color: var(--muted);
+
+    line-height: 1.8;
+
+    margin-bottom: 30px;
+}
+
+
+/* ===========================
+   FEATURED PROJECT
+=========================== */
+
+.featured {
+
+    border-top: 1px solid var(--line);
+}
+
+.project-number {
+
+    font-size: .8rem;
+
+    color: var(--muted);
+
+    letter-spacing: .15em;
+}
+
+.project-title {
+
+    font-size:
+        clamp(3.8rem, 10vw, 9rem);
+
+    letter-spacing: -.065em;
+
+    line-height: .85;
+
+    margin:
+        25px 0
+        50px;
+}
+
+
+/* PCB VISUAL */
+
+.pcb-visual {
+
+    position: relative;
+
+    height: min(70vw, 650px);
+
+    max-height: 650px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #18250d,
+            #0b1406
+        );
+
+    overflow: hidden;
+
+    border-radius: 2px;
+
+    margin-bottom: 50px;
+}
+
+
+/* fake PCB traces */
+
+.trace {
+
+    position: absolute;
+
+    background: rgba(215,255,56,.45);
+}
+
+.trace.h {
+    height: 2px;
+}
+
+.trace.v {
+    width: 2px;
+}
+
+.trace1 {
+
+    width: 48%;
+    top: 25%;
+    left: 0;
+}
+
+.trace2 {
+
+    width: 32%;
+    top: 68%;
+    right: 0;
+}
+
+.trace3 {
+
+    height: 42%;
+    left: 31%;
+    top: 0;
+}
+
+.trace4 {
+
+    height: 38%;
+    right: 26%;
+    bottom: 0;
+}
+
+
+/* center chip */
+
+.pcb-chip {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width:
+        clamp(150px, 20vw, 260px);
+
+    aspect-ratio: 1;
+
+    display: grid;
+    place-items: center;
+
+    background: #090909;
+
+    border: 2px solid var(--accent);
+
+    font-weight: 900;
+
+    letter-spacing: -.04em;
+
+    font-size: 1.5rem;
+
+    text-align: center;
+}
+
+.pcb-node {
+
+    position: absolute;
+
+    width: 13px;
+    height: 13px;
+
+    background: var(--accent);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 20px rgba(215,255,56,.6);
+}
+
+.node1 {
+    left: 31%;
+    top: 25%;
+}
+
+.node2 {
+    right: 26%;
+    top: 68%;
+}
+
+
+/* ===========================
+   PROJECT DATA
+=========================== */
+
+.project-info {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 80px;
+}
+
+.project-description {
+
+    font-size: 1.4rem;
+    line-height: 1.6;
+
+    max-width: 650px;
+}
+
+.project-description p + p {
+    margin-top: 25px;
+}
+
+.project-meta {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    border-top: 1px solid var(--line);
+}
+
+.stat {
+
+    padding: 25px 0;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.stat:nth-child(odd) {
+
+    border-right: 1px solid var(--line);
+
+    padding-right: 25px;
+}
+
+.stat:nth-child(even) {
+    padding-left: 25px;
+}
+
+.stat-number {
+
+    font-size:
+        clamp(2rem, 5vw, 4rem);
+
+    letter-spacing: -.06em;
+
+    font-weight: 800;
+}
+
+.stat-label {
+
+    margin-top: 8px;
+
+    color: var(--muted);
+
+    font-size: .75rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: .15em;
+}
+
+
+/* ===========================
+   PROJECT LIST
+=========================== */
+
+.projects-list {
+
+    border-top: 1px solid var(--line);
+
+    margin-top: 80px;
+}
+
+.project-row {
+
+    display: grid;
+
+    grid-template-columns:
+        80px 1fr 1fr 40px;
+
+    align-items: center;
+
+    gap: 30px;
+
+    padding: 35px 10px;
+
+    border-bottom: 1px solid var(--line);
+
+    transition:
+        padding .35s ease,
+        background .35s ease;
+}
+
+.project-row:hover {
+
+    padding-left: 30px;
+    padding-right: 30px;
+
+    background: var(--text);
+
+    color: var(--bg);
+}
+
+.project-row .number {
+
+    font-size: .75rem;
+    opacity: .6;
+}
+
+.project-row h3 {
+
+    font-size:
+        clamp(1.4rem, 3vw, 2.7rem);
+
+    letter-spacing: -.04em;
+}
+
+.project-row p {
+
+    color: var(--muted);
+}
+
+.project-row:hover p {
+    color: #555;
+}
+
+.arrow {
+
+    font-size: 2rem;
+
+    transition: transform .3s ease;
+}
+
+.project-row:hover .arrow {
+
+    transform:
+        translateX(8px)
+        rotate(-45deg);
+}
+
+
+/* ===========================
+   PROCESS
+=========================== */
+
+.process {
+
+    background: var(--text);
+    color: var(--bg);
+}
+
+.process .eyebrow {
+    color: #626262;
+}
+
+.steps {
+
+    margin-top: 80px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+}
+
+.step {
+
+    padding: 30px;
+
+    border-left:
+        1px solid #c7c7c0;
+
+    min-height: 280px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+}
+
+.step-number {
+
+    font-size: .75rem;
+
+    color: #777;
+}
+
+.step h3 {
+
+    font-size: 2rem;
+
+    letter-spacing: -.04em;
+}
+
+.step p {
+
+    color: #555;
+
+    line-height: 1.6;
+}
+
+
+/* ===========================
+   CONTACT
+=========================== */
+
+.contact {
+
+    min-height: 85vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+}
+
+.contact-title {
+
+    font-size:
+        clamp(4rem, 13vw, 12rem);
+
+    line-height: .8;
+
+    letter-spacing: -.075em;
+}
+
+.contact-links {
+
+    display: flex;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+    margin-top: 70px;
+}
+
+.contact-button {
+
+    border:
+        1px solid #4b4b4b;
+
+    padding:
+        16px 23px;
+
+    border-radius: 100px;
+
+    transition: .25s;
+}
+
+.contact-button:hover {
+
+    background: var(--accent);
+
+    border-color: var(--accent);
+
+    color: black;
+
+    transform: translateY(-4px);
+}
+
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding:
+        30px 4vw;
+
+    border-top: 1px solid var(--line);
+
+    color: var(--muted);
+
+    font-size: .8rem;
+}
+
+
+/* ===========================
+   SCROLL REVEALS
+=========================== */
+
+.reveal {
+
+    opacity: 0;
+
+    transform: translateY(70px);
+
+    transition:
+        opacity .9s cubic-bezier(.2,.7,.2,1),
+        transform .9s cubic-bezier(.2,.7,.2,1);
+}
+
+.reveal.visible {
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width: 850px) {
 
     .nav-links {
-      display: flex;
-      gap: 25px;
+        display: none;
     }
 
-    .nav-links a {
-      color: #cbd5e1;
+    .hero-bottom,
+    .about-grid,
+    .project-info {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
     }
 
-    .nav-links a:hover {
-      color: white;
+    .hero-scroll {
+        text-align: left;
     }
 
-    /* HERO */
+    .steps {
 
-    .hero {
-      min-height: 88vh;
-
-      display: grid;
-      grid-template-columns: 1.3fr 1fr;
-      align-items: center;
-
-      gap: 50px;
-      padding: 80px 8%;
+        grid-template-columns:
+            1fr 1fr;
     }
 
-    .hero-tag {
-      color: #63e6be;
-      font-weight: bold;
-      letter-spacing: 2px;
-      margin-bottom: 12px;
+    .project-row {
+
+        grid-template-columns:
+            45px 1fr 30px;
     }
 
-    .hero h1 {
-      font-size: clamp(3rem, 8vw, 6rem);
-      line-height: 0.95;
-      margin-bottom: 25px;
+    .project-row p {
+
+        display: none;
     }
+}
 
-    .hero-description {
-      max-width: 650px;
-      font-size: 1.15rem;
-      color: #aebccd;
-      margin-bottom: 30px;
+@media(max-width: 550px) {
+
+    .steps {
+        grid-template-columns: 1fr;
     }
-
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 13px 22px;
-      border-radius: 10px;
-
-      background: white;
-      color: #08111f;
-
-      font-weight: bold;
-    }
-
-    .button.secondary {
-      background: transparent;
-      color: white;
-      border: 1px solid #52677f;
-    }
-
-    .button:hover {
-      transform: translateY(-2px);
-    }
-
-    /* HERO GRAPHIC */
-
-    .circuit-card {
-      position: relative;
-
-      min-height: 380px;
-      border-radius: 25px;
-
-      background:
-        linear-gradient(rgba(99,230,190,.05), rgba(99,230,190,.01)),
-        #0d1c2e;
-
-      border: 1px solid #29425c;
-
-      box-shadow:
-        0 30px 80px rgba(0,0,0,.4),
-        inset 0 0 50px rgba(99,230,190,.05);
-
-      overflow: hidden;
-    }
-
-    .chip {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-
-      transform: translate(-50%, -50%);
-
-      width: 140px;
-      height: 140px;
-
-      display: grid;
-      place-items: center;
-
-      background: #07101c;
-      border: 2px solid #63e6be;
-      border-radius: 15px;
-
-      box-shadow: 0 0 40px rgba(99,230,190,.25);
-
-      text-align: center;
-      font-weight: bold;
-    }
-
-    .trace {
-      position: absolute;
-      background: #63e6be;
-      opacity: .65;
-    }
-
-    .trace.horizontal {
-      height: 2px;
-      width: 130px;
-    }
-
-    .trace.vertical {
-      width: 2px;
-      height: 110px;
-    }
-
-    .t1 {
-      left: 0;
-      top: 45%;
-    }
-
-    .t2 {
-      right: 0;
-      top: 60%;
-    }
-
-    .t3 {
-      left: 55%;
-      top: 0;
-    }
-
-    .t4 {
-      left: 32%;
-      bottom: 0;
-    }
-
-    .node {
-      position: absolute;
-
-      width: 11px;
-      height: 11px;
-
-      border-radius: 50%;
-      background: #63e6be;
-
-      box-shadow: 0 0 15px #63e6be;
-    }
-
-    .n1 {
-      left: 18%;
-      top: 44%;
-    }
-
-    .n2 {
-      right: 20%;
-      top: 59%;
-    }
-
-    .n3 {
-      left: 54%;
-      top: 20%;
-    }
-
-    .n4 {
-      left: 31%;
-      bottom: 20%;
-    }
-
-    /* GENERAL SECTIONS */
 
     section {
-      padding: 90px 8%;
+        padding:
+            90px 5vw;
     }
+}
 
-    .section-label {
-      color: #63e6be;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: .85rem;
-      margin-bottom: 10px;
-    }
-
-    .section-title {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-    }
-
-    .section-intro {
-      color: #9fb0c2;
-      max-width: 750px;
-      margin-bottom: 45px;
-    }
-
-    /* ABOUT */
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 25px;
-    }
-
-    .panel {
-      padding: 30px;
-
-      border-radius: 18px;
-      background: #0d1a2b;
-
-      border: 1px solid #20364d;
-    }
-
-    .panel h3 {
-      margin-bottom: 12px;
-    }
-
-    .panel p {
-      color: #9fb0c2;
-    }
-
-    /* PROJECT CARDS */
-
-    .projects {
-      display: grid;
-
-      grid-template-columns:
-        repeat(auto-fit, minmax(270px, 1fr));
-
-      gap: 25px;
-    }
-
-    .project-card {
-      overflow: hidden;
-
-      border-radius: 20px;
-      background: #0d1a2b;
-
-      border: 1px solid #20364d;
-
-      transition: .2s;
-    }
-
-    .project-card:hover {
-      transform: translateY(-6px);
-      border-color: #63e6be;
-    }
-
-    .project-image {
-      height: 190px;
-
-      display: grid;
-      place-items: center;
-
-      background:
-        linear-gradient(135deg, #16324b, #0b1727);
-
-      font-size: 4rem;
-    }
-
-    .project-content {
-      padding: 25px;
-    }
-
-    .project-content h3 {
-      margin-bottom: 10px;
-    }
-
-    .project-content p {
-      color: #9fb0c2;
-      margin-bottom: 20px;
-    }
-
-    .project-tag {
-      display: inline-block;
-
-      padding: 6px 10px;
-      margin: 4px;
-
-      background: #142b3d;
-
-      border-radius: 100px;
-
-      color: #8ee7cb;
-      font-size: .8rem;
-    }
-
-    /* PROJECT STORY */
-
-    .project-detail {
-      margin-top: 50px;
-
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-
-      gap: 40px;
-
-      padding: 40px;
-      border-radius: 25px;
-
-      background: #0b1727;
-      border: 1px solid #20364d;
-    }
-
-    .project-detail h3 {
-      font-size: 2rem;
-      margin-bottom: 18px;
-    }
-
-    .project-detail p {
-      color: #9fb0c2;
-      margin-bottom: 18px;
-    }
-
-    .diagram {
-      min-height: 300px;
-
-      display: grid;
-      place-items: center;
-
-      border-radius: 20px;
-
-      background:
-        repeating-linear-gradient(
-          0deg,
-          transparent,
-          transparent 19px,
-          rgba(99,230,190,.05) 20px
-        ),
-        repeating-linear-gradient(
-          90deg,
-          transparent,
-          transparent 19px,
-          rgba(99,230,190,.05) 20px
-        ),
-        #091421;
-
-      border: 1px solid #29425c;
-
-      text-align: center;
-      padding: 25px;
-    }
-
-    .energy-flow {
-      font-size: 1.25rem;
-      line-height: 2.5;
-    }
-
-    /* CONTACT */
-
-    .contact {
-      text-align: center;
-
-      padding: 100px 8%;
-    }
-
-    .contact-box {
-      max-width: 800px;
-      margin: auto;
-
-      padding: 55px 30px;
-
-      background: #0d1a2b;
-      border: 1px solid #29425c;
-      border-radius: 25px;
-    }
-
-    .contact-box h2 {
-      font-size: 2.7rem;
-      margin-bottom: 15px;
-    }
-
-    .contact-box p {
-      color: #9fb0c2;
-      margin-bottom: 30px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-
-      color: #64748b;
-
-      border-top: 1px solid #1c3044;
-    }
-
-    @media(max-width: 800px) {
-
-      .hero,
-      .about-grid,
-      .project-detail {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding-top: 60px;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .circuit-card {
-        min-height: 300px;
-      }
-    }
-
-  </style>
+</style>
 </head>
 
 
 <body>
 
+<div id="progress"></div>
 
-<!-- NAV -->
+<div class="cursor-glow"></div>
+
+
+<!-- NAVIGATION -->
 
 <nav>
 
-  <div class="logo">
-    YOUR NAME
-  </div>
+    <div class="logo">
+        YOUR NAME / 2026
+    </div>
 
-  <div class="nav-links">
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </div>
+    <div class="nav-links">
+
+        <a href="#about">
+            About
+        </a>
+
+        <a href="#work">
+            Work
+        </a>
+
+        <a href="#contact">
+            Contact
+        </a>
+
+    </div>
 
 </nav>
 
 
-
 <!-- HERO -->
 
-<section class="hero">
+<header class="hero">
 
-  <div>
+    <div class="cross"></div>
 
-    <div class="hero-tag">
-      ENGINEER • BUILDER • CREATOR
+    <div class="hero-label reveal">
+        Engineering / Electronics / Software
     </div>
 
-    <h1>
-      Hi, I'm<br>
-      Your Name.
+    <h1 class="reveal">
+
+        I BUILD<br>
+        THINGS<br>
+        THAT WORK.
+
     </h1>
 
-    <p class="hero-description">
 
-      Put a short introduction here.
+    <div class="hero-bottom reveal">
 
-      Explain who you are, what you're interested in,
-      and the kinds of things you enjoy building.
+        <p>
 
-      This can be 2–4 sentences.
+            I'm Your Name.
 
-    </p>
+            I like turning ideas into real things —
+            electronics, custom PCBs, embedded software,
+            websites and engineering projects.
 
+        </p>
 
-    <div class="buttons">
-
-      <a class="button" href="#projects">
-        View My Projects
-      </a>
-
-      <a class="button secondary"
-         href="https://github.com/YOURUSERNAME">
-
-        GitHub
-
-      </a>
+        <div class="hero-scroll">
+            Scroll to explore ↓
+        </div>
 
     </div>
 
-  </div>
+</header>
 
 
+<!-- MOVING STRIP -->
 
-  <!-- decorative circuit graphic -->
+<div class="marquee">
 
-  <div class="circuit-card">
+    <div class="marquee-track">
 
-    <div class="trace horizontal t1"></div>
-    <div class="trace horizontal t2"></div>
+        <span>PCB DESIGN <b>+</b></span>
+        <span>EMBEDDED SYSTEMS <b>+</b></span>
+        <span>STM32 <b>+</b></span>
+        <span>SOFTWARE <b>+</b></span>
+        <span>SOLAR ENERGY <b>+</b></span>
+        <span>BUILDING THINGS <b>+</b></span>
 
-    <div class="trace vertical t3"></div>
-    <div class="trace vertical t4"></div>
-
-    <div class="node n1"></div>
-    <div class="node n2"></div>
-    <div class="node n3"></div>
-    <div class="node n4"></div>
-
-
-    <div class="chip">
-
-      YOUR<br>
-      PORTFOLIO
+        <span>PCB DESIGN <b>+</b></span>
+        <span>EMBEDDED SYSTEMS <b>+</b></span>
+        <span>STM32 <b>+</b></span>
+        <span>SOFTWARE <b>+</b></span>
+        <span>SOLAR ENERGY <b>+</b></span>
+        <span>BUILDING THINGS <b>+</b></span>
 
     </div>
 
-  </div>
-
-</section>
-
+</div>
 
 
 <!-- ABOUT -->
 
 <section id="about">
 
-  <div class="section-label">
-    About Me
-  </div>
-
-  <h2 class="section-title">
-    A little about what I do.
-  </h2>
-
-  <p class="section-intro">
-
-    Use this section to explain yourself in more detail.
-
-    You can talk about school, engineering, programming,
-    electronics, sports, hobbies, career goals, or anything
-    else you want visitors to know.
-
-  </p>
-
-
-  <div class="about-grid">
-
-
-    <div class="panel">
-
-      <h3>⚡ What I Build</h3>
-
-      <p>
-
-        Explain the kinds of projects you enjoy creating.
-
-        Example: electronics, embedded systems, websites,
-        robotics, software, 3D printing, etc.
-
-      </p>
-
+    <div class="eyebrow reveal">
+        01 / About
     </div>
 
+    <h2 class="big-heading reveal">
 
-    <div class="panel">
+        Curious enough
+        to take things apart.
 
-      <h3>🧠 What I'm Learning</h3>
+        Stubborn enough
+        to put them back together.
 
-      <p>
+    </h2>
 
-        Put technologies or skills you're currently learning.
 
-        Example: STM32, PCB design, C++, Python,
-        electronics, CAD, or web development.
+    <div class="about-grid">
 
-      </p>
+        <div class="about-text reveal">
+
+            This is where you tell your story.
+
+            Don't write it like a résumé.
+
+            Explain what got you interested in
+            electronics, programming or engineering,
+            and what kinds of problems you actually
+            enjoy solving.
+
+        </div>
+
+
+        <div class="about-side reveal">
+
+            <p>
+                CURRENTLY EXPLORING
+            </p>
+
+            <p>
+
+                STM32 microcontrollers<br>
+                Power electronics<br>
+                PCB design<br>
+                Embedded C/C++<br>
+                Web development
+
+            </p>
+
+            <p>
+                Los Angeles, California
+            </p>
+
+        </div>
 
     </div>
-
-
-  </div>
 
 </section>
 
 
 
-<!-- PROJECTS -->
+<!-- FEATURED PROJECT -->
 
-<section id="projects">
+<section
+    class="featured"
+    id="work"
+>
 
-  <div class="section-label">
-    Projects
-  </div>
+    <div class="eyebrow reveal">
+        02 / Featured Project
+    </div>
 
-  <h2 class="section-title">
-    Things I've built.
-  </h2>
+    <div class="project-number reveal">
+        PROJECT 001
+    </div>
 
-  <p class="section-intro">
+    <h2 class="project-title reveal">
 
-    Each project can have a picture, description,
-    technologies used, and a link to learn more.
+        SOLAR<br>
+        BUSINESS<br>
+        CARD
 
-  </p>
-
-
-
-  <div class="projects">
+    </h2>
 
 
-    <!-- PROJECT 1 -->
+    <!-- Replace later with real PCB photo -->
 
-    <div class="project-card">
+    <div
+        class="pcb-visual reveal"
+        id="pcb"
+    >
 
-      <div class="project-image">
-        ☀️
-      </div>
+        <div class="trace h trace1"></div>
 
-      <div class="project-content">
+        <div class="trace h trace2"></div>
 
-        <h3>
-          Solar Smart Business Card
-        </h3>
+        <div class="trace v trace3"></div>
 
-        <p>
+        <div class="trace v trace4"></div>
 
-          A solar-powered electronic business card using
-          an STM32 microcontroller, OLED display,
-          supercapacitor energy storage and custom PCB.
+        <div
+            class="pcb-node node1"
+        ></div>
 
-        </p>
+        <div
+            class="pcb-node node2"
+        ></div>
 
-        <span class="project-tag">STM32</span>
-        <span class="project-tag">KiCad</span>
-        <span class="project-tag">PCB</span>
-        <span class="project-tag">Solar</span>
 
-      </div>
+        <div class="pcb-chip">
+
+            STM32<br>
+            POWERED
+
+        </div>
 
     </div>
 
 
 
-    <!-- PROJECT 2 -->
-
-    <div class="project-card">
-
-      <div class="project-image">
-        💻
-      </div>
-
-      <div class="project-content">
-
-        <h3>
-          Project Name
-        </h3>
-
-        <p>
-
-          Explain what this project does,
-          why you made it, and what you learned.
-
-        </p>
-
-        <span class="project-tag">Python</span>
-        <span class="project-tag">Software</span>
-
-      </div>
-
-    </div>
+    <div class="project-info">
 
 
+        <div
+            class="project-description reveal"
+        >
 
-    <!-- PROJECT 3 -->
+            <p>
 
-    <div class="project-card">
+                I wanted to make a business card
+                that wasn't just a piece of paper.
 
-      <div class="project-image">
-        🤖
-      </div>
+            </p>
 
-      <div class="project-content">
+            <p>
 
-        <h3>
-          Future Project
-        </h3>
+                The result is a custom PCB powered
+                by four solar cells and a
+                supercapacitor.
 
-        <p>
+                An STM32 microcontroller controls
+                an OLED display while a buck-boost
+                converter keeps the electronics
+                running as the stored voltage changes.
 
-          Leave this spot for the next interesting
-          thing you build.
+            </p>
 
-        </p>
+            <p>
 
-        <span class="project-tag">Engineering</span>
+                This section can explain your design
+                choices, mistakes, revisions and
+                what you learned while building it.
 
-      </div>
+            </p>
 
-    </div>
-
-
-  </div>
+        </div>
 
 
 
-  <!-- DETAILED PROJECT SECTION -->
-
-  <div class="project-detail">
+        <div class="project-meta reveal">
 
 
-    <div>
+            <div class="stat">
 
-      <div class="section-label">
-        Featured Project
-      </div>
+                <div class="stat-number">
+                    4×
+                </div>
 
-      <h3>
-        Solar Smart Business Card
-      </h3>
+                <div class="stat-label">
+                    Solar Cells
+                </div>
 
-
-      <p>
-
-        <strong>Why I built it:</strong><br>
-
-        Write about where the idea came from
-        and what you wanted to accomplish.
-
-      </p>
+            </div>
 
 
-      <p>
+            <div class="stat">
 
-        <strong>The challenge:</strong><br>
+                <div class="stat-number">
+                    2.5F
+                </div>
 
-        Explain difficult parts of the project.
+                <div class="stat-label">
+                    Energy Storage
+                </div>
 
-        For example: harvesting enough solar energy,
-        choosing a supercapacitor, designing the
-        buck-boost converter, routing the PCB, or
-        programming the OLED.
-
-      </p>
-
-
-      <p>
-
-        <strong>What I learned:</strong><br>
-
-        Explain the new skills you gained while
-        creating the project.
-
-      </p>
+            </div>
 
 
-      <a class="button"
-         href="https://github.com/YOURUSERNAME">
+            <div class="stat">
 
-        View Project on GitHub
+                <div class="stat-number">
+                    3.3V
+                </div>
 
-      </a>
+                <div class="stat-label">
+                    System Rail
+                </div>
+
+            </div>
+
+
+            <div class="stat">
+
+                <div class="stat-number">
+                    2
+                </div>
+
+                <div class="stat-label">
+                    PCB Layers
+                </div>
+
+            </div>
+
+
+        </div>
 
     </div>
 
+</section>
 
 
-    <div class="diagram">
 
-      <div class="energy-flow">
+<!-- OTHER PROJECTS -->
 
-        ☀️ Solar Cells
-        <br>
-        ↓
-        <br>
+<section>
 
-        ⚡ Supercapacitor
-        <br>
-        ↓
-        <br>
+    <div class="eyebrow reveal">
+        03 / More Work
+    </div>
 
-        🔋 Buck / Boost
-        <br>
-        ↓
-        <br>
+    <h2 class="big-heading reveal">
+        Selected projects.
+    </h2>
 
-        🧠 STM32
-        <br>
-        ↓
-        <br>
 
-        🖥 OLED
+    <div class="projects-list">
 
-      </div>
+
+        <a
+            href="#"
+            class="project-row reveal"
+        >
+
+            <div class="number">
+                002
+            </div>
+
+            <h3>
+                Project Name
+            </h3>
+
+            <p>
+                Brief explanation of what you made.
+            </p>
+
+            <div class="arrow">
+                →
+            </div>
+
+        </a>
+
+
+
+        <a
+            href="#"
+            class="project-row reveal"
+        >
+
+            <div class="number">
+                003
+            </div>
+
+            <h3>
+                Software Project
+            </h3>
+
+            <p>
+                Python / C++ / Web / whatever you used.
+            </p>
+
+            <div class="arrow">
+                →
+            </div>
+
+        </a>
+
+
+
+        <a
+            href="#"
+            class="project-row reveal"
+        >
+
+            <div class="number">
+                004
+            </div>
+
+            <h3>
+                Next Experiment
+            </h3>
+
+            <p>
+                Something you're currently building.
+            </p>
+
+            <div class="arrow">
+                →
+            </div>
+
+        </a>
+
 
     </div>
 
+</section>
 
-  </div>
+
+
+<!-- PROCESS -->
+
+<section class="process">
+
+    <div class="eyebrow reveal">
+        How I Work
+    </div>
+
+    <h2 class="big-heading reveal">
+
+        Idea → prototype →
+        break it → improve it.
+
+    </h2>
+
+
+    <div class="steps">
+
+
+        <div class="step reveal">
+
+            <div class="step-number">
+                01
+            </div>
+
+            <div>
+
+                <h3>
+                    Question
+                </h3>
+
+                <p>
+
+                    Start with something I want
+                    to understand or improve.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="step reveal">
+
+            <div class="step-number">
+                02
+            </div>
+
+            <div>
+
+                <h3>
+                    Design
+                </h3>
+
+                <p>
+
+                    Sketch the architecture,
+                    research parts and build
+                    the first design.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="step reveal">
+
+            <div class="step-number">
+                03
+            </div>
+
+            <div>
+
+                <h3>
+                    Build
+                </h3>
+
+                <p>
+
+                    Turn the idea into something
+                    physical and testable.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="step reveal">
+
+            <div class="step-number">
+                04
+            </div>
+
+            <div>
+
+                <h3>
+                    Iterate
+                </h3>
+
+                <p>
+
+                    Find what went wrong,
+                    understand why and make
+                    the next revision better.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
 
 </section>
 
@@ -861,53 +1457,54 @@
 
 <!-- CONTACT -->
 
-<section class="contact" id="contact">
+<section
+    class="contact"
+    id="contact"
+>
 
-  <div class="contact-box">
+    <div>
 
-    <div class="section-label">
-      Contact
+        <div class="eyebrow reveal">
+            04 / Contact
+        </div>
+
+        <h2 class="contact-title reveal">
+
+            LET'S<br>
+            BUILD<br>
+            SOMETHING.
+
+        </h2>
+
+
+        <div class="contact-links reveal">
+
+            <a
+                class="contact-button"
+                href="mailto:YOUR_EMAIL@gmail.com"
+            >
+                Email
+            </a>
+
+
+            <a
+                class="contact-button"
+                href="https://github.com/YOURUSERNAME"
+            >
+                GitHub ↗
+            </a>
+
+
+            <a
+                class="contact-button"
+                href="https://linkedin.com/in/YOURUSERNAME"
+            >
+                LinkedIn ↗
+            </a>
+
+        </div>
+
     </div>
-
-    <h2>
-      Let's connect.
-    </h2>
-
-    <p>
-
-      Interested in my projects or want to talk
-      about engineering, software, or electronics?
-
-    </p>
-
-
-    <div class="buttons"
-         style="justify-content:center">
-
-      <a class="button"
-         href="mailto:YOUR_EMAIL@example.com">
-
-        Email Me
-
-      </a>
-
-      <a class="button secondary"
-         href="https://github.com/YOURUSERNAME">
-
-        GitHub
-
-      </a>
-
-      <a class="button secondary"
-         href="https://linkedin.com/in/YOURUSERNAME">
-
-        LinkedIn
-
-      </a>
-
-    </div>
-
-  </div>
 
 </section>
 
@@ -915,10 +1512,164 @@
 
 <footer>
 
-  Built by Your Name • 2026
+    <span>
+        YOUR NAME
+    </span>
+
+    <span>
+        DESIGNED + BUILT BY ME
+    </span>
+
+    <span>
+        © 2026
+    </span>
 
 </footer>
 
+
+
+<script>
+
+/* ============================
+   REVEAL ELEMENTS ON SCROLL
+============================ */
+
+const observer =
+    new IntersectionObserver(
+
+        entries => {
+
+            entries.forEach(entry => {
+
+                if(entry.isIntersecting) {
+
+                    entry.target
+                        .classList
+                        .add("visible");
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold: .12
+        }
+
+    );
+
+
+document
+    .querySelectorAll(".reveal")
+    .forEach(element => {
+
+        observer.observe(element);
+
+    });
+
+
+
+/* ============================
+   SCROLL PROGRESS
+============================ */
+
+window.addEventListener(
+    "scroll",
+    () => {
+
+        const scrollTop =
+            document.documentElement.scrollTop;
+
+        const height =
+            document.documentElement.scrollHeight -
+            document.documentElement.clientHeight;
+
+        const progress =
+            scrollTop / height * 100;
+
+        document
+            .getElementById("progress")
+            .style.width =
+            progress + "%";
+
+    }
+);
+
+
+
+/* ============================
+   CURSOR LIGHT
+============================ */
+
+const glow =
+    document.querySelector(".cursor-glow");
+
+
+window.addEventListener(
+    "mousemove",
+    event => {
+
+        glow.style.left =
+            event.clientX + "px";
+
+        glow.style.top =
+            event.clientY + "px";
+
+    }
+);
+
+
+
+/* ============================
+   PCB PARALLAX / TILT
+============================ */
+
+const pcb =
+    document.getElementById("pcb");
+
+
+pcb.addEventListener(
+    "mousemove",
+    event => {
+
+        const rect =
+            pcb.getBoundingClientRect();
+
+        const x =
+            event.clientX -
+            rect.left;
+
+        const y =
+            event.clientY -
+            rect.top;
+
+        const rotateY =
+            ((x / rect.width) - .5) * 3;
+
+        const rotateX =
+            ((y / rect.height) - .5) * -3;
+
+        pcb.style.transform =
+            `perspective(1200px)
+             rotateX(${rotateX}deg)
+             rotateY(${rotateY}deg)`;
+
+    }
+);
+
+
+pcb.addEventListener(
+    "mouseleave",
+    () => {
+
+        pcb.style.transform =
+            "perspective(1200px) rotateX(0) rotateY(0)";
+
+    }
+);
+
+</script>
 
 </body>
 </html>
