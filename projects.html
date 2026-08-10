@@ -1,1 +1,2223 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Projects — Your Name</title>
+
+
+<style>
+
+:root {
+    --bg: #0b0b0b;
+    --text: #f3f1ea;
+    --muted: #92928d;
+    --accent: #d7ff38;
+    --line: #292929;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background:
+        var(--bg);
+
+    color:
+        var(--text);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    overflow-x:
+        hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* ==================================
+   PROGRESS
+================================== */
+
+#progress {
+    position:
+        fixed;
+
+    top: 0;
+    left: 0;
+
+    height: 3px;
+    width: 0;
+
+    background:
+        var(--accent);
+
+    z-index: 9999;
+}
+
+
+/* ==================================
+   CURSOR GLOW
+================================== */
+
+.cursor-glow {
+    position:
+        fixed;
+
+    width: 420px;
+    height: 420px;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(215,255,56,.07),
+            transparent 65%
+        );
+
+    transform:
+        translate(-50%, -50%);
+
+    z-index: 0;
+}
+
+
+/* ==================================
+   NAV
+================================== */
+
+nav {
+    position:
+        fixed;
+
+    width:
+        100%;
+
+    top: 0;
+    left: 0;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    padding:
+        24px
+        4vw;
+
+    z-index:
+        1000;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(11,11,11,.8),
+            transparent
+        );
+}
+
+.logo {
+    font-weight:
+        900;
+
+    letter-spacing:
+        -.04em;
+}
+
+.nav-links {
+    display:
+        flex;
+
+    gap:
+        28px;
+
+    font-size:
+        .78rem;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        .12em;
+}
+
+.nav-links a {
+    position:
+        relative;
+}
+
+.nav-links a::after {
+    content: "";
+
+    position:
+        absolute;
+
+    left: 0;
+    bottom: -6px;
+
+    width: 0;
+    height: 1px;
+
+    background:
+        var(--accent);
+
+    transition:
+        width .3s ease;
+}
+
+.nav-links a:hover::after {
+    width:
+        100%;
+}
+
+
+/* ==================================
+   HERO
+================================== */
+
+.projects-hero {
+    min-height:
+        90vh;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        flex-end;
+
+    padding:
+        150px
+        4vw
+        60px;
+}
+
+.eyebrow {
+    color:
+        var(--accent);
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        .2em;
+
+    font-size:
+        .72rem;
+
+    margin-bottom:
+        28px;
+}
+
+.projects-hero h1 {
+    font-size:
+        clamp(
+            5rem,
+            16vw,
+            14rem
+        );
+
+    line-height:
+        .74;
+
+    letter-spacing:
+        -.085em;
+
+    font-weight:
+        900;
+}
+
+.outline {
+    color:
+        transparent;
+
+    -webkit-text-stroke:
+        1px
+        var(--text);
+}
+
+.hero-info {
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap:
+        50px;
+
+    margin-top:
+        70px;
+
+    padding-top:
+        25px;
+
+    border-top:
+        1px solid
+        var(--line);
+}
+
+.hero-info p {
+    max-width:
+        580px;
+
+    color:
+        var(--muted);
+
+    line-height:
+        1.8;
+
+    font-size:
+        1.05rem;
+}
+
+.project-count {
+    text-align:
+        right;
+
+    color:
+        var(--muted);
+
+    font-size:
+        .75rem;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        .15em;
+}
+
+
+/* ==================================
+   MARQUEE
+================================== */
+
+.marquee {
+    overflow:
+        hidden;
+
+    border-top:
+        1px solid
+        var(--line);
+
+    border-bottom:
+        1px solid
+        var(--line);
+
+    padding:
+        17px
+        0;
+}
+
+.marquee-inner {
+    display:
+        flex;
+
+    width:
+        max-content;
+
+    animation:
+        marquee
+        25s
+        linear
+        infinite;
+}
+
+.marquee span {
+    margin-right:
+        70px;
+
+    white-space:
+        nowrap;
+
+    font-size:
+        .85rem;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        .13em;
+}
+
+.marquee b {
+    color:
+        var(--accent);
+}
+
+@keyframes marquee {
+
+    from {
+        transform:
+            translateX(0);
+    }
+
+    to {
+        transform:
+            translateX(-50%);
+    }
+
+}
+
+
+/* ==================================
+   PROJECT SECTION
+================================== */
+
+.projects-section {
+    padding:
+        130px
+        4vw;
+}
+
+.projects-top {
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        flex-end;
+
+    gap:
+        50px;
+
+    margin-bottom:
+        75px;
+}
+
+.projects-top h2 {
+    font-size:
+        clamp(
+            3rem,
+            7vw,
+            6rem
+        );
+
+    line-height:
+        .88;
+
+    letter-spacing:
+        -.06em;
+}
+
+.projects-note {
+    color:
+        var(--muted);
+
+    font-size:
+        .72rem;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        .14em;
+}
+
+
+/* ==================================
+   PROJECT GRID
+================================== */
+
+.project-grid {
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(12, 1fr);
+
+    column-gap:
+        25px;
+
+    row-gap:
+        70px;
+}
+
+.project-card {
+    grid-column:
+        span 6;
+
+    cursor:
+        pointer;
+}
+
+.project-card.wide {
+    grid-column:
+        span 8;
+}
+
+.project-card.small {
+    grid-column:
+        span 4;
+}
+
+
+/* ==================================
+   PROJECT IMAGE
+================================== */
+
+.project-image {
+    position:
+        relative;
+
+    aspect-ratio:
+        4 / 3;
+
+    overflow:
+        hidden;
+
+    background:
+        #151515;
+}
+
+.project-image img {
+    width:
+        100%;
+
+    height:
+        100%;
+
+    display:
+        block;
+
+    object-fit:
+        cover;
+
+    filter:
+        grayscale(15%);
+
+    transition:
+        transform
+        .8s
+        cubic-bezier(.2,.7,.2,1),
+
+        filter
+        .5s ease;
+}
+
+.project-card:hover
+.project-image img {
+    transform:
+        scale(1.045);
+
+    filter:
+        grayscale(0);
+}
+
+
+/* ==================================
+   PLACEHOLDER ART
+================================== */
+
+.placeholder {
+    width:
+        100%;
+
+    height:
+        100%;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #17230f,
+            #080c06
+        );
+
+    transition:
+        transform
+        .7s ease;
+}
+
+.project-card:hover
+.placeholder {
+    transform:
+        scale(1.025);
+}
+
+.placeholder-symbol {
+    font-size:
+        clamp(
+            4rem,
+            10vw,
+            9rem
+        );
+
+    font-weight:
+        900;
+
+    position:
+        relative;
+
+    z-index:
+        2;
+}
+
+
+/* TECHNICAL GRID */
+
+.placeholder::before {
+    content: "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background:
+
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 29px,
+            rgba(215,255,56,.045) 30px
+        ),
+
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 29px,
+            rgba(215,255,56,.045) 30px
+        );
+}
+
+
+/* ==================================
+   SOLAR CARD GRAPHIC
+================================== */
+
+.pcb {
+    position:
+        relative;
+}
+
+.pcb-board {
+    width:
+        72%;
+
+    max-width:
+        600px;
+
+    aspect-ratio:
+        1.75;
+
+    border:
+        1px solid
+        rgba(215,255,56,.5);
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    background:
+        rgba(10,25,8,.8);
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,.5);
+
+    transition:
+        transform .5s ease;
+}
+
+.project-card:hover
+.pcb-board {
+    transform:
+        rotate(-1deg)
+        scale(1.02);
+}
+
+.solar-cell {
+    position:
+        absolute;
+
+    width:
+        18%;
+
+    height:
+        28%;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #162837,
+            #162837 8px,
+            #21384d 9px,
+            #21384d 10px
+        );
+
+    border:
+        1px solid
+        #31546c;
+}
+
+.sc1 {
+    left: 5%;
+    top: 12%;
+}
+
+.sc2 {
+    left: 27%;
+    top: 12%;
+}
+
+.sc3 {
+    left: 5%;
+    bottom: 12%;
+}
+
+.sc4 {
+    left: 27%;
+    bottom: 12%;
+}
+
+.fake-screen {
+    position:
+        absolute;
+
+    right:
+        8%;
+
+    top:
+        14%;
+
+    width:
+        28%;
+
+    height:
+        25%;
+
+    background:
+        #050505;
+
+    border:
+        1px solid
+        #555;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    color:
+        #9ddfff;
+
+    font-size:
+        clamp(
+            .6rem,
+            1.5vw,
+            1rem
+        );
+}
+
+.fake-chip {
+    position:
+        absolute;
+
+    right:
+        20%;
+
+    bottom:
+        19%;
+
+    width:
+        10%;
+
+    aspect-ratio:
+        1;
+
+    background:
+        #080808;
+
+    border:
+        1px solid
+        var(--accent);
+}
+
+
+/* ==================================
+   LABELS
+================================== */
+
+.project-number {
+    position:
+        absolute;
+
+    top:
+        18px;
+
+    left:
+        18px;
+
+    padding:
+        8px
+        11px;
+
+    background:
+        rgba(0,0,0,.75);
+
+    backdrop-filter:
+        blur(8px);
+
+    font-size:
+        .68rem;
+
+    letter-spacing:
+        .13em;
+
+    z-index:
+        5;
+}
+
+.project-arrow {
+    position:
+        absolute;
+
+    right:
+        18px;
+
+    bottom:
+        18px;
+
+    width:
+        52px;
+
+    height:
+        52px;
+
+    border-radius:
+        50%;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    background:
+        var(--text);
+
+    color:
+        var(--bg);
+
+    font-size:
+        1.4rem;
+
+    z-index:
+        5;
+
+    transition:
+        background .3s ease,
+        transform .3s ease;
+}
+
+.project-card:hover
+.project-arrow {
+    background:
+        var(--accent);
+
+    transform:
+        rotate(45deg);
+}
+
+
+/* ==================================
+   PROJECT TEXT
+================================== */
+
+.project-text {
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr
+        auto;
+
+    gap:
+        30px;
+
+    margin-top:
+        15px;
+
+    padding-top:
+        20px;
+
+    border-top:
+        1px solid
+        var(--line);
+}
+
+.project-text h3 {
+    font-size:
+        clamp(
+            1.5rem,
+            3vw,
+            2.7rem
+        );
+
+    letter-spacing:
+        -.045em;
+
+    line-height:
+        1;
+}
+
+.project-text p {
+    color:
+        var(--muted);
+
+    max-width:
+        550px;
+
+    margin-top:
+        13px;
+
+    line-height:
+        1.7;
+}
+
+.year {
+    color:
+        var(--muted);
+
+    font-size:
+        .7rem;
+
+    letter-spacing:
+        .14em;
+
+    text-transform:
+        uppercase;
+}
+
+
+/* ==================================
+   TAGS
+================================== */
+
+.tags {
+    margin-top:
+        18px;
+}
+
+.tag {
+    display:
+        inline-block;
+
+    margin:
+        0
+        7px
+        7px
+        0;
+
+    padding:
+        7px
+        11px;
+
+    border:
+        1px solid
+        #383838;
+
+    border-radius:
+        100px;
+
+    color:
+        #b1b1aa;
+
+    font-size:
+        .67rem;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        .09em;
+
+    transition:
+        border .3s ease,
+        color .3s ease;
+}
+
+.project-card:hover
+.tag {
+    border-color:
+        #666;
+
+    color:
+        var(--text);
+}
+
+
+/* ==================================
+   PROCESS PHILOSOPHY
+================================== */
+
+.philosophy {
+    margin-top:
+        150px;
+
+    padding-top:
+        100px;
+
+    border-top:
+        1px solid
+        var(--line);
+}
+
+.philosophy h2 {
+    max-width:
+        1150px;
+
+    font-size:
+        clamp(
+            3rem,
+            8vw,
+            7rem
+        );
+
+    line-height:
+        .88;
+
+    letter-spacing:
+        -.065em;
+}
+
+.philosophy-bottom {
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap:
+        60px;
+
+    margin-top:
+        60px;
+}
+
+.philosophy-bottom p {
+    max-width:
+        550px;
+
+    color:
+        var(--muted);
+
+    line-height:
+        1.9;
+}
+
+
+/* ==================================
+   CONTACT
+================================== */
+
+.contact {
+    min-height:
+        75vh;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        space-between;
+
+    padding:
+        110px
+        4vw;
+
+    border-top:
+        1px solid
+        var(--line);
+}
+
+.contact h2 {
+    font-size:
+        clamp(
+            4.5rem,
+            12vw,
+            11rem
+        );
+
+    line-height:
+        .77;
+
+    letter-spacing:
+        -.08em;
+}
+
+.contact-links {
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        12px;
+
+    margin-top:
+        70px;
+}
+
+.button {
+    padding:
+        15px
+        22px;
+
+    border:
+        1px solid
+        #444;
+
+    border-radius:
+        100px;
+
+    transition:
+        .25s ease;
+}
+
+.button:hover {
+    background:
+        var(--accent);
+
+    border-color:
+        var(--accent);
+
+    color:
+        #000;
+
+    transform:
+        translateY(-4px);
+}
+
+
+/* ==================================
+   FOOTER
+================================== */
+
+footer {
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    padding:
+        28px
+        4vw;
+
+    border-top:
+        1px solid
+        var(--line);
+
+    color:
+        var(--muted);
+
+    font-size:
+        .7rem;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        .09em;
+}
+
+
+/* ==================================
+   REVEAL
+================================== */
+
+.reveal {
+    opacity:
+        0;
+
+    transform:
+        translateY(60px);
+
+    transition:
+        opacity
+        .9s
+        cubic-bezier(.2,.7,.2,1),
+
+        transform
+        .9s
+        cubic-bezier(.2,.7,.2,1);
+}
+
+.reveal.visible {
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* ==================================
+   MOBILE
+================================== */
+
+@media(max-width: 850px) {
+
+    .hero-info {
+        grid-template-columns:
+            1fr;
+    }
+
+    .project-count {
+        text-align:
+            left;
+    }
+
+    .project-card,
+    .project-card.wide,
+    .project-card.small {
+        grid-column:
+            span 12;
+    }
+
+    .projects-top {
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+    }
+
+    .philosophy-bottom {
+        grid-template-columns:
+            1fr;
+    }
+
+}
+
+
+@media(max-width: 550px) {
+
+    nav {
+        padding:
+            20px
+            5vw;
+    }
+
+    .projects-section {
+        padding:
+            90px
+            5vw;
+    }
+
+    .nav-links a:nth-child(2) {
+        display:
+            none;
+    }
+
+    footer {
+        flex-direction:
+            column;
+
+        gap:
+            10px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div id="progress"></div>
+
+<div class="cursor-glow"></div>
+
+
+
+<!-- ==================================
+     NAV
+================================== -->
+
+<nav>
+
+
+    <a
+        href="index.html"
+        class="logo"
+    >
+
+        YOUR NAME / 2026
+
+    </a>
+
+
+    <div class="nav-links">
+
+
+        <a href="index.html">
+
+            Home
+
+        </a>
+
+
+        <a href="projects.html">
+
+            Projects
+
+        </a>
+
+
+        <a href="#contact">
+
+            Contact
+
+        </a>
+
+
+    </div>
+
+
+</nav>
+
+
+
+<!-- ==================================
+     HERO
+================================== -->
+
+<header class="projects-hero">
+
+
+    <div class="eyebrow reveal">
+
+        Engineering Archive
+
+    </div>
+
+
+    <h1 class="reveal">
+
+        PRO<span class="outline">JECTS.</span>
+
+    </h1>
+
+
+    <div class="hero-info reveal">
+
+
+        <p>
+
+            A collection of things I've designed,
+            programmed, assembled, broken,
+            redesigned and eventually gotten working.
+
+            This page is less about showing perfect
+            finished products and more about documenting
+            the engineering behind them.
+
+        </p>
+
+
+        <div class="project-count">
+
+            04 PROJECTS /
+            MORE COMING
+
+        </div>
+
+
+    </div>
+
+
+</header>
+
+
+
+<!-- ==================================
+     MARQUEE
+================================== -->
+
+<div class="marquee">
+
+
+    <div class="marquee-inner">
+
+
+        <span>
+            HARDWARE <b>+</b>
+        </span>
+
+        <span>
+            SOFTWARE <b>+</b>
+        </span>
+
+        <span>
+            PCB DESIGN <b>+</b>
+        </span>
+
+        <span>
+            EMBEDDED <b>+</b>
+        </span>
+
+        <span>
+            EXPERIMENTS <b>+</b>
+        </span>
+
+        <span>
+            PROTOTYPES <b>+</b>
+        </span>
+
+
+        <!-- duplicate -->
+
+        <span>
+            HARDWARE <b>+</b>
+        </span>
+
+        <span>
+            SOFTWARE <b>+</b>
+        </span>
+
+        <span>
+            PCB DESIGN <b>+</b>
+        </span>
+
+        <span>
+            EMBEDDED <b>+</b>
+        </span>
+
+        <span>
+            EXPERIMENTS <b>+</b>
+        </span>
+
+        <span>
+            PROTOTYPES <b>+</b>
+        </span>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- ==================================
+     PROJECTS
+================================== -->
+
+<main class="projects-section">
+
+
+    <div class="projects-top reveal">
+
+
+        <div>
+
+
+            <div class="eyebrow">
+
+                Selected Work
+
+            </div>
+
+
+            <h2>
+
+                BUILD.<br>
+                TEST.<br>
+                ITERATE.
+
+            </h2>
+
+
+        </div>
+
+
+        <div class="projects-note">
+
+            2026 → PRESENT
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="project-grid">
+
+
+
+        <!-- ==================================
+             PROJECT 001
+        ================================== -->
+
+        <a
+            href="#"
+            class="project-card wide reveal"
+        >
+
+
+            <div class="project-image">
+
+
+                <div class="placeholder pcb">
+
+
+                    <div class="pcb-board">
+
+
+                        <div class="solar-cell sc1"></div>
+
+                        <div class="solar-cell sc2"></div>
+
+                        <div class="solar-cell sc3"></div>
+
+                        <div class="solar-cell sc4"></div>
+
+
+                        <div class="fake-screen">
+
+                            HELLO
+
+                        </div>
+
+
+                        <div class="fake-chip"></div>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="project-number">
+
+                    001 / HARDWARE
+
+                </div>
+
+
+                <div class="project-arrow">
+
+                    ↗
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="project-text">
+
+
+                <div>
+
+
+                    <h3>
+
+                        Solar Smart Business Card
+
+                    </h3>
+
+
+                    <p>
+
+                        A custom solar-powered electronic
+                        business card using photovoltaic
+                        cells, supercapacitor energy storage,
+                        a buck-boost converter, STM32
+                        microcontroller and OLED display.
+
+                    </p>
+
+
+                    <div class="tags">
+
+
+                        <span class="tag">
+                            STM32
+                        </span>
+
+                        <span class="tag">
+                            KiCad
+                        </span>
+
+                        <span class="tag">
+                            PCB Design
+                        </span>
+
+                        <span class="tag">
+                            Solar
+                        </span>
+
+                        <span class="tag">
+                            Embedded
+                        </span>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="year">
+
+                    2026
+
+                </div>
+
+
+            </div>
+
+
+        </a>
+
+
+
+        <!-- ==================================
+             PROJECT 002
+        ================================== -->
+
+        <a
+            href="#"
+            class="project-card small reveal"
+        >
+
+
+            <div class="project-image">
+
+
+                <div class="placeholder">
+
+
+                    <div class="placeholder-symbol">
+
+                        { }
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="project-number">
+
+                    002 / SOFTWARE
+
+                </div>
+
+
+                <div class="project-arrow">
+
+                    ↗
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="project-text">
+
+
+                <div>
+
+
+                    <h3>
+
+                        Project Name
+
+                    </h3>
+
+
+                    <p>
+
+                        Explain what this project does,
+                        why you created it and the
+                        interesting problem you solved.
+
+                    </p>
+
+
+                    <div class="tags">
+
+
+                        <span class="tag">
+                            Python
+                        </span>
+
+                        <span class="tag">
+                            Software
+                        </span>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="year">
+
+                    2026
+
+                </div>
+
+
+            </div>
+
+
+        </a>
+
+
+
+        <!-- ==================================
+             PROJECT 003
+        ================================== -->
+
+        <a
+            href="#"
+            class="project-card small reveal"
+        >
+
+
+            <div class="project-image">
+
+
+                <div class="placeholder">
+
+
+                    <div class="placeholder-symbol">
+
+                        ⚙
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="project-number">
+
+                    003 / ENGINEERING
+
+                </div>
+
+
+                <div class="project-arrow">
+
+                    ↗
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="project-text">
+
+
+                <div>
+
+
+                    <h3>
+
+                        Engineering Project
+
+                    </h3>
+
+
+                    <p>
+
+                        Add another hardware,
+                        electronics, mechanical
+                        or engineering experiment here.
+
+                    </p>
+
+
+                    <div class="tags">
+
+
+                        <span class="tag">
+                            Engineering
+                        </span>
+
+                        <span class="tag">
+                            Prototype
+                        </span>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="year">
+
+                    2026
+
+                </div>
+
+
+            </div>
+
+
+        </a>
+
+
+
+        <!-- ==================================
+             PROJECT 004
+        ================================== -->
+
+        <a
+            href="#"
+            class="project-card wide reveal"
+        >
+
+
+            <div class="project-image">
+
+
+                <div class="placeholder">
+
+
+                    <div class="placeholder-symbol">
+
+                        04
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="project-number">
+
+                    004 / EXPERIMENT
+
+                </div>
+
+
+                <div class="project-arrow">
+
+                    ↗
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="project-text">
+
+
+                <div>
+
+
+                    <h3>
+
+                        Future Project
+
+                    </h3>
+
+
+                    <p>
+
+                        Leave space here for the next
+                        project you build.
+
+                        You can always add more cards
+                        later without changing your homepage.
+
+                    </p>
+
+
+                    <div class="tags">
+
+
+                        <span class="tag">
+                            C++
+                        </span>
+
+                        <span class="tag">
+                            Embedded
+                        </span>
+
+                        <span class="tag">
+                            Experiment
+                        </span>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="year">
+
+                    NEXT
+
+                </div>
+
+
+            </div>
+
+
+        </a>
+
+
+
+    </div>
+
+
+
+    <!-- ==================================
+         PHILOSOPHY
+    ================================== -->
+
+    <div class="philosophy">
+
+
+        <div class="eyebrow reveal">
+
+            The Process
+
+        </div>
+
+
+        <h2 class="reveal">
+
+            THE FIRST VERSION
+            IS ALMOST NEVER
+            THE FINAL VERSION.
+
+        </h2>
+
+
+        <div class="philosophy-bottom reveal">
+
+
+            <p>
+
+                Most of my projects start
+                with a question instead of
+                a polished plan.
+
+                I research, prototype,
+                test, find what doesn't work,
+                and build another revision.
+
+            </p>
+
+
+            <p>
+
+                I want this site to show
+                more than the finished result.
+
+                It should also document the
+                decisions, mistakes,
+                experiments and engineering
+                behind the project.
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+</main>
+
+
+
+<!-- ==================================
+     CONTACT
+================================== -->
+
+<section
+    class="contact"
+    id="contact"
+>
+
+
+    <div>
+
+
+        <div class="eyebrow reveal">
+
+            Want to talk?
+
+        </div>
+
+
+        <h2 class="reveal">
+
+            LET'S<br>
+            MAKE<br>
+            SOMETHING.
+
+        </h2>
+
+
+        <div class="contact-links reveal">
+
+
+            <a
+                class="button"
+                href="mailto:YOUR_EMAIL@gmail.com"
+            >
+
+                Email
+
+            </a>
+
+
+            <a
+                class="button"
+                href="https://github.com/YOURUSERNAME"
+            >
+
+                GitHub ↗
+
+            </a>
+
+
+            <a
+                class="button"
+                href="https://linkedin.com/in/YOURUSERNAME"
+            >
+
+                LinkedIn ↗
+
+            </a>
+
+
+            <a
+                class="button"
+                href="index.html"
+            >
+
+                ← Back Home
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ==================================
+     FOOTER
+================================== -->
+
+<footer>
+
+
+    <span>
+
+        YOUR NAME
+
+    </span>
+
+
+    <span>
+
+        ENGINEERING /
+        SOFTWARE /
+        HARDWARE
+
+    </span>
+
+
+    <span>
+
+        © 2026
+
+    </span>
+
+
+</footer>
+
+
+
+<script>
+
+
+/* ==================================
+   REVEAL
+================================== */
+
+const observer =
+new IntersectionObserver(
+
+    entries => {
+
+        entries.forEach(entry => {
+
+            if(entry.isIntersecting) {
+
+                entry.target
+                    .classList
+                    .add("visible");
+
+            }
+
+        });
+
+    },
+
+    {
+        threshold: .1
+    }
+
+);
+
+
+document
+.querySelectorAll(".reveal")
+.forEach(element => {
+
+    observer.observe(element);
+
+});
+
+
+
+/* ==================================
+   SCROLL PROGRESS
+================================== */
+
+window.addEventListener(
+    "scroll",
+    () => {
+
+        const scroll =
+            document.documentElement.scrollTop;
+
+        const height =
+            document.documentElement.scrollHeight -
+            document.documentElement.clientHeight;
+
+        const percentage =
+            height > 0
+            ? scroll / height * 100
+            : 0;
+
+        document
+            .getElementById("progress")
+            .style.width =
+            percentage + "%";
+
+    }
+);
+
+
+
+/* ==================================
+   CURSOR GLOW
+================================== */
+
+const glow =
+document.querySelector(".cursor-glow");
+
+
+window.addEventListener(
+
+    "mousemove",
+
+    event => {
+
+        glow.style.left =
+            event.clientX + "px";
+
+        glow.style.top =
+            event.clientY + "px";
+
+    }
+
+);
+
+
+</script>
+
+
+</body>
+
+</html>
