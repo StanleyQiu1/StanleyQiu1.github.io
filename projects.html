@@ -15,7 +15,13 @@
 
 <title>Projects — Stanley Qiu</title>
 
+
 <style>
+
+
+/* ==================================
+   COLORS
+================================== */
 
 :root {
     --bg: #0b0b0b;
@@ -26,15 +32,22 @@
     --placeholder: #151515;
 }
 
+
+/* ==================================
+   RESET
+================================== */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
 html {
     scroll-behavior: smooth;
 }
+
 
 body {
     background: var(--bg);
@@ -47,6 +60,7 @@ body {
 
     overflow-x: hidden;
 }
+
 
 a {
     color: inherit;
@@ -130,10 +144,12 @@ nav {
         );
 }
 
+
 .logo {
     font-weight: 900;
     letter-spacing: -.04em;
 }
+
 
 .nav-links {
     display: flex;
@@ -146,9 +162,11 @@ nav {
     letter-spacing: .12em;
 }
 
+
 .nav-links a {
     position: relative;
 }
+
 
 .nav-links a::after {
     content: "";
@@ -165,6 +183,7 @@ nav {
 
     transition: width .3s ease;
 }
+
 
 .nav-links a:hover::after {
     width: 100%;
@@ -188,6 +207,7 @@ nav {
         60px;
 }
 
+
 .eyebrow {
     color: var(--accent);
 
@@ -198,6 +218,7 @@ nav {
 
     margin-bottom: 28px;
 }
+
 
 .projects-hero h1 {
     font-size:
@@ -214,6 +235,7 @@ nav {
     font-weight: 900;
 }
 
+
 .outline {
     color: transparent;
 
@@ -221,6 +243,7 @@ nav {
         1px
         var(--text);
 }
+
 
 .hero-info {
     display: grid;
@@ -240,6 +263,7 @@ nav {
         var(--line);
 }
 
+
 .hero-info p {
     max-width: 700px;
 
@@ -251,6 +275,7 @@ nav {
 
     font-weight: 600;
 }
+
 
 .project-count {
     text-align: right;
@@ -283,6 +308,7 @@ nav {
         17px 0;
 }
 
+
 .marquee-inner {
     display: flex;
 
@@ -295,6 +321,7 @@ nav {
         infinite;
 }
 
+
 .marquee span {
     margin-right: 70px;
 
@@ -306,9 +333,11 @@ nav {
     letter-spacing: .13em;
 }
 
+
 .marquee b {
     color: var(--accent);
 }
+
 
 @keyframes marquee {
 
@@ -335,6 +364,7 @@ nav {
         4vw;
 }
 
+
 .projects-top {
     display: flex;
 
@@ -345,6 +375,7 @@ nav {
 
     margin-bottom: 75px;
 }
+
 
 .projects-top h2 {
     font-size:
@@ -359,6 +390,7 @@ nav {
     letter-spacing: -.06em;
 }
 
+
 .projects-note {
     color: var(--muted);
 
@@ -371,49 +403,69 @@ nav {
 
 /* ==================================
    PROJECT GRID
+
+   TWO IDENTICAL COLUMNS
 ================================== */
 
 .project-grid {
     display: grid;
 
     grid-template-columns:
-        repeat(12, 1fr);
+        repeat(2, minmax(0, 1fr));
 
-    column-gap: 25px;
+    column-gap: 32px;
     row-gap: 70px;
+
+    align-items: stretch;
 }
 
-.project-card {
-    grid-column: span 6;
+
+/*
+   ALL PROJECT CARDS ARE NOW
+   EXACTLY THE SAME WIDTH.
+
+   "wide" and "small" classes
+   are intentionally overridden.
+*/
+
+.project-card,
+.project-card.wide,
+.project-card.small {
+    width: 100%;
+
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
 
     cursor: pointer;
-}
-
-.project-card.wide {
-    grid-column: span 8;
-}
-
-.project-card.small {
-    grid-column: span 4;
 }
 
 
 /* ==================================
    PROJECT IMAGE AREA
+
+   EVERY IMAGE IS SAME SIZE
 ================================== */
 
 .project-image {
     position: relative;
+
+    width: 100%;
 
     aspect-ratio: 4 / 3;
 
     overflow: hidden;
 
     background: var(--placeholder);
+
+    flex-shrink: 0;
 }
 
 
-/* REAL IMAGE */
+/* ==================================
+   REAL PROJECT IMAGES
+================================== */
 
 .project-image img {
     width: 100%;
@@ -436,6 +488,7 @@ nav {
         .5s ease;
 }
 
+
 .project-card:hover
 .project-image img {
     transform: scale(1.045);
@@ -445,7 +498,7 @@ nav {
 
 
 /* ==================================
-   PLACEHOLDER
+   PLACEHOLDER IMAGE
 ================================== */
 
 .placeholder {
@@ -464,6 +517,7 @@ nav {
         transform .7s ease;
 }
 
+
 .project-card:hover
 .placeholder {
     background: #191919;
@@ -471,14 +525,15 @@ nav {
     transform: scale(1.02);
 }
 
+
 .placeholder-symbol {
     color: var(--accent);
 
     font-size:
         clamp(
             3rem,
-            8vw,
-            7rem
+            7vw,
+            6rem
         );
 
     font-weight: 900;
@@ -487,6 +542,7 @@ nav {
 
     opacity: .92;
 }
+
 
 .placeholder-label {
     position: absolute;
@@ -550,6 +606,7 @@ nav {
     place-items: center;
 
     background: var(--text);
+
     color: var(--bg);
 
     font-size: 1.4rem;
@@ -561,6 +618,7 @@ nav {
         transform .3s ease;
 }
 
+
 .project-card:hover
 .project-arrow {
     background: var(--accent);
@@ -571,13 +629,15 @@ nav {
 
 /* ==================================
    PROJECT TEXT
+
+   SAME MINIMUM HEIGHT
 ================================== */
 
 .project-text {
     display: grid;
 
     grid-template-columns:
-        1fr
+        minmax(0, 1fr)
         auto;
 
     gap: 30px;
@@ -589,7 +649,12 @@ nav {
     border-top:
         1px solid
         var(--line);
+
+    min-height: 245px;
+
+    flex: 1;
 }
+
 
 .project-text h3 {
     font-size:
@@ -604,6 +669,7 @@ nav {
     line-height: 1;
 }
 
+
 .project-text p {
     color: var(--muted);
 
@@ -613,6 +679,7 @@ nav {
 
     line-height: 1.7;
 }
+
 
 .year {
     color: var(--muted);
@@ -632,6 +699,7 @@ nav {
 .tags {
     margin-top: 18px;
 }
+
 
 .tag {
     display: inline-block;
@@ -665,6 +733,7 @@ nav {
         background .3s ease;
 }
 
+
 .project-card:hover
 .tag {
     border-color: var(--accent);
@@ -673,6 +742,25 @@ nav {
 
     background:
         rgba(255,122,0,.07);
+}
+
+
+/* ==================================
+   PLACEHOLDER TEXT AREA
+================================== */
+
+.placeholder-card .project-text {
+    min-height: 245px;
+}
+
+
+.placeholder-card .project-text h3 {
+    color: var(--text);
+}
+
+
+.placeholder-card .project-text p {
+    color: var(--muted);
 }
 
 
@@ -690,6 +778,7 @@ nav {
         var(--line);
 }
 
+
 .philosophy h2 {
     max-width: 1150px;
 
@@ -705,6 +794,7 @@ nav {
     letter-spacing: -.065em;
 }
 
+
 .philosophy-bottom {
     display: grid;
 
@@ -716,6 +806,7 @@ nav {
 
     margin-top: 60px;
 }
+
 
 .philosophy-bottom p {
     max-width: 550px;
@@ -746,6 +837,7 @@ nav {
         var(--line);
 }
 
+
 .contact h2 {
     font-size:
         clamp(
@@ -759,6 +851,7 @@ nav {
     letter-spacing: -.08em;
 }
 
+
 .contact-links {
     display: flex;
 
@@ -768,6 +861,7 @@ nav {
 
     margin-top: 70px;
 }
+
 
 .button {
     padding:
@@ -784,6 +878,7 @@ nav {
         .25s ease;
 }
 
+
 .button:hover {
     background: var(--accent);
 
@@ -791,7 +886,8 @@ nav {
 
     color: #000;
 
-    transform: translateY(-4px);
+    transform:
+        translateY(-4px);
 }
 
 
@@ -841,6 +937,7 @@ footer {
         cubic-bezier(.2,.7,.2,1);
 }
 
+
 .reveal.visible {
     opacity: 1;
 
@@ -850,24 +947,21 @@ footer {
 
 
 /* ==================================
-   MOBILE
+   TABLET
 ================================== */
 
 @media(max-width: 850px) {
 
     .hero-info {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
     }
+
 
     .project-count {
         text-align: left;
     }
 
-    .project-card,
-    .project-card.wide,
-    .project-card.small {
-        grid-column: span 12;
-    }
 
     .projects-top {
         align-items: flex-start;
@@ -875,12 +969,35 @@ footer {
         flex-direction: column;
     }
 
+
+    .project-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .project-text {
+        min-height: 0;
+    }
+
+
+    .placeholder-card
+    .project-text {
+        min-height: 0;
+    }
+
+
     .philosophy-bottom {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
     }
 
 }
 
+
+/* ==================================
+   MOBILE
+================================== */
 
 @media(max-width: 550px) {
 
@@ -890,19 +1007,53 @@ footer {
             5vw;
     }
 
+
     .nav-links {
         gap: 15px;
     }
 
+
     .nav-links a:nth-child(2) {
         display: none;
     }
+
 
     .projects-section {
         padding:
             90px
             5vw;
     }
+
+
+    .project-grid {
+        row-gap: 55px;
+    }
+
+
+    .project-number {
+        top: 12px;
+        left: 12px;
+
+        font-size: .6rem;
+    }
+
+
+    .project-arrow {
+        width: 44px;
+        height: 44px;
+
+        right: 12px;
+        bottom: 12px;
+    }
+
+
+    .project-text {
+        grid-template-columns:
+            1fr;
+
+        gap: 15px;
+    }
+
 
     footer {
         flex-direction: column;
@@ -911,6 +1062,7 @@ footer {
     }
 
 }
+
 
 </style>
 
@@ -1090,6 +1242,9 @@ footer {
     </div>
 
 
+    <!-- ==================================
+         PROJECT GRID
+    ================================== -->
 
     <div class="project-grid">
 
@@ -1175,7 +1330,6 @@ footer {
         </a>
 
 
-
         <!-- ==================================
              PROJECT 002
              AI DRONE
@@ -1187,12 +1341,6 @@ footer {
         >
 
             <div class="project-image">
-
-                <!--
-                    IMPORTANT:
-                    Image is directly inside project-image.
-                    Do NOT put it inside placeholder.
-                -->
 
                 <img
                     src="images/IMG_1720.JPG"
@@ -1259,7 +1407,6 @@ footer {
             </div>
 
         </a>
-
 
 
         <!-- ==================================
@@ -1335,7 +1482,6 @@ footer {
         </a>
 
 
-
         <!-- ==================================
              PROJECT 004
         ================================== -->
@@ -1407,8 +1553,247 @@ footer {
         </a>
 
 
-    </div>
+        <!-- ==================================
+             PLACEHOLDER 005
+        ================================== -->
 
+        <a
+            href="#"
+            class="project-card placeholder-card reveal"
+        >
+
+            <div class="project-image">
+
+                <div class="placeholder">
+
+                    <div class="placeholder-symbol">
+                        005
+                    </div>
+
+                    <div class="placeholder-label">
+                        PROJECT PLACEHOLDER
+                    </div>
+
+                </div>
+
+
+                <div class="project-number">
+                    005 / PROJECT
+                </div>
+
+
+                <div class="project-arrow">
+                    ↗
+                </div>
+
+            </div>
+
+
+            <div class="project-text">
+
+                <div>
+
+                    <h3>
+                        Coming Soon
+                    </h3>
+
+                    <p>
+                        Project placeholder.
+                    </p>
+
+                </div>
+
+
+                <div class="year">
+                    NEXT
+                </div>
+
+            </div>
+
+        </a>
+
+
+        <!-- ==================================
+             PLACEHOLDER 006
+        ================================== -->
+
+        <a
+            href="#"
+            class="project-card placeholder-card reveal"
+        >
+
+            <div class="project-image">
+
+                <div class="placeholder">
+
+                    <div class="placeholder-symbol">
+                        006
+                    </div>
+
+                    <div class="placeholder-label">
+                        PROJECT PLACEHOLDER
+                    </div>
+
+                </div>
+
+
+                <div class="project-number">
+                    006 / PROJECT
+                </div>
+
+
+                <div class="project-arrow">
+                    ↗
+                </div>
+
+            </div>
+
+
+            <div class="project-text">
+
+                <div>
+
+                    <h3>
+                        Coming Soon
+                    </h3>
+
+                    <p>
+                        Project placeholder.
+                    </p>
+
+                </div>
+
+
+                <div class="year">
+                    NEXT
+                </div>
+
+            </div>
+
+        </a>
+
+
+        <!-- ==================================
+             PLACEHOLDER 007
+        ================================== -->
+
+        <a
+            href="#"
+            class="project-card placeholder-card reveal"
+        >
+
+            <div class="project-image">
+
+                <div class="placeholder">
+
+                    <div class="placeholder-symbol">
+                        007
+                    </div>
+
+                    <div class="placeholder-label">
+                        PROJECT PLACEHOLDER
+                    </div>
+
+                </div>
+
+
+                <div class="project-number">
+                    007 / PROJECT
+                </div>
+
+
+                <div class="project-arrow">
+                    ↗
+                </div>
+
+            </div>
+
+
+            <div class="project-text">
+
+                <div>
+
+                    <h3>
+                        Coming Soon
+                    </h3>
+
+                    <p>
+                        Project placeholder.
+                    </p>
+
+                </div>
+
+
+                <div class="year">
+                    NEXT
+                </div>
+
+            </div>
+
+        </a>
+
+
+        <!-- ==================================
+             PLACEHOLDER 008
+        ================================== -->
+
+        <a
+            href="#"
+            class="project-card placeholder-card reveal"
+        >
+
+            <div class="project-image">
+
+                <div class="placeholder">
+
+                    <div class="placeholder-symbol">
+                        008
+                    </div>
+
+                    <div class="placeholder-label">
+                        PROJECT PLACEHOLDER
+                    </div>
+
+                </div>
+
+
+                <div class="project-number">
+                    008 / PROJECT
+                </div>
+
+
+                <div class="project-arrow">
+                    ↗
+                </div>
+
+            </div>
+
+
+            <div class="project-text">
+
+                <div>
+
+                    <h3>
+                        Coming Soon
+                    </h3>
+
+                    <p>
+                        Project placeholder.
+                    </p>
+
+                </div>
+
+
+                <div class="year">
+                    NEXT
+                </div>
+
+            </div>
+
+        </a>
+
+
+    </div>
 
 
     <!-- ==================================
@@ -1543,6 +1928,10 @@ footer {
 </footer>
 
 
+<!-- ==================================
+     JAVASCRIPT
+================================== -->
+
 <script>
 
 
@@ -1598,14 +1987,17 @@ window.addEventListener(
         const scroll =
             document.documentElement.scrollTop;
 
+
         const height =
             document.documentElement.scrollHeight -
             document.documentElement.clientHeight;
+
 
         const percentage =
             height > 0
             ? scroll / height * 100
             : 0;
+
 
         document
             .getElementById("progress")
