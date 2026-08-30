@@ -268,12 +268,45 @@ nav {
 }
 
 
+/* ==================================
+   THINGS THAT OUTLINE
+================================== */
+
 .hero-outline {
     color: transparent;
 
     -webkit-text-stroke:
         1px
         var(--text);
+}
+
+
+/* ==================================
+   DO STUFF OUTLINE + ORANGE HOVER
+================================== */
+
+.hero-do-stuff {
+    display: inline-block;
+
+    color: transparent;
+
+    -webkit-text-stroke:
+        1px
+        var(--text);
+
+    transition:
+        color .3s ease,
+        -webkit-text-stroke .3s ease,
+        transform .3s ease;
+}
+
+
+.hero-do-stuff:hover {
+    color: var(--accent);
+
+    -webkit-text-stroke:
+        1px
+        var(--accent);
 }
 
 
@@ -344,8 +377,7 @@ nav {
 /* ==================================
    PERSONAL SOLAR CAR IMAGE
 
-   NOW EXTENDS ALMOST TO THE
-   BOTTOM OF THE HERO
+   EXTENDS ALMOST TO BOTTOM
 ================================== */
 
 .hero-portrait {
@@ -400,11 +432,6 @@ nav {
     display: block;
 
     object-fit: cover;
-
-    /*
-       Keeps your face visible while
-       still showing the cockpit/car.
-    */
 
     object-position:
         28% center;
@@ -1509,7 +1536,9 @@ footer {
 
         <br>
 
-        DO STUFF.
+        <span class="hero-do-stuff">
+            DO STUFF.
+        </span>
 
     </h1>
 
