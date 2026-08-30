@@ -217,6 +217,20 @@ nav {
         55px;
 
     position: relative;
+
+    overflow: hidden;
+}
+
+
+/* Keeps hero text above portrait */
+
+.hero-label,
+.hero h1,
+.hero-subtext,
+.hero-bottom {
+    position: relative;
+
+    z-index: 3;
 }
 
 
@@ -320,6 +334,113 @@ nav {
 
 
 /* ==================================
+   PERSONAL IMAGE
+================================== */
+
+.hero-portrait {
+    position: absolute;
+
+    right: 0;
+    top: 8%;
+
+    width:
+        clamp(
+            330px,
+            29vw,
+            560px
+        );
+
+    height: 88%;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    opacity: .95;
+
+    /*
+       This makes the LEFT side of
+       your image gradually appear.
+    */
+
+    -webkit-mask-image:
+        linear-gradient(
+            to right,
+            transparent 0%,
+            rgba(0,0,0,.08) 9%,
+            rgba(0,0,0,.35) 20%,
+            rgba(0,0,0,.75) 36%,
+            black 53%,
+            black 100%
+        );
+
+    mask-image:
+        linear-gradient(
+            to right,
+            transparent 0%,
+            rgba(0,0,0,.08) 9%,
+            rgba(0,0,0,.35) 20%,
+            rgba(0,0,0,.75) 36%,
+            black 53%,
+            black 100%
+        );
+}
+
+
+.hero-portrait img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position:
+        center
+        top;
+
+    filter:
+        brightness(.82)
+        contrast(1.05)
+        saturate(.9);
+}
+
+
+/*
+   Dark fade at the bottom and
+   slight vignette around portrait.
+*/
+
+.hero-portrait::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+            to top,
+            var(--bg) 0%,
+            rgba(11,11,11,.82) 5%,
+            rgba(11,11,11,.25) 18%,
+            transparent 35%
+        ),
+
+        linear-gradient(
+            to right,
+            rgba(11,11,11,.45) 0%,
+            transparent 42%
+        );
+
+    pointer-events: none;
+}
+
+
+/* ==================================
    SPINNING DECAP IMAGE
 ================================== */
 
@@ -332,13 +453,89 @@ nav {
     width: 75px;
     height: 75px;
 
-    opacity: .55;
+    opacity: .8;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
     pointer-events: none;
+
+    z-index: 5;
+
+    isolation: isolate;
+}
+
+
+/* ==================================
+   DARK CAPACITOR BUBBLE
+================================== */
+
+.cross::before {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 205px;
+    height: 205px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(47,38,31,.48) 0%,
+            rgba(31,25,21,.36) 25%,
+            rgba(20,17,15,.24) 45%,
+            rgba(11,11,11,.08) 62%,
+            transparent 74%
+        );
+
+    filter:
+        blur(8px);
+
+    z-index: -1;
+}
+
+
+/*
+   Extends the capacitor bubble
+   toward your portrait so the two
+   visually blend together.
+*/
+
+.cross::after {
+    content: "";
+
+    position: absolute;
+
+    right: -165px;
+    top: 5px;
+
+    width: 300px;
+    height: 190px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            ellipse at 28% 40%,
+            rgba(42,34,28,.32) 0%,
+            rgba(29,23,20,.24) 30%,
+            rgba(18,15,13,.13) 48%,
+            transparent 73%
+        );
+
+    filter:
+        blur(14px);
+
+    z-index: -2;
 }
 
 
@@ -350,13 +547,18 @@ nav {
 
     object-fit: contain;
 
-    transform-origin: center center;
+    transform-origin:
+        center center;
 
     animation:
         rotateCross
         20s
         linear
         infinite;
+
+    position: relative;
+
+    z-index: 2;
 }
 
 
@@ -1033,6 +1235,32 @@ footer {
     }
 
 
+    /*
+       Portrait becomes more subtle
+       on tablet so it does not fight
+       with the large headline.
+    */
+
+    .hero-portrait {
+        width: 48vw;
+
+        right: -10vw;
+
+        top: 12%;
+
+        height: 74%;
+
+        opacity: .42;
+    }
+
+
+    .cross {
+        right: 8vw;
+
+        top: 17%;
+    }
+
+
     .about-side {
         border-left: 0;
 
@@ -1100,6 +1328,48 @@ footer {
 
     .nav-links a:first-child {
         display: none;
+    }
+
+
+    /*
+       Keeps a subtle portrait on
+       mobile without covering text.
+    */
+
+    .hero-portrait {
+        width: 75vw;
+
+        right: -37vw;
+
+        top: 16%;
+
+        height: 64%;
+
+        opacity: .22;
+    }
+
+
+    .cross {
+        width: 60px;
+        height: 60px;
+
+        right: 7vw;
+
+        top: 17%;
+    }
+
+
+    .cross::before {
+        width: 155px;
+        height: 155px;
+    }
+
+
+    .cross::after {
+        width: 220px;
+        height: 150px;
+
+        right: -130px;
     }
 
 
@@ -1203,6 +1473,24 @@ footer {
 
 <header class="hero">
 
+
+    <!-- ==================================
+         PERSONAL IMAGE
+    ================================== -->
+
+    <div class="hero-portrait">
+
+        <img
+            src="images/Personal Image.jpg"
+            alt="Stanley Qiu"
+        >
+
+    </div>
+
+
+    <!-- ==================================
+         SPINNING CAPACITOR
+    ================================== -->
 
     <div class="cross">
 
