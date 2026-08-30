@@ -336,6 +336,14 @@ nav {
 
 .marquee b {
     color: var(--accent);
+
+    font-size: 1.7em;
+
+    font-weight: 900;
+
+    line-height: 0;
+
+    vertical-align: -0.08em;
 }
 
 
@@ -716,13 +724,18 @@ nav {
 
     border:
         1px solid
-        #383838;
+        var(--accent);
 
     border-radius: 100px;
 
-    color: #b1b1aa;
+    background:
+        var(--accent);
+
+    color: #0b0b0b;
 
     font-size: .67rem;
+
+    font-weight: 600;
 
     text-transform: uppercase;
     letter-spacing: .09em;
@@ -736,12 +749,14 @@ nav {
 
 .project-card:hover
 .tag {
-    border-color: var(--accent);
+    border-color:
+        var(--accent);
 
-    color: var(--text);
+    color:
+        #0b0b0b;
 
     background:
-        rgba(255,122,0,.07);
+        var(--accent);
 }
 
 
@@ -863,6 +878,10 @@ nav {
 }
 
 
+/* ==================================
+   SOLID ORANGE CONTACT BUTTONS
+================================== */
+
 .button {
     padding:
         15px
@@ -870,9 +889,18 @@ nav {
 
     border:
         1px solid
-        #444;
+        var(--accent);
 
-    border-radius: 100px;
+    border-radius:
+        100px;
+
+    background:
+        var(--accent);
+
+    color:
+        #0b0b0b;
+
+    font-weight: 600;
 
     transition:
         .25s ease;
@@ -880,11 +908,14 @@ nav {
 
 
 .button:hover {
-    background: var(--accent);
+    background:
+        var(--accent);
 
-    border-color: var(--accent);
+    border-color:
+        var(--accent);
 
-    color: #000;
+    color:
+        #0b0b0b;
 
     transform:
         translateY(-4px);
@@ -1748,7 +1779,6 @@ footer {
                         <span class="tag">
                             Hardware
                         </span>
-
 
                     </div>
 
