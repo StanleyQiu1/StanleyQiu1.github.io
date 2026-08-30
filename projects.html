@@ -385,7 +385,7 @@ nav {
 
     gap: 50px;
 
-    margin-bottom: 75px;
+    margin-bottom: 95px;
 
     position: relative;
 
@@ -396,7 +396,7 @@ nav {
         0
         40px;
 
-    overflow: hidden;
+    overflow: visible;
 
     isolation: isolate;
 }
@@ -432,14 +432,6 @@ nav {
     pointer-events: none;
 
     overflow: hidden;
-
-
-    /*
-       Smooth black → photo transition.
-       The image begins very faintly
-       around the center-left and is
-       fully visible farther right.
-    */
 
     -webkit-mask-image:
         linear-gradient(
@@ -492,11 +484,6 @@ nav {
     display: block;
 
     object-fit: cover;
-
-    /*
-       Keeps you, the soldering iron,
-       and the PCB in view.
-    */
 
     object-position:
         57% center;
@@ -568,12 +555,23 @@ nav {
 
 
 .projects-note {
+    position: absolute;
+
+    right: 0;
+    bottom: -28px;
+
+    z-index: 4;
+
     color: var(--muted);
 
     font-size: .72rem;
 
     text-transform: uppercase;
     letter-spacing: .14em;
+
+    background: var(--bg);
+
+    padding-left: 18px;
 }
 
 
@@ -1170,6 +1168,8 @@ footer {
         min-height: 560px;
 
         justify-content: flex-end;
+
+        margin-bottom: 80px;
     }
 
 
@@ -1184,6 +1184,11 @@ footer {
     .selected-work-photo img {
         object-position:
             58% center;
+    }
+
+
+    .projects-note {
+        bottom: -24px;
     }
 
 
@@ -1249,6 +1254,8 @@ footer {
             25px
             0
             30px;
+
+        margin-bottom: 70px;
     }
 
 
@@ -1263,6 +1270,11 @@ footer {
     .selected-work-photo img {
         object-position:
             55% center;
+    }
+
+
+    .projects-note {
+        bottom: -20px;
     }
 
 
