@@ -224,10 +224,9 @@ nav {
 }
 
 
-/*
-   Keeps all hero text above
-   the photograph.
-*/
+/* ==================================
+   KEEP HERO TEXT ABOVE PHOTO
+================================== */
 
 .hero-label,
 .hero h1,
@@ -294,6 +293,12 @@ nav {
 }
 
 
+/* ==================================
+   HERO BOTTOM
+
+   DIVIDER MOVED DOWN
+================================== */
+
 .hero-bottom {
     display: grid;
 
@@ -303,7 +308,7 @@ nav {
 
     gap: 50px;
 
-    margin-top: 60px;
+    margin-top: 95px;
 
     padding-top: 25px;
 
@@ -339,21 +344,25 @@ nav {
 
 
 /* ==================================
-   PERSONAL IMAGE
+   PERSONAL SOLAR CAR IMAGE
 
-   Starts farther left and preserves
-   much more of the original photo.
+   - STARTS AT VERY TOP
+   - NO BLACK BAR
+   - SHOWS MORE OF ORIGINAL PHOTO
+   - FADE STARTS FARTHER LEFT
 ================================== */
 
 .hero-portrait {
     position: absolute;
 
-    left: 35%;
-    right: 0;
+    left: 32%;
+    right: -12%;
 
-    top: 6%;
+    top: 0;
 
-    height: 88%;
+    height: auto;
+
+    aspect-ratio: 1480 / 817;
 
     z-index: 1;
 
@@ -361,18 +370,9 @@ nav {
 
     overflow: hidden;
 
-    display: flex;
-
-    align-items: center;
-    justify-content: flex-end;
-
 
     /*
-       Fade starts farther to the left.
-
-       This makes the photo slowly emerge
-       from behind the headline rather
-       than appearing abruptly.
+       Fade begins farther to the left.
     */
 
     -webkit-mask-image:
@@ -381,13 +381,15 @@ nav {
 
             transparent 0%,
 
-            rgba(0,0,0,.08) 4%,
+            rgba(0,0,0,.06) 3%,
 
-            rgba(0,0,0,.28) 9%,
+            rgba(0,0,0,.18) 7%,
 
-            rgba(0,0,0,.55) 14%,
+            rgba(0,0,0,.40) 11%,
 
-            rgba(0,0,0,.82) 20%,
+            rgba(0,0,0,.68) 16%,
+
+            rgba(0,0,0,.88) 21%,
 
             black 27%,
 
@@ -400,13 +402,15 @@ nav {
 
             transparent 0%,
 
-            rgba(0,0,0,.08) 4%,
+            rgba(0,0,0,.06) 3%,
 
-            rgba(0,0,0,.28) 9%,
+            rgba(0,0,0,.18) 7%,
 
-            rgba(0,0,0,.55) 14%,
+            rgba(0,0,0,.40) 11%,
 
-            rgba(0,0,0,.82) 20%,
+            rgba(0,0,0,.68) 16%,
+
+            rgba(0,0,0,.88) 21%,
 
             black 27%,
 
@@ -416,9 +420,9 @@ nav {
 
 
 /*
-   Using contain instead of cover
-   keeps much more of your original
-   solar car photo visible.
+   The container matches the original
+   photograph ratio, so almost the
+   entire solar-car photo is preserved.
 */
 
 .hero-portrait img {
@@ -427,23 +431,28 @@ nav {
 
     display: block;
 
-    object-fit: contain;
+    object-fit: cover;
 
     object-position:
-        right center;
+        center center;
 
     filter:
-        brightness(.82)
+        brightness(.84)
         contrast(1.04)
-        saturate(.92);
+        saturate(.94);
 }
 
 
-/*
-   Adds subtle darkness at the top
-   and bottom of the photograph so
-   it blends with the black page.
-*/
+/* ==================================
+   PHOTO DARK BLENDING
+
+   TOP:
+   Keeps navigation visible.
+
+   BOTTOM:
+   Smoothly fades photo back into
+   black before the divider.
+================================== */
 
 .hero-portrait::after {
     content: "";
@@ -459,17 +468,25 @@ nav {
         linear-gradient(
             to bottom,
 
-            rgba(11,11,11,.55) 0%,
+            rgba(11,11,11,.96) 0%,
 
-            rgba(11,11,11,.20) 10%,
+            rgba(11,11,11,.72) 6%,
 
-            transparent 22%,
+            rgba(11,11,11,.38) 12%,
 
-            transparent 78%,
+            rgba(11,11,11,.10) 20%,
 
-            rgba(11,11,11,.18) 90%,
+            transparent 28%,
 
-            rgba(11,11,11,.58) 100%
+            transparent 75%,
+
+            rgba(11,11,11,.08) 82%,
+
+            rgba(11,11,11,.28) 89%,
+
+            rgba(11,11,11,.68) 96%,
+
+            var(--bg) 100%
         );
 }
 
@@ -494,14 +511,13 @@ nav {
     pointer-events: none;
 
     z-index: 5;
+
+    isolation: isolate;
 }
 
 
 /* ==================================
    BLACK CAPACITOR BUBBLE
-
-   Main dark circle directly
-   behind the capacitor.
 ================================== */
 
 .cross::before {
@@ -512,8 +528,8 @@ nav {
     left: 50%;
     top: 50%;
 
-    width: 245px;
-    height: 245px;
+    width: 275px;
+    height: 275px;
 
     transform:
         translate(-50%, -50%);
@@ -524,34 +540,32 @@ nav {
         radial-gradient(
             circle,
 
-            rgba(0,0,0,.98) 0%,
+            rgba(0,0,0,1) 0%,
 
-            rgba(0,0,0,.94) 18%,
+            rgba(0,0,0,.98) 18%,
 
-            rgba(0,0,0,.78) 34%,
+            rgba(0,0,0,.88) 32%,
 
-            rgba(0,0,0,.52) 49%,
+            rgba(0,0,0,.67) 46%,
 
-            rgba(0,0,0,.26) 63%,
+            rgba(0,0,0,.42) 59%,
 
-            rgba(0,0,0,.08) 72%,
+            rgba(0,0,0,.18) 70%,
 
-            transparent 80%
+            rgba(0,0,0,.05) 78%,
+
+            transparent 84%
         );
 
     filter:
-        blur(6px);
+        blur(7px);
 
-    z-index: 0;
+    z-index: -1;
 }
 
 
 /* ==================================
-   BUBBLE → PHOTO TRANSITION
-
-   Larger black haze that extends
-   from the capacitor into your
-   photograph.
+   CAPACITOR BUBBLE → PHOTO FADE
 ================================== */
 
 .cross::after {
@@ -559,35 +573,37 @@ nav {
 
     position: absolute;
 
-    right: -145px;
-    top: -70px;
+    right: -155px;
+    top: -90px;
 
-    width: 440px;
-    height: 285px;
+    width: 500px;
+    height: 330px;
 
     border-radius: 50%;
 
     background:
         radial-gradient(
-            ellipse at 45% 48%,
+            ellipse at 44% 46%,
 
-            rgba(0,0,0,.88) 0%,
+            rgba(0,0,0,.95) 0%,
 
-            rgba(0,0,0,.74) 22%,
+            rgba(0,0,0,.84) 20%,
 
-            rgba(0,0,0,.52) 39%,
+            rgba(0,0,0,.66) 35%,
 
-            rgba(0,0,0,.28) 55%,
+            rgba(0,0,0,.43) 49%,
 
-            rgba(0,0,0,.10) 67%,
+            rgba(0,0,0,.22) 61%,
 
-            transparent 78%
+            rgba(0,0,0,.08) 71%,
+
+            transparent 81%
         );
 
     filter:
-        blur(18px);
+        blur(20px);
 
-    z-index: 0;
+    z-index: -2;
 }
 
 
@@ -599,6 +615,12 @@ nav {
 
     object-fit: contain;
 
+    position: relative;
+
+    z-index: 2;
+
+    opacity: .88;
+
     transform-origin:
         center center;
 
@@ -607,12 +629,6 @@ nav {
         20s
         linear
         infinite;
-
-    position: relative;
-
-    z-index: 2;
-
-    opacity: .86;
 }
 
 
@@ -1291,20 +1307,27 @@ footer {
 
     .hero-portrait {
         left: 20%;
-        right: -17%;
+        right: -30%;
 
-        top: 10%;
+        top: 0;
 
-        height: 72%;
+        height: auto;
 
-        opacity: .44;
+        aspect-ratio: 1480 / 817;
+
+        opacity: .48;
+    }
+
+
+    .hero-bottom {
+        margin-top: 80px;
     }
 
 
     .cross {
         right: 8vw;
 
-        top: 16%;
+        top: 15%;
     }
 
 
@@ -1379,14 +1402,21 @@ footer {
 
 
     .hero-portrait {
-        left: 15%;
-        right: -43%;
+        left: 8%;
+        right: -65%;
 
-        top: 13%;
+        top: 0;
 
-        height: 60%;
+        height: auto;
 
-        opacity: .22;
+        aspect-ratio: 1480 / 817;
+
+        opacity: .25;
+    }
+
+
+    .hero-bottom {
+        margin-top: 65px;
     }
 
 
@@ -1396,22 +1426,23 @@ footer {
 
         right: 7vw;
 
-        top: 17%;
+        top: 16%;
     }
 
 
     .cross::before {
-        width: 175px;
-        height: 175px;
+        width: 190px;
+        height: 190px;
     }
 
 
     .cross::after {
-        width: 280px;
-        height: 190px;
+        width: 300px;
+        height: 210px;
 
-        right: -100px;
-        top: -55px;
+        right: -110px;
+
+        top: -65px;
     }
 
 
@@ -1880,8 +1911,6 @@ footer {
     >
 
 
-        <!-- LEFT -->
-
         <div>
 
 
@@ -1896,8 +1925,6 @@ footer {
 
         </div>
 
-
-        <!-- RIGHT -->
 
         <div class="projects-entry-right">
 
@@ -1960,8 +1987,6 @@ footer {
     <div class="steps">
 
 
-        <!-- STEP 1 -->
-
         <div class="step reveal">
 
 
@@ -1985,7 +2010,7 @@ footer {
                 <p>
 
                     Find something interesting
-                    enough that makes me want to 
+                    enough that makes me want to
                     build it.
 
                 </p>
@@ -1996,8 +2021,6 @@ footer {
 
         </div>
 
-
-        <!-- STEP 2 -->
 
         <div class="step reveal">
 
@@ -2034,8 +2057,6 @@ footer {
         </div>
 
 
-        <!-- STEP 3 -->
-
         <div class="step reveal">
 
 
@@ -2071,8 +2092,6 @@ footer {
 
         </div>
 
-
-        <!-- STEP 4 -->
 
         <div class="step reveal">
 
