@@ -219,10 +219,15 @@ nav {
     position: relative;
 
     overflow: hidden;
+
+    isolation: isolate;
 }
 
 
-/* Keeps hero text above portrait */
+/*
+   Keeps all hero text above
+   the photograph.
+*/
 
 .hero-label,
 .hero h1,
@@ -335,20 +340,18 @@ nav {
 
 /* ==================================
    PERSONAL IMAGE
+
+   Starts farther left and preserves
+   much more of the original photo.
 ================================== */
 
 .hero-portrait {
     position: absolute;
 
+    left: 35%;
     right: 0;
-    top: 8%;
 
-    width:
-        clamp(
-            330px,
-            29vw,
-            560px
-        );
+    top: 6%;
 
     height: 88%;
 
@@ -358,36 +361,65 @@ nav {
 
     overflow: hidden;
 
-    opacity: .95;
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-end;
+
 
     /*
-       This makes the LEFT side of
-       your image gradually appear.
+       Fade starts farther to the left.
+
+       This makes the photo slowly emerge
+       from behind the headline rather
+       than appearing abruptly.
     */
 
     -webkit-mask-image:
         linear-gradient(
             to right,
+
             transparent 0%,
-            rgba(0,0,0,.08) 9%,
-            rgba(0,0,0,.35) 20%,
-            rgba(0,0,0,.75) 36%,
-            black 53%,
+
+            rgba(0,0,0,.08) 4%,
+
+            rgba(0,0,0,.28) 9%,
+
+            rgba(0,0,0,.55) 14%,
+
+            rgba(0,0,0,.82) 20%,
+
+            black 27%,
+
             black 100%
         );
 
     mask-image:
         linear-gradient(
             to right,
+
             transparent 0%,
-            rgba(0,0,0,.08) 9%,
-            rgba(0,0,0,.35) 20%,
-            rgba(0,0,0,.75) 36%,
-            black 53%,
+
+            rgba(0,0,0,.08) 4%,
+
+            rgba(0,0,0,.28) 9%,
+
+            rgba(0,0,0,.55) 14%,
+
+            rgba(0,0,0,.82) 20%,
+
+            black 27%,
+
             black 100%
         );
 }
 
+
+/*
+   Using contain instead of cover
+   keeps much more of your original
+   solar car photo visible.
+*/
 
 .hero-portrait img {
     width: 100%;
@@ -395,22 +427,22 @@ nav {
 
     display: block;
 
-    object-fit: cover;
+    object-fit: contain;
 
     object-position:
-        center
-        top;
+        right center;
 
     filter:
         brightness(.82)
-        contrast(1.05)
-        saturate(.9);
+        contrast(1.04)
+        saturate(.92);
 }
 
 
 /*
-   Dark fade at the bottom and
-   slight vignette around portrait.
+   Adds subtle darkness at the top
+   and bottom of the photograph so
+   it blends with the black page.
 */
 
 .hero-portrait::after {
@@ -420,23 +452,25 @@ nav {
 
     inset: 0;
 
+    pointer-events: none;
+
     background:
 
         linear-gradient(
-            to top,
-            var(--bg) 0%,
-            rgba(11,11,11,.82) 5%,
-            rgba(11,11,11,.25) 18%,
-            transparent 35%
-        ),
+            to bottom,
 
-        linear-gradient(
-            to right,
-            rgba(11,11,11,.45) 0%,
-            transparent 42%
+            rgba(11,11,11,.55) 0%,
+
+            rgba(11,11,11,.20) 10%,
+
+            transparent 22%,
+
+            transparent 78%,
+
+            rgba(11,11,11,.18) 90%,
+
+            rgba(11,11,11,.58) 100%
         );
-
-    pointer-events: none;
 }
 
 
@@ -453,8 +487,6 @@ nav {
     width: 75px;
     height: 75px;
 
-    opacity: .8;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -462,13 +494,14 @@ nav {
     pointer-events: none;
 
     z-index: 5;
-
-    isolation: isolate;
 }
 
 
 /* ==================================
-   DARK CAPACITOR BUBBLE
+   BLACK CAPACITOR BUBBLE
+
+   Main dark circle directly
+   behind the capacitor.
 ================================== */
 
 .cross::before {
@@ -479,8 +512,8 @@ nav {
     left: 50%;
     top: 50%;
 
-    width: 205px;
-    height: 205px;
+    width: 245px;
+    height: 245px;
 
     transform:
         translate(-50%, -50%);
@@ -490,52 +523,71 @@ nav {
     background:
         radial-gradient(
             circle,
-            rgba(47,38,31,.48) 0%,
-            rgba(31,25,21,.36) 25%,
-            rgba(20,17,15,.24) 45%,
-            rgba(11,11,11,.08) 62%,
-            transparent 74%
+
+            rgba(0,0,0,.98) 0%,
+
+            rgba(0,0,0,.94) 18%,
+
+            rgba(0,0,0,.78) 34%,
+
+            rgba(0,0,0,.52) 49%,
+
+            rgba(0,0,0,.26) 63%,
+
+            rgba(0,0,0,.08) 72%,
+
+            transparent 80%
         );
 
     filter:
-        blur(8px);
+        blur(6px);
 
-    z-index: -1;
+    z-index: 0;
 }
 
 
-/*
-   Extends the capacitor bubble
-   toward your portrait so the two
-   visually blend together.
-*/
+/* ==================================
+   BUBBLE → PHOTO TRANSITION
+
+   Larger black haze that extends
+   from the capacitor into your
+   photograph.
+================================== */
 
 .cross::after {
     content: "";
 
     position: absolute;
 
-    right: -165px;
-    top: 5px;
+    right: -145px;
+    top: -70px;
 
-    width: 300px;
-    height: 190px;
+    width: 440px;
+    height: 285px;
 
     border-radius: 50%;
 
     background:
         radial-gradient(
-            ellipse at 28% 40%,
-            rgba(42,34,28,.32) 0%,
-            rgba(29,23,20,.24) 30%,
-            rgba(18,15,13,.13) 48%,
-            transparent 73%
+            ellipse at 45% 48%,
+
+            rgba(0,0,0,.88) 0%,
+
+            rgba(0,0,0,.74) 22%,
+
+            rgba(0,0,0,.52) 39%,
+
+            rgba(0,0,0,.28) 55%,
+
+            rgba(0,0,0,.10) 67%,
+
+            transparent 78%
         );
 
     filter:
-        blur(14px);
+        blur(18px);
 
-    z-index: -2;
+    z-index: 0;
 }
 
 
@@ -559,6 +611,8 @@ nav {
     position: relative;
 
     z-index: 2;
+
+    opacity: .86;
 }
 
 
@@ -1235,29 +1289,22 @@ footer {
     }
 
 
-    /*
-       Portrait becomes more subtle
-       on tablet so it does not fight
-       with the large headline.
-    */
-
     .hero-portrait {
-        width: 48vw;
+        left: 20%;
+        right: -17%;
 
-        right: -10vw;
+        top: 10%;
 
-        top: 12%;
+        height: 72%;
 
-        height: 74%;
-
-        opacity: .42;
+        opacity: .44;
     }
 
 
     .cross {
         right: 8vw;
 
-        top: 17%;
+        top: 16%;
     }
 
 
@@ -1331,19 +1378,13 @@ footer {
     }
 
 
-    /*
-       Keeps a subtle portrait on
-       mobile without covering text.
-    */
-
     .hero-portrait {
-        width: 75vw;
+        left: 15%;
+        right: -43%;
 
-        right: -37vw;
+        top: 13%;
 
-        top: 16%;
-
-        height: 64%;
+        height: 60%;
 
         opacity: .22;
     }
@@ -1360,16 +1401,17 @@ footer {
 
 
     .cross::before {
-        width: 155px;
-        height: 155px;
+        width: 175px;
+        height: 175px;
     }
 
 
     .cross::after {
-        width: 220px;
-        height: 150px;
+        width: 280px;
+        height: 190px;
 
-        right: -130px;
+        right: -100px;
+        top: -55px;
     }
 
 
@@ -1475,14 +1517,14 @@ footer {
 
 
     <!-- ==================================
-         PERSONAL IMAGE
+         SOLAR CAR PERSONAL PHOTO
     ================================== -->
 
     <div class="hero-portrait">
 
         <img
             src="images/Personal Image.jpg"
-            alt="Stanley Qiu"
+            alt="Stanley Qiu inside the solar car"
         >
 
     </div>
