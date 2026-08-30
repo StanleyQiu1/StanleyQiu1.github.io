@@ -295,8 +295,6 @@ nav {
 
 /* ==================================
    HERO BOTTOM
-
-   DIVIDER MOVED DOWN
 ================================== */
 
 .hero-bottom {
@@ -345,18 +343,13 @@ nav {
 
 /* ==================================
    PERSONAL SOLAR CAR IMAGE
-
-   - STARTS AT VERY TOP
-   - NO BLACK BAR
-   - SHOWS MORE OF ORIGINAL PHOTO
-   - FADE STARTS FARTHER LEFT
 ================================== */
 
 .hero-portrait {
     position: absolute;
 
-    left: 32%;
-    right: -12%;
+    left: 31%;
+    right: -10%;
 
     top: 0;
 
@@ -370,29 +363,17 @@ nav {
 
     overflow: hidden;
 
-
-    /*
-       Fade begins farther to the left.
-    */
-
     -webkit-mask-image:
         linear-gradient(
             to right,
 
             transparent 0%,
-
-            rgba(0,0,0,.06) 3%,
-
-            rgba(0,0,0,.18) 7%,
-
-            rgba(0,0,0,.40) 11%,
-
-            rgba(0,0,0,.68) 16%,
-
-            rgba(0,0,0,.88) 21%,
-
-            black 27%,
-
+            rgba(0,0,0,.10) 3%,
+            rgba(0,0,0,.28) 6%,
+            rgba(0,0,0,.50) 9%,
+            rgba(0,0,0,.72) 12%,
+            rgba(0,0,0,.90) 15%,
+            black 18%,
             black 100%
         );
 
@@ -401,29 +382,16 @@ nav {
             to right,
 
             transparent 0%,
-
-            rgba(0,0,0,.06) 3%,
-
-            rgba(0,0,0,.18) 7%,
-
-            rgba(0,0,0,.40) 11%,
-
-            rgba(0,0,0,.68) 16%,
-
-            rgba(0,0,0,.88) 21%,
-
-            black 27%,
-
+            rgba(0,0,0,.10) 3%,
+            rgba(0,0,0,.28) 6%,
+            rgba(0,0,0,.50) 9%,
+            rgba(0,0,0,.72) 12%,
+            rgba(0,0,0,.90) 15%,
+            black 18%,
             black 100%
         );
 }
 
-
-/*
-   The container matches the original
-   photograph ratio, so almost the
-   entire solar-car photo is preserved.
-*/
 
 .hero-portrait img {
     width: 100%;
@@ -437,21 +405,14 @@ nav {
         center center;
 
     filter:
-        brightness(.84)
+        brightness(.90)
         contrast(1.04)
-        saturate(.94);
+        saturate(.95);
 }
 
 
 /* ==================================
    PHOTO DARK BLENDING
-
-   TOP:
-   Keeps navigation visible.
-
-   BOTTOM:
-   Smoothly fades photo back into
-   black before the divider.
 ================================== */
 
 .hero-portrait::after {
@@ -468,24 +429,17 @@ nav {
         linear-gradient(
             to bottom,
 
-            rgba(11,11,11,.96) 0%,
-
-            rgba(11,11,11,.72) 6%,
-
-            rgba(11,11,11,.38) 12%,
-
-            rgba(11,11,11,.10) 20%,
+            rgba(11,11,11,.92) 0%,
+            rgba(11,11,11,.62) 6%,
+            rgba(11,11,11,.26) 12%,
+            rgba(11,11,11,.06) 19%,
 
             transparent 28%,
+            transparent 76%,
 
-            transparent 75%,
-
-            rgba(11,11,11,.08) 82%,
-
-            rgba(11,11,11,.28) 89%,
-
+            rgba(11,11,11,.08) 83%,
+            rgba(11,11,11,.28) 90%,
             rgba(11,11,11,.68) 96%,
-
             var(--bg) 100%
         );
 }
@@ -517,7 +471,7 @@ nav {
 
 
 /* ==================================
-   BLACK CAPACITOR BUBBLE
+   SMALLER CENTERED BLACK BUBBLE
 ================================== */
 
 .cross::before {
@@ -528,8 +482,8 @@ nav {
     left: 50%;
     top: 50%;
 
-    width: 275px;
-    height: 275px;
+    width: 190px;
+    height: 190px;
 
     transform:
         translate(-50%, -50%);
@@ -539,33 +493,23 @@ nav {
     background:
         radial-gradient(
             circle,
-
-            rgba(0,0,0,1) 0%,
-
-            rgba(0,0,0,.98) 18%,
-
-            rgba(0,0,0,.88) 32%,
-
-            rgba(0,0,0,.67) 46%,
-
-            rgba(0,0,0,.42) 59%,
-
-            rgba(0,0,0,.18) 70%,
-
-            rgba(0,0,0,.05) 78%,
-
-            transparent 84%
+            rgba(0,0,0,.96) 0%,
+            rgba(0,0,0,.88) 28%,
+            rgba(0,0,0,.58) 50%,
+            rgba(0,0,0,.24) 68%,
+            rgba(0,0,0,.06) 80%,
+            transparent 88%
         );
 
     filter:
-        blur(7px);
+        blur(5px);
 
     z-index: -1;
 }
 
 
 /* ==================================
-   CAPACITOR BUBBLE → PHOTO FADE
+   BUBBLE FADE INTO PHOTO
 ================================== */
 
 .cross::after {
@@ -573,35 +517,30 @@ nav {
 
     position: absolute;
 
-    right: -155px;
-    top: -90px;
+    left: 50%;
+    top: 50%;
 
-    width: 500px;
-    height: 330px;
+    width: 320px;
+    height: 230px;
+
+    transform:
+        translate(-50%, -50%);
 
     border-radius: 50%;
 
     background:
         radial-gradient(
-            ellipse at 44% 46%,
-
-            rgba(0,0,0,.95) 0%,
-
-            rgba(0,0,0,.84) 20%,
-
-            rgba(0,0,0,.66) 35%,
-
-            rgba(0,0,0,.43) 49%,
-
-            rgba(0,0,0,.22) 61%,
-
-            rgba(0,0,0,.08) 71%,
-
-            transparent 81%
+            ellipse at center,
+            rgba(0,0,0,.90) 0%,
+            rgba(0,0,0,.70) 26%,
+            rgba(0,0,0,.42) 48%,
+            rgba(0,0,0,.18) 67%,
+            rgba(0,0,0,.06) 78%,
+            transparent 88%
         );
 
     filter:
-        blur(20px);
+        blur(14px);
 
     z-index: -2;
 }
@@ -796,10 +735,6 @@ section {
 }
 
 
-/* ==================================
-   LARGER ABOUT SIDE HEADERS
-================================== */
-
 .about-side-title {
     color: #b8b8b3;
 
@@ -964,10 +899,6 @@ section {
     letter-spacing: -.075em;
 }
 
-
-/* IMPORTANT:
-   Keeps text at top and arrow at bottom-right.
-*/
 
 .projects-entry-right {
     min-height: 320px;
@@ -1180,10 +1111,6 @@ section {
 }
 
 
-/* ==================================
-   SOLID ORANGE CONTACT BUTTONS
-================================== */
-
 .contact-button {
     padding:
         15px
@@ -1315,7 +1242,7 @@ footer {
 
         aspect-ratio: 1480 / 817;
 
-        opacity: .48;
+        opacity: .50;
     }
 
 
@@ -1411,7 +1338,7 @@ footer {
 
         aspect-ratio: 1480 / 817;
 
-        opacity: .25;
+        opacity: .28;
     }
 
 
@@ -1431,18 +1358,14 @@ footer {
 
 
     .cross::before {
-        width: 190px;
-        height: 190px;
+        width: 145px;
+        height: 145px;
     }
 
 
     .cross::after {
-        width: 300px;
-        height: 210px;
-
-        right: -110px;
-
-        top: -65px;
+        width: 240px;
+        height: 170px;
     }
 
 
@@ -1547,10 +1470,6 @@ footer {
 <header class="hero">
 
 
-    <!-- ==================================
-         SOLAR CAR PERSONAL PHOTO
-    ================================== -->
-
     <div class="hero-portrait">
 
         <img
@@ -1560,10 +1479,6 @@ footer {
 
     </div>
 
-
-    <!-- ==================================
-         SPINNING CAPACITOR
-    ================================== -->
 
     <div class="cross">
 
@@ -1675,9 +1590,6 @@ footer {
         <span>
             ENGINEERING <b>+</b>
         </span>
-
-
-        <!-- DUPLICATED FOR LOOP -->
 
 
         <span>
@@ -1825,10 +1737,6 @@ footer {
 
     </div>
 
-
-    <!-- ==================================
-         SKILLS
-    ================================== -->
 
     <div class="skills reveal">
 
