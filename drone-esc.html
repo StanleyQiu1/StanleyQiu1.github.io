@@ -1,1 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Custom Drone ESC — Stanley Qiu</title>
+
+<link rel="icon" href="images/Q logo.png">
+<link rel="stylesheet" href="project-detail.css">
+
+</head>
+
+
+<body>
+
+
+<div id="progress"></div>
+<div class="cursor-glow"></div>
+
+
+<nav>
+
+    <a href="index.html" class="logo">
+        Stanley Qiu / 2026
+    </a>
+
+    <div class="nav-links">
+
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="#contact">Contact</a>
+
+    </div>
+
+</nav>
+
+
+<header class="project-hero">
+
+    <div class="project-kicker reveal">
+        007 / HARDWARE
+    </div>
+
+
+    <h1 class="reveal">
+        CUSTOM<br>
+        DRONE<br>
+        <span class="outline">
+            ESC.
+        </span>
+    </h1>
+
+
+    <div class="hero-bottom reveal">
+
+        <p class="hero-description">
+            A custom electronic speed controller I designed
+            for my drone project. The design was not used
+            in the final drone because of problems discovered
+            during testing.
+        </p>
+
+
+        <div class="hero-meta">
+
+            <div>
+                <span class="meta-label">Year</span>
+                <span class="meta-value">2026</span>
+            </div>
+
+            <div>
+                <span class="meta-label">Status</span>
+                <span class="meta-value">WIP</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<div class="hero-image reveal">
+
+    <img
+        src="images/ESC.JPG"
+        alt="Custom drone ESC"
+    >
+
+</div>
+
+
+<section class="project-section">
+
+    <div class="section-border section-grid reveal">
+
+        <div class="section-label">
+            Overview
+        </div>
+
+        <div class="section-content">
+
+            <h2>
+                A PROJECT THAT
+                DIDN'T WORK
+                PERFECTLY.
+            </h2>
+
+            <p>
+                I designed this custom ESC as part of my
+                drone project.
+            </p>
+
+            <p>
+                During testing I ran into problems that
+                prevented me from implementing it into
+                the drone. I still consider the project
+                valuable because debugging failures is an
+                important part of engineering.
+            </p>
+
+
+            <div class="tags">
+
+                <span class="tag">Hardware</span>
+                <span class="tag">STM32</span>
+                <span class="tag">PCB Design</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="facts reveal">
+
+        <div class="fact">
+            <span class="fact-label">Type</span>
+            <span class="fact-value">ESC</span>
+        </div>
+
+        <div class="fact">
+            <span class="fact-label">Application</span>
+            <span class="fact-value">Drone</span>
+        </div>
+
+        <div class="fact">
+            <span class="fact-label">Controller</span>
+            <span class="fact-value">STM32</span>
+        </div>
+
+        <div class="fact">
+            <span class="fact-label">Result</span>
+            <span class="fact-value">Needs Revision</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="project-section">
+
+    <div class="section-border section-grid reveal">
+
+        <div class="section-label">
+            Design
+        </div>
+
+        <div class="section-content">
+
+            <h2>
+                DESIGNING MOTOR
+                CONTROL HARDWARE.
+            </h2>
+
+            <p>
+                An ESC has to control significant motor
+                current while responding quickly and
+                reliably to control signals.
+            </p>
+
+            <p>
+                This made the project a useful exercise
+                in PCB design, switching electronics,
+                embedded control and hardware testing.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="gallery reveal">
+
+        <div class="gallery-item image-placeholder">
+
+            <strong>IMAGE 02</strong>
+
+            <span>
+                Add schematic
+            </span>
+
+        </div>
+
+        <div class="gallery-item image-placeholder">
+
+            <strong>IMAGE 03</strong>
+
+            <span>
+                Add PCB layout
+            </span>
+
+        </div>
+
+        <div class="gallery-item wide image-placeholder">
+
+            <strong>IMAGE 04</strong>
+
+            <span>
+                Add testing / oscilloscope photo
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="project-section">
+
+    <div class="section-border section-grid reveal">
+
+        <div class="section-label">
+            Failure
+        </div>
+
+        <div class="section-content">
+
+            <h2>
+                FAILURE IS
+                USEFUL DATA.
+            </h2>
+
+
+            <div class="info-grid">
+
+                <div class="info-card">
+
+                    <span class="info-number">01</span>
+
+                    <h3>Design</h3>
+
+                    <p>
+                        Creating the board required
+                        understanding how power electronics
+                        and control electronics interact.
+                    </p>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <span class="info-number">02</span>
+
+                    <h3>Testing</h3>
+
+                    <p>
+                        Bench testing exposed problems
+                        that were not obvious during
+                        schematic design.
+                    </p>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <span class="info-number">03</span>
+
+                    <h3>Debugging</h3>
+
+                    <p>
+                        Instead of hiding the problems,
+                        I documented them and used them
+                        to understand what should change.
+                    </p>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <span class="info-number">04</span>
+
+                    <h3>Next Revision</h3>
+
+                    <p>
+                        The next design can use what I
+                        learned from the first hardware
+                        instead of starting from zero.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<div class="project-navigation">
+
+    <a class="project-nav-link" href="gilbert-system.html">
+
+        <span class="project-nav-small">
+            ← Previous Project
+        </span>
+
+        <span class="project-nav-title">
+            GILBERT
+        </span>
+
+    </a>
+
+
+    <a class="project-nav-link" href="cubesat.html">
+
+        <span class="project-nav-small">
+            Next Project →
+        </span>
+
+        <span class="project-nav-title">
+            CUBESAT
+        </span>
+
+    </a>
+
+</div>
+
+
+<section class="contact" id="contact">
+
+    <h2 class="reveal">
+        LET'S BUILD<br>
+        SOMETHING.
+    </h2>
+
+    <div class="contact-links reveal">
+
+        <a class="button" href="mailto:Stanleyqiu11@gmail.com">
+            Email
+        </a>
+
+        <a class="button" href="https://github.com/Stanleyqiu1">
+            GitHub ↗
+        </a>
+
+        <a class="button" href="projects.html">
+            ← Projects
+        </a>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <span>Stanley Qiu</span>
+    <span>Engineering / Electronics / Robotics</span>
+    <span>© 2026</span>
+
+</footer>
+
+
+<script>
+
+const observer =
+new IntersectionObserver(
+    entries => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            }
+        });
+    },
+    { threshold: .08 }
+);
+
+document
+.querySelectorAll(".reveal")
+.forEach(element => observer.observe(element));
+
+
+window.addEventListener("scroll", () => {
+
+    const scroll =
+        document.documentElement.scrollTop;
+
+    const height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+    document
+        .getElementById("progress")
+        .style.width =
+        (height > 0 ? scroll / height * 100 : 0)
+        + "%";
+
+});
+
+
+const glow =
+document.querySelector(".cursor-glow");
+
+
+window.addEventListener("mousemove", event => {
+
+    glow.style.left =
+        event.clientX + "px";
+
+    glow.style.top =
+        event.clientY + "px";
+
+});
+
+</script>
+
+
+</body>
+</html>
