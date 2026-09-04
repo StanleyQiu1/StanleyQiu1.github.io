@@ -1085,16 +1085,26 @@ footer {
 
 }
 
-.laser-turret-page .hero-image {
-    background: #0b0b0b;
-}
-
-.laser-turret-page .hero-image img {
+.hero-image img[src$="IMG_1724.JPG"] {
     object-fit: contain;
     object-position: center;
-    transform: scale(.92);
+
+    padding: 55px;
+
+    background: #0b0b0b;
+
+    transform: none;
 }
 
-.laser-turret-page .hero-image:hover img {
-    transform: scale(.94);
+.hero-image:hover img[src$="IMG_1724.JPG"] {
+    transform: none;
+}
+
+
+@media(max-width: 600px) {
+
+    .hero-image img[src$="IMG_1724.JPG"] {
+        padding: 24px;
+    }
+
 }
