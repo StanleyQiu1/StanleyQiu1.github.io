@@ -1,1 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>CubeSat — Stanley Qiu</title>
+
+<link rel="icon" href="images/Q logo.png">
+<link rel="stylesheet" href="project-detail.css">
+
+</head>
+
+
+<body>
+
+
+<div id="progress"></div>
+<div class="cursor-glow"></div>
+
+
+<nav>
+
+    <a href="index.html" class="logo">
+        Stanley Qiu / 2026
+    </a>
+
+    <div class="nav-links">
+
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="#contact">Contact</a>
+
+    </div>
+
+</nav>
+
+
+<header class="project-hero">
+
+    <div class="project-kicker reveal">
+        008 / HARDWARE
+    </div>
+
+
+    <h1 class="reveal">
+        CUBE<br>
+        <span class="outline">
+            SAT.
+        </span>
+    </h1>
+
+
+    <div class="hero-bottom reveal">
+
+        <p class="hero-description">
+            A CubeSat-style electronics project built
+            around multiple stacked PCBs. The electrical
+            power system is currently the most developed
+            board, with additional boards still being
+            designed.
+        </p>
+
+
+        <div class="hero-meta">
+
+            <div>
+                <span class="meta-label">Year</span>
+                <span class="meta-value">2026</span>
+            </div>
+
+            <div>
+                <span class="meta-label">Status</span>
+                <span class="meta-value">WIP</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<div class="hero-image reveal">
+
+    <img
+        src="images/EPS_New.png"
+        alt="CubeSat electrical power system PCB"
+    >
+
+</div>
+
+
+<section class="project-section">
+
+    <div class="section-border section-grid reveal">
+
+        <div class="section-label">
+            Overview
+        </div>
+
+        <div class="section-content">
+
+            <h2>
+                A SMALL SATELLITE
+                AS A BIG
+                SYSTEMS PROJECT.
+            </h2>
+
+            <p>
+                This project is based around a CubeSat-style
+                structure containing multiple stacked PCBs.
+            </p>
+
+            <p>
+                The image above shows the electrical power
+                system. Additional boards will eventually
+                stack with it to create a larger integrated
+                electronics system.
+            </p>
+
+
+            <div class="tags">
+
+                <span class="tag">STM32</span>
+                <span class="tag">KiCad</span>
+                <span class="tag">PCB Design</span>
+                <span class="tag">Embedded</span>
+                <span class="tag">Power Electronics</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="facts reveal">
+
+        <div class="fact">
+            <span class="fact-label">Format</span>
+            <span class="fact-value">1U CubeSat Style</span>
+        </div>
+
+        <div class="fact">
+            <span class="fact-label">Architecture</span>
+            <span class="fact-value">Stacked PCBs</span>
+        </div>
+
+        <div class="fact">
+            <span class="fact-label">Current Board</span>
+            <span class="fact-value">EPS</span>
+        </div>
+
+        <div class="fact">
+            <span class="fact-label">Status</span>
+            <span class="fact-value">In Development</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="project-section">
+
+    <div class="section-border section-grid reveal">
+
+        <div class="section-label">
+            Architecture
+        </div>
+
+        <div class="section-content">
+
+            <h2>
+                MULTIPLE BOARDS.
+                ONE SYSTEM.
+            </h2>
+
+            <p>
+                Instead of putting everything on one PCB,
+                the project uses separate boards for
+                different functions.
+            </p>
+
+            <p>
+                This makes the project an exercise in
+                system architecture as well as individual
+                circuit design.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="gallery reveal">
+
+        <div class="gallery-item image-placeholder">
+
+            <strong>
+                EPS
+            </strong>
+
+            <span>
+                Add EPS schematic
+            </span>
+
+        </div>
+
+
+        <div class="gallery-item image-placeholder">
+
+            <strong>
+                OBC
+            </strong>
+
+            <span>
+                Add onboard computer PCB
+            </span>
+
+        </div>
+
+
+        <div class="gallery-item image-placeholder">
+
+            <strong>
+                STACK
+            </strong>
+
+            <span>
+                Add stacked board CAD image
+            </span>
+
+        </div>
+
+
+        <div class="gallery-item image-placeholder">
+
+            <strong>
+                SOLAR
+            </strong>
+
+            <span>
+                Add solar panel / deployment image
+            </span>
+
+        </div>
+
+
+        <div class="gallery-item wide image-placeholder">
+
+            <strong>
+                FINAL ASSEMBLY
+            </strong>
+
+            <span>
+                Add completed CubeSat photo
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="project-section">
+
+    <div class="section-border section-grid reveal">
+
+        <div class="section-label">
+            EPS
+        </div>
+
+        <div class="section-content">
+
+            <h2>
+                POWER COMES
+                FIRST.
+            </h2>
+
+            <p>
+                The electrical power system manages how
+                energy enters, is stored and is distributed
+                through the CubeSat.
+            </p>
+
+            <p>
+                Designing the EPS has required thinking
+                about solar input, battery power, voltage
+                regulation, current monitoring and how the
+                other boards will receive power.
+            </p>
+
+
+            <div class="info-grid">
+
+                <div class="info-card">
+
+                    <span class="info-number">01</span>
+
+                    <h3>Power Input</h3>
+
+                    <p>
+                        The system has to accept energy
+                        from external sources while
+                        protecting downstream electronics.
+                    </p>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <span class="info-number">02</span>
+
+                    <h3>Battery</h3>
+
+                    <p>
+                        Stored energy allows the electronics
+                        to operate when solar power is not
+                        available.
+                    </p>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <span class="info-number">03</span>
+
+                    <h3>Power Rails</h3>
+
+                    <p>
+                        Different subsystems require stable
+                        regulated voltages.
+                    </p>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <span class="info-number">04</span>
+
+                    <h3>Monitoring</h3>
+
+                    <p>
+                        Current and voltage monitoring can
+                        provide information about how the
+                        power system is behaving.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="project-section">
+
+    <div class="section-border section-grid reveal">
+
+        <div class="section-label">
+            Future
+        </div>
+
+        <div class="section-content">
+
+            <h2>
+                THE EPS IS
+                ONLY THE
+                BEGINNING.
+            </h2>
+
+            <p>
+                The next boards will build on the
+                electrical and mechanical interfaces
+                established by the EPS.
+            </p>
+
+            <p>
+                The long-term goal is to combine the
+                boards, structure, sensors and software
+                into one working CubeSat-style platform.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<div class="project-navigation">
+
+    <a class="project-nav-link" href="drone-esc.html">
+
+        <span class="project-nav-small">
+            ← Previous Project
+        </span>
+
+        <span class="project-nav-title">
+            DRONE ESC
+        </span>
+
+    </a>
+
+
+    <a class="project-nav-link" href="projects.html">
+
+        <span class="project-nav-small">
+            Back To →
+        </span>
+
+        <span class="project-nav-title">
+            ALL PROJECTS
+        </span>
+
+    </a>
+
+</div>
+
+
+<section class="contact" id="contact">
+
+    <h2 class="reveal">
+        LET'S BUILD<br>
+        SOMETHING.
+    </h2>
+
+    <div class="contact-links reveal">
+
+        <a class="button" href="mailto:Stanleyqiu11@gmail.com">
+            Email
+        </a>
+
+        <a class="button" href="https://github.com/Stanleyqiu1">
+            GitHub ↗
+        </a>
+
+        <a class="button" href="projects.html">
+            ← Projects
+        </a>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <span>Stanley Qiu</span>
+    <span>Engineering / Electronics / Robotics</span>
+    <span>© 2026</span>
+
+</footer>
+
+
+<script>
+
+const observer =
+new IntersectionObserver(
+    entries => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            }
+        });
+    },
+    { threshold: .08 }
+);
+
+document
+.querySelectorAll(".reveal")
+.forEach(element => observer.observe(element));
+
+
+window.addEventListener("scroll", () => {
+
+    const scroll =
+        document.documentElement.scrollTop;
+
+    const height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+    document
+        .getElementById("progress")
+        .style.width =
+        (height > 0 ? scroll / height * 100 : 0)
+        + "%";
+
+});
+
+
+const glow =
+document.querySelector(".cursor-glow");
+
+
+window.addEventListener("mousemove", event => {
+
+    glow.style.left =
+        event.clientX + "px";
+
+    glow.style.top =
+        event.clientY + "px";
+
+});
+
+</script>
+
+
+</body>
+</html>
