@@ -79,10 +79,8 @@
     <div class="hero-bottom reveal">
 
         <p class="hero-description">
-            A custom electronic business card powered
-            by four solar cells. This project combines
-            PCB design, embedded electronics and solar
-            power into a functional business card.
+            A custom PCB business card that is powered
+            by four solar cells.
         </p>
 
 
@@ -138,23 +136,22 @@
         <div class="section-content">
 
             <h2>
-                MAKING A BUSINESS CARD
-                THAT ACTUALLY DOES
-                SOMETHING.
+                MAKING A BUSSINESS CARD MORE THAN
+                A PIECE OF PAPER
             </h2>
 
             <p>
-                I wanted to make a business card that was
-                more than just a piece of paper. The goal
-                was to design a custom PCB that could use
-                solar energy to power its electronics.
+                I alwayds thought that paper bussiness 
+                cards were not that memorable. After watching
+                a few videos on other PCB bussiness cards
+                I decided to make my own.
             </p>
 
             <p>
-                This project gave me experience with PCB
-                layout, component selection, embedded
-                electronics, power management and designing
-                around limited available energy.
+                I used the skills I learned from developing
+                the solar/electrical system on my Solar Car
+                Team to implement the solar circuit on my 
+                PCB.
             </p>
 
 
@@ -218,16 +215,22 @@
 
             <p>
                 I designed the circuit and PCB in KiCad.
-                One of the important parts of the project
-                was fitting the electronics into the size
-                and shape of a business card.
+                It is powered by 4 KXOB25-05X3F-TB solar cells.
+                The power is regulated through a TPS63031DSKR 
+                Buck Boost IC, providing a constant 3.3V that
+                powers the rest of the electronics.
             </p>
 
             <p>
-                I also had to think about how the solar
-                cells, power circuitry and microcontroller
-                would work together while keeping the board
-                practical and visually interesting.
+                The rest of the circuit includes an STM32C011F6P7
+                Microcontroller for the computations, and a 0.96"
+                I2C OLED as the display. There consists of two buttons
+                that allow for the user to play the game that is programmed,
+                which I currently have as the dinosaur game. It was 
+                programmed through STM32CubeProgrammer with C.
+                When the User is not playing the game, the screen will 
+                display a bar of text that scrolls through my skills
+                and ends with a QR code to this website.
             </p>
 
         </div>
