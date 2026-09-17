@@ -310,14 +310,14 @@ nav {
 .hero-image {
     position: relative;
 
-    width: 92%;
+    width: 80%;
 
     margin:
         0
         auto
         0;
 
-    aspect-ratio: 16 / 8;
+    aspect-ratio: 3 / 2;
 
     overflow: hidden;
 
