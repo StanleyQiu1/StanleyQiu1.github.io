@@ -1119,3 +1119,17 @@ footer {
     object-position: center;
     background: #0b0b0b;
 }
+
+.esc-page .esc-crop {
+    height: 500px;
+}
+
+.esc-page .esc-crop img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    /* Change this to move the crop */
+    object-position: center;
+}
