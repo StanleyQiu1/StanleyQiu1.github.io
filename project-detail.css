@@ -1120,16 +1120,16 @@ footer {
     background: #0b0b0b;
 }
 
-.esc-page .esc-crop {
-    height: 500px;
+.gallery-item.esc-crop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
-.esc-page .esc-crop img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    /* Change this to move the crop */
+.gallery-item.esc-crop img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
     object-position: center;
 }
