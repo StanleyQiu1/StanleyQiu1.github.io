@@ -125,39 +125,30 @@
         <div class="section-content">
 
             <h2>
-                BUILDING A PLATFORM
-                FOR AUTONOMOUS
-                EXPERIMENTATION.
+                NON-FUNCTIONAL MISSILE.
+                5'8"~ 172.72 CM LONG. 
+                100MM WIDE.
             </h2>
 
             <p>
-                This drone was built to expirement
-                with different autonomous systems. Onboard
-                there is a Nvidia Orin Jetson Nano which
-                does all of the Onboard computing locally.
-                The flight-controller which handles all of the 
-                flying computations is a Mateksys F405 Wing V2.
+                I was bored on a weekend and decided I needed
+                more practice with CAD. I opened Fusion and spent around
+                7 hours designing this missile. Most of the time was spent on
+                making cutting the main body into different parts so it can
+                fit in my 3D printer.
             </p>
 
             <p>
-                It uses 4 3115 900KV Drone Motors in a quadcopter X
-                configuration. It is powered with a 10,000 mAH 6S
-                LiPo Battery.
+                It is centered on a NodeMCU ESP32S with a breakout board.
+                It uses a OV2640 camera module (one without ribbon cable
+                but with header pins). It uses a PCA9685 servo driver to
+                drive the servos (ESP32 cannot provide enough Amps). There is
+                a 3000mAh 2S LiPo battery powering the system.
             </p>
 
             <p>
-                Currently I am still working having it fly without
-                drifting, which seems to be an issue stemming from the
-                3D printing Drone frame. The frame is made out of 
-                PETG-CF, which I plan to switch to carbon-fiber.
-            </p>
-
-            <p>
-                It has crashed 3 times, and I am trying to find a
-                permenant solution which fixes the drifting. I have
-                paused on this project multiple times do to the financial
-                aspect, as every time it crashes, I need to provide
-                money which could be used to fund other projects
+                ARCHTECTURE:
+                CAMERA -> ESP32 -> WEB BROWSER -> TRACKER MODEL -> ESP32 -> PCA9865 -> SERVOS
             </p>
 
 
