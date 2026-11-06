@@ -5,7 +5,7 @@
 
 <meta charset="UTF-8">
 
-<link rel="icon" type="Q logo.png" href="images/Q logo.png">
+<link rel="icon" type="image/png" href="images/Q logo.png">
 <link rel="shortcut icon" href="images/Q logo.png">
 
 <meta
@@ -15,13 +15,7 @@
 
 <title>Projects — Stanley Qiu</title>
 
-
 <style>
-
-
-/* ==================================
-   COLORS
-================================== */
 
 :root {
     --bg: #0b0b0b;
@@ -32,95 +26,58 @@
     --placeholder: #151515;
 }
 
-
-/* ==================================
-   RESET
-================================== */
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
 
-
 body {
     background: var(--bg);
     color: var(--text);
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
+    font-family: Arial, Helvetica, sans-serif;
     overflow-x: hidden;
 }
-
 
 a {
     color: inherit;
     text-decoration: none;
 }
 
-
-/* ==================================
-   SCROLL PROGRESS
-================================== */
-
 #progress {
     position: fixed;
-
     top: 0;
     left: 0;
-
     width: 0;
     height: 3px;
-
     background: var(--accent);
-
     z-index: 9999;
 }
 
-
-/* ==================================
-   CURSOR GLOW
-================================== */
-
 .cursor-glow {
     position: fixed;
-
     width: 420px;
     height: 420px;
-
     border-radius: 50%;
-
     pointer-events: none;
 
     background:
         radial-gradient(
             circle,
-            rgba(255,122,0,.08),
+            rgba(255, 122, 0, .08),
             transparent 65%
         );
 
     transform: translate(-50%, -50%);
-
     z-index: 0;
 }
 
-
-/* ==================================
-   NAVIGATION
-================================== */
-
 nav {
     position: fixed;
-
     top: 0;
     left: 0;
 
@@ -130,30 +87,25 @@ nav {
     align-items: center;
     justify-content: space-between;
 
-    padding:
-        24px
-        4vw;
+    padding: 24px 4vw;
 
     z-index: 1000;
 
     background:
         linear-gradient(
             to bottom,
-            rgba(11,11,11,.85),
+            rgba(11, 11, 11, .85),
             transparent
         );
 }
-
 
 .logo {
     font-weight: 900;
     letter-spacing: -.04em;
 }
 
-
 .nav-links {
     display: flex;
-
     gap: 28px;
 
     font-size: .78rem;
@@ -162,11 +114,9 @@ nav {
     letter-spacing: .12em;
 }
 
-
 .nav-links a {
     position: relative;
 }
-
 
 .nav-links a::after {
     content: "";
@@ -184,15 +134,9 @@ nav {
     transition: width .3s ease;
 }
 
-
 .nav-links a:hover::after {
     width: 100%;
 }
-
-
-/* ==================================
-   HERO
-================================== */
 
 .projects-hero {
     min-height: 90vh;
@@ -201,12 +145,8 @@ nav {
     flex-direction: column;
     justify-content: flex-end;
 
-    padding:
-        150px
-        4vw
-        60px;
+    padding: 150px 4vw 60px;
 }
-
 
 .eyebrow {
     color: var(--accent);
@@ -219,7 +159,6 @@ nav {
     margin-bottom: 28px;
 }
 
-
 .projects-hero h1 {
     font-size:
         clamp(
@@ -229,21 +168,14 @@ nav {
         );
 
     line-height: .74;
-
     letter-spacing: -.085em;
-
     font-weight: 900;
 }
 
-
 .outline {
     color: transparent;
-
-    -webkit-text-stroke:
-        1px
-        var(--text);
+    -webkit-text-stroke: 1px var(--text);
 }
-
 
 .hero-info {
     display: grid;
@@ -255,14 +187,12 @@ nav {
     gap: 50px;
 
     margin-top: 70px;
-
     padding-top: 25px;
 
     border-top:
         1px solid
         var(--line);
 }
-
 
 .hero-info p {
     max-width: 700px;
@@ -272,10 +202,8 @@ nav {
     line-height: 1.8;
 
     font-size: 1.05rem;
-
     font-weight: 600;
 }
-
 
 .project-count {
     text-align: right;
@@ -288,11 +216,6 @@ nav {
     letter-spacing: .15em;
 }
 
-
-/* ==================================
-   MOVING MARQUEE
-================================== */
-
 .marquee {
     overflow: hidden;
 
@@ -304,10 +227,8 @@ nav {
         1px solid
         var(--line);
 
-    padding:
-        17px 0;
+    padding: 17px 0;
 }
-
 
 .marquee-inner {
     display: flex;
@@ -321,7 +242,6 @@ nav {
         infinite;
 }
 
-
 .marquee span {
     margin-right: 70px;
 
@@ -333,12 +253,10 @@ nav {
     letter-spacing: .13em;
 }
 
-
 .marquee b {
     color: var(--accent);
 
     font-size: 1.7em;
-
     font-weight: 900;
 
     line-height: 0;
@@ -346,36 +264,21 @@ nav {
     vertical-align: -0.08em;
 }
 
-
 @keyframes marquee {
 
     from {
-        transform:
-            translateX(0);
+        transform: translateX(0);
     }
 
     to {
-        transform:
-            translateX(-50%);
+        transform: translateX(-50%);
     }
 
 }
 
-
-/* ==================================
-   MAIN PROJECT SECTION
-================================== */
-
 .projects-section {
-    padding:
-        130px
-        4vw;
+    padding: 130px 4vw;
 }
-
-
-/* ==================================
-   SELECTED WORK HERO
-================================== */
 
 .projects-top {
     display: flex;
@@ -391,32 +294,17 @@ nav {
 
     min-height: 640px;
 
-    padding:
-        45px
-        0
-        40px;
+    padding: 45px 0 40px;
 
     overflow: visible;
 
     isolation: isolate;
 }
 
-
-/*
-   Keeps BUILD / TEST / ITERATE
-   and the date above the image.
-*/
-
 .projects-top > div:not(.selected-work-photo) {
     position: relative;
-
     z-index: 3;
 }
-
-
-/* ==================================
-   SOLDERING IMAGE
-================================== */
 
 .selected-work-photo {
     position: absolute;
@@ -436,46 +324,29 @@ nav {
     -webkit-mask-image:
         linear-gradient(
             to right,
-
             transparent 0%,
-
             rgba(0,0,0,.06) 7%,
-
             rgba(0,0,0,.18) 13%,
-
             rgba(0,0,0,.38) 20%,
-
             rgba(0,0,0,.65) 27%,
-
             rgba(0,0,0,.88) 34%,
-
             black 41%,
-
             black 100%
         );
 
     mask-image:
         linear-gradient(
             to right,
-
             transparent 0%,
-
             rgba(0,0,0,.06) 7%,
-
             rgba(0,0,0,.18) 13%,
-
             rgba(0,0,0,.38) 20%,
-
             rgba(0,0,0,.65) 27%,
-
             rgba(0,0,0,.88) 34%,
-
             black 41%,
-
             black 100%
         );
 }
-
 
 .selected-work-photo img {
     width: 100%;
@@ -484,20 +355,13 @@ nav {
     display: block;
 
     object-fit: cover;
-
-    object-position:
-        57% center;
+    object-position: 57% center;
 
     filter:
         brightness(.68)
         contrast(1.06)
         saturate(.90);
 }
-
-
-/* ==================================
-   SOLDERING PHOTO VIGNETTE
-================================== */
 
 .selected-work-photo::after {
     content: "";
@@ -509,36 +373,24 @@ nav {
     pointer-events: none;
 
     background:
-
         linear-gradient(
             to bottom,
-
             rgba(11,11,11,.78) 0%,
-
             rgba(11,11,11,.32) 8%,
-
             rgba(11,11,11,.07) 18%,
-
             transparent 28%,
-
             transparent 72%,
-
             rgba(11,11,11,.08) 82%,
-
             rgba(11,11,11,.38) 91%,
-
             var(--bg) 100%
         ),
 
         linear-gradient(
             to left,
-
             rgba(11,11,11,.16) 0%,
-
             transparent 18%
         );
 }
-
 
 .projects-top h2 {
     font-size:
@@ -549,10 +401,8 @@ nav {
         );
 
     line-height: .88;
-
     letter-spacing: -.06em;
 }
-
 
 .projects-note {
     position: absolute;
@@ -574,11 +424,6 @@ nav {
     padding-left: 18px;
 }
 
-
-/* ==================================
-   PROJECT GRID
-================================== */
-
 .project-grid {
     display: grid;
 
@@ -591,12 +436,10 @@ nav {
     align-items: stretch;
 }
 
-
 .project-card,
 .project-card.wide,
 .project-card.small {
     width: 100%;
-
     min-width: 0;
 
     display: flex;
@@ -604,11 +447,6 @@ nav {
 
     cursor: pointer;
 }
-
-
-/* ==================================
-   PROJECT IMAGE AREA
-================================== */
 
 .project-image {
     position: relative;
@@ -624,11 +462,6 @@ nav {
     flex-shrink: 0;
 }
 
-
-/* ==================================
-   REAL PROJECT IMAGES
-================================== */
-
 .project-image img {
     width: 100%;
     height: 100%;
@@ -636,94 +469,19 @@ nav {
     display: block;
 
     object-fit: cover;
-
     object-position: center;
 
     filter: grayscale(10%);
 
     transition:
-        transform
-        .8s
-        cubic-bezier(.2,.7,.2,1),
-
-        filter
-        .5s ease;
+        transform .8s cubic-bezier(.2,.7,.2,1),
+        filter .5s ease;
 }
 
-
-.project-card:hover
-.project-image img {
+.project-card:hover .project-image img {
     transform: scale(1.045);
-
     filter: grayscale(0);
 }
-
-
-/* ==================================
-   PLACEHOLDER IMAGE
-================================== */
-
-.placeholder {
-    width: 100%;
-    height: 100%;
-
-    display: grid;
-    place-items: center;
-
-    position: relative;
-
-    background: var(--placeholder);
-
-    transition:
-        background .3s ease,
-        transform .7s ease;
-}
-
-
-.project-card:hover
-.placeholder {
-    background: #191919;
-
-    transform: scale(1.02);
-}
-
-
-.placeholder-symbol {
-    color: var(--accent);
-
-    font-size:
-        clamp(
-            3rem,
-            7vw,
-            6rem
-        );
-
-    font-weight: 900;
-
-    letter-spacing: -.06em;
-
-    opacity: .92;
-}
-
-
-.placeholder-label {
-    position: absolute;
-
-    bottom: 22px;
-    left: 22px;
-
-    color: #666;
-
-    font-size: .68rem;
-
-    text-transform: uppercase;
-    letter-spacing: .16em;
-}
-
-
-/* ==================================
-   PROJECT CATEGORY LABEL
-================================== */
 
 .project-number {
     position: absolute;
@@ -731,15 +489,11 @@ nav {
     top: 18px;
     left: 18px;
 
-    padding:
-        8px
-        11px;
+    padding: 8px 11px;
 
-    background:
-        rgba(0,0,0,.78);
+    background: rgba(0,0,0,.78);
 
-    backdrop-filter:
-        blur(8px);
+    backdrop-filter: blur(8px);
 
     font-size: .68rem;
 
@@ -747,11 +501,6 @@ nav {
 
     z-index: 5;
 }
-
-
-/* ==================================
-   ROUND ARROW
-================================== */
 
 .project-arrow {
     position: absolute;
@@ -780,18 +529,10 @@ nav {
         transform .3s ease;
 }
 
-
-.project-card:hover
-.project-arrow {
+.project-card:hover .project-arrow {
     background: var(--accent);
-
     transform: rotate(45deg);
 }
-
-
-/* ==================================
-   PROJECT TEXT
-================================== */
 
 .project-text {
     display: grid;
@@ -815,7 +556,6 @@ nav {
     flex: 1;
 }
 
-
 .project-text h3 {
     font-size:
         clamp(
@@ -829,7 +569,6 @@ nav {
     line-height: 1;
 }
 
-
 .project-text p {
     color: var(--muted);
 
@@ -839,7 +578,6 @@ nav {
 
     line-height: 1.7;
 }
-
 
 .year {
     color: var(--muted);
@@ -851,15 +589,9 @@ nav {
     text-transform: uppercase;
 }
 
-
-/* ==================================
-   TAGS
-================================== */
-
 .tags {
     margin-top: 18px;
 }
-
 
 .tag {
     display: inline-block;
@@ -880,8 +612,7 @@ nav {
 
     border-radius: 100px;
 
-    background:
-        var(--accent);
+    background: var(--accent);
 
     color: #0b0b0b;
 
@@ -891,49 +622,11 @@ nav {
 
     text-transform: uppercase;
     letter-spacing: .09em;
-
-    transition:
-        border .3s ease,
-        color .3s ease,
-        background .3s ease;
 }
-
-
-.project-card:hover
-.tag {
-    border-color:
-        var(--accent);
-
-    color:
-        #0b0b0b;
-
-    background:
-        var(--accent);
-}
-
-
-/* ==================================
-   PLACEHOLDER TEXT AREA
-================================== */
 
 .placeholder-card .project-text {
     min-height: 245px;
 }
-
-
-.placeholder-card .project-text h3 {
-    color: var(--text);
-}
-
-
-.placeholder-card .project-text p {
-    color: var(--muted);
-}
-
-
-/* ==================================
-   PHILOSOPHY SECTION
-================================== */
 
 .philosophy {
     margin-top: 150px;
@@ -944,7 +637,6 @@ nav {
         1px solid
         var(--line);
 }
-
 
 .philosophy h2 {
     max-width: 1150px;
@@ -957,10 +649,8 @@ nav {
         );
 
     line-height: .88;
-
     letter-spacing: -.065em;
 }
-
 
 .philosophy-bottom {
     display: grid;
@@ -974,7 +664,6 @@ nav {
     margin-top: 60px;
 }
 
-
 .philosophy-bottom p {
     max-width: 550px;
 
@@ -983,11 +672,6 @@ nav {
     line-height: 1.9;
 }
 
-
-/* ==================================
-   CONTACT
-================================== */
-
 .contact {
     min-height: 75vh;
 
@@ -995,15 +679,12 @@ nav {
     flex-direction: column;
     justify-content: space-between;
 
-    padding:
-        110px
-        4vw;
+    padding: 110px 4vw;
 
     border-top:
         1px solid
         var(--line);
 }
-
 
 .contact h2 {
     font-size:
@@ -1014,10 +695,8 @@ nav {
         );
 
     line-height: .77;
-
     letter-spacing: -.08em;
 }
-
 
 .contact-links {
     display: flex;
@@ -1029,63 +708,34 @@ nav {
     margin-top: 70px;
 }
 
-
-/* ==================================
-   SOLID ORANGE CONTACT BUTTONS
-================================== */
-
 .button {
-    padding:
-        15px
-        22px;
+    padding: 15px 22px;
 
     border:
         1px solid
         var(--accent);
 
-    border-radius:
-        100px;
+    border-radius: 100px;
 
-    background:
-        var(--accent);
+    background: var(--accent);
 
-    color:
-        #0b0b0b;
+    color: #0b0b0b;
 
     font-weight: 600;
 
-    transition:
-        .25s ease;
+    transition: .25s ease;
 }
-
 
 .button:hover {
-    background:
-        var(--accent);
-
-    border-color:
-        var(--accent);
-
-    color:
-        #0b0b0b;
-
-    transform:
-        translateY(-4px);
+    transform: translateY(-4px);
 }
-
-
-/* ==================================
-   FOOTER
-================================== */
 
 footer {
     display: flex;
 
     justify-content: space-between;
 
-    padding:
-        28px
-        4vw;
+    padding: 28px 4vw;
 
     border-top:
         1px solid
@@ -1099,52 +749,30 @@ footer {
     letter-spacing: .09em;
 }
 
-
-/* ==================================
-   SCROLL REVEAL
-================================== */
-
 .reveal {
     opacity: 0;
 
-    transform:
-        translateY(60px);
+    transform: translateY(60px);
 
     transition:
-        opacity
-        .9s
-        cubic-bezier(.2,.7,.2,1),
-
-        transform
-        .9s
-        cubic-bezier(.2,.7,.2,1);
+        opacity .9s cubic-bezier(.2,.7,.2,1),
+        transform .9s cubic-bezier(.2,.7,.2,1);
 }
-
 
 .reveal.visible {
     opacity: 1;
-
-    transform:
-        translateY(0);
+    transform: translateY(0);
 }
-
-
-/* ==================================
-   TABLET
-================================== */
 
 @media(max-width: 850px) {
 
     .hero-info {
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
     }
-
 
     .project-count {
         text-align: left;
     }
-
 
     .projects-top {
         align-items: flex-start;
@@ -1158,7 +786,6 @@ footer {
         margin-bottom: 80px;
     }
 
-
     .selected-work-photo {
         left: 16%;
         right: -20%;
@@ -1166,84 +793,44 @@ footer {
         opacity: .62;
     }
 
-
-    .selected-work-photo img {
-        object-position:
-            58% center;
-    }
-
-
-    .projects-note {
-        bottom: -24px;
-    }
-
-
     .project-grid {
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
     }
-
 
     .project-text {
         min-height: 0;
     }
-
-
-    .placeholder-card
-    .project-text {
-        min-height: 0;
-    }
-
 
     .philosophy-bottom {
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
     }
-
 }
-
-
-/* ==================================
-   MOBILE
-================================== */
 
 @media(max-width: 550px) {
 
     nav {
-        padding:
-            20px
-            5vw;
+        padding: 20px 5vw;
     }
-
 
     .nav-links {
         gap: 15px;
     }
 
-
     .nav-links a:nth-child(2) {
         display: none;
     }
 
-
     .projects-section {
-        padding:
-            90px
-            5vw;
+        padding: 90px 5vw;
     }
-
 
     .projects-top {
         min-height: 500px;
 
-        padding:
-            25px
-            0
-            30px;
+        padding: 25px 0 30px;
 
         margin-bottom: 70px;
     }
-
 
     .selected-work-photo {
         left: 4%;
@@ -1252,22 +839,9 @@ footer {
         opacity: .34;
     }
 
-
-    .selected-work-photo img {
-        object-position:
-            55% center;
-    }
-
-
-    .projects-note {
-        bottom: -20px;
-    }
-
-
     .project-grid {
         row-gap: 55px;
     }
-
 
     .project-number {
         top: 12px;
@@ -1275,7 +849,6 @@ footer {
 
         font-size: .6rem;
     }
-
 
     .project-arrow {
         width: 44px;
@@ -1285,50 +858,31 @@ footer {
         bottom: 12px;
     }
 
-
     .project-text {
-        grid-template-columns:
-            1fr;
-
+        grid-template-columns: 1fr;
         gap: 15px;
     }
 
-
     footer {
         flex-direction: column;
-
         gap: 10px;
     }
-
 }
-
 
 </style>
 
 </head>
 
-
 <body>
 
-
 <div id="progress"></div>
-
 <div class="cursor-glow"></div>
-
-
-<!-- ==================================
-     NAVIGATION
-================================== -->
 
 <nav>
 
-    <a
-        href="index.html"
-        class="logo"
-    >
+    <a href="index.html" class="logo">
         Stanley Qiu / 2026
     </a>
-
 
     <div class="nav-links">
 
@@ -1349,35 +903,27 @@ footer {
 </nav>
 
 
-<!-- ==================================
-     HERO
-================================== -->
-
 <header class="projects-hero">
 
     <div class="eyebrow reveal">
         Engineering Archive
     </div>
 
-
     <h1 class="reveal">
         PRO<span class="outline">JECTS.</span>
     </h1>
-
 
     <div class="hero-info reveal">
 
         <p>
             This is some of the stuff I have built.
-
             I tried my best to document the process
             behind each project. (Projects are in
             a random order.)
         </p>
 
-
         <div class="project-count">
-            04 PROJECTS /
+            10 PROJECTS /
             MORE COMING
         </div>
 
@@ -1386,83 +932,32 @@ footer {
 </header>
 
 
-<!-- ==================================
-     MOVING STRIP
-================================== -->
-
 <div class="marquee">
 
     <div class="marquee-inner">
 
-        <span>
-            HARDWARE <b>+</b>
-        </span>
+        <span>HARDWARE <b>+</b></span>
+        <span>SOFTWARE <b>+</b></span>
+        <span>PCB DESIGN <b>+</b></span>
+        <span>EMBEDDED <b>+</b></span>
+        <span>EXPERIMENTS <b>+</b></span>
+        <span>PROTOTYPES <b>+</b></span>
 
-        <span>
-            SOFTWARE <b>+</b>
-        </span>
-
-        <span>
-            PCB DESIGN <b>+</b>
-        </span>
-
-        <span>
-            EMBEDDED <b>+</b>
-        </span>
-
-        <span>
-            EXPERIMENTS <b>+</b>
-        </span>
-
-        <span>
-            PROTOTYPES <b>+</b>
-        </span>
-
-
-        <!-- DUPLICATED FOR LOOP -->
-
-        <span>
-            HARDWARE <b>+</b>
-        </span>
-
-        <span>
-            SOFTWARE <b>+</b>
-        </span>
-
-        <span>
-            PCB DESIGN <b>+</b>
-        </span>
-
-        <span>
-            EMBEDDED <b>+</b>
-        </span>
-
-        <span>
-            EXPERIMENTS <b>+</b>
-        </span>
-
-        <span>
-            PROTOTYPES <b>+</b>
-        </span>
+        <span>HARDWARE <b>+</b></span>
+        <span>SOFTWARE <b>+</b></span>
+        <span>PCB DESIGN <b>+</b></span>
+        <span>EMBEDDED <b>+</b></span>
+        <span>EXPERIMENTS <b>+</b></span>
+        <span>PROTOTYPES <b>+</b></span>
 
     </div>
 
 </div>
 
 
-<!-- ==================================
-     PROJECTS
-================================== -->
-
 <main class="projects-section">
 
-
-    <!-- ==================================
-         SELECTED WORK + SOLDERING IMAGE
-    ================================== -->
-
     <div class="projects-top reveal">
-
 
         <div class="selected-work-photo">
 
@@ -1472,7 +967,6 @@ footer {
             >
 
         </div>
-
 
         <div>
 
@@ -1488,7 +982,6 @@ footer {
 
         </div>
 
-
         <div class="projects-note">
             2023 → PRESENT
         </div>
@@ -1496,17 +989,10 @@ footer {
     </div>
 
 
-    <!-- ==================================
-         PROJECT GRID
-    ================================== -->
-
     <div class="project-grid">
 
 
-        <!-- ==================================
-             PROJECT 001
-             SOLAR BUSINESS CARD
-        ================================== -->
+        <!-- PROJECT 001 -->
 
         <a
             href="solar-business-card.html"
@@ -1520,18 +1006,15 @@ footer {
                     alt="Solar-powered PCB business card"
                 >
 
-
                 <div class="project-number">
                     001 / HARDWARE
                 </div>
-
 
                 <div class="project-arrow">
                     ↗
                 </div>
 
             </div>
-
 
             <div class="project-text">
 
@@ -1542,38 +1025,22 @@ footer {
                     </h3>
 
                     <p>
-                        This is a custom bussiness card
-                        I developed which is powered by 
+                        This is a custom business card
+                        I developed which is powered by
                         4 solar cells.
                     </p>
 
-
                     <div class="tags">
 
-                        <span class="tag">
-                            STM32
-                        </span>
-
-                        <span class="tag">
-                            KiCad
-                        </span>
-
-                        <span class="tag">
-                            PCB Design
-                        </span>
-
-                        <span class="tag">
-                            Solar
-                        </span>
-
-                        <span class="tag">
-                            Embedded
-                        </span>
+                        <span class="tag">STM32</span>
+                        <span class="tag">KiCad</span>
+                        <span class="tag">PCB Design</span>
+                        <span class="tag">Solar</span>
+                        <span class="tag">Embedded</span>
 
                     </div>
 
                 </div>
-
 
                 <div class="year">
                     2026
@@ -1584,10 +1051,7 @@ footer {
         </a>
 
 
-        <!-- ==================================
-             PROJECT 002
-             AI DRONE
-        ================================== -->
+        <!-- PROJECT 002 -->
 
         <a
             href="ai-drone.html"
@@ -1601,18 +1065,15 @@ footer {
                     alt="AI Drone"
                 >
 
-
                 <div class="project-number">
                     002 / HARDWARE-SOFTWARE-AI
                 </div>
-
 
                 <div class="project-arrow">
                     ↗
                 </div>
 
             </div>
-
 
             <div class="project-text">
 
@@ -1624,35 +1085,22 @@ footer {
 
                     <p>
                         A custom drone platform I designed
-                        combining embedded hardware, 
-                        flight control, computer vision 
-                        and software for autonomous 
+                        combining embedded hardware,
+                        flight control, computer vision
+                        and software for autonomous
                         experimentation. (WIP)
                     </p>
 
-
                     <div class="tags">
 
-                        <span class="tag">
-                            Python
-                        </span>
-
-                        <span class="tag">
-                            Embedded
-                        </span>
-
-                        <span class="tag">
-                            AI
-                        </span>
-
-                        <span class="tag">
-                            Computer Vision
-                        </span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Embedded</span>
+                        <span class="tag">AI</span>
+                        <span class="tag">Computer Vision</span>
 
                     </div>
 
                 </div>
-
 
                 <div class="year">
                     2026
@@ -1663,10 +1111,7 @@ footer {
         </a>
 
 
-        <!-- ==================================
-             PROJECT 003
-             LASER TURRET
-        ================================== -->
+        <!-- PROJECT 003 -->
 
         <a
             href="laser-turret.html"
@@ -1680,18 +1125,15 @@ footer {
                     alt="Laser Turret"
                 >
 
-
                 <div class="project-number">
                     003 / HARDWARE
                 </div>
-
 
                 <div class="project-arrow">
                     ↗
                 </div>
 
             </div>
-
 
             <div class="project-text">
 
@@ -1703,30 +1145,20 @@ footer {
 
                     <p>
                         This is one of my first
-                        projects. Its a turret with
-                        a laser that is controller
+                        projects. It's a turret with
+                        a laser that is controlled
                         by a joystick.
                     </p>
 
-
                     <div class="tags">
 
-                        <span class="tag">
-                            3D Printing
-                        </span>
-
-                        <span class="tag">
-                            CAD
-                        </span>
-
-                        <span class="tag">
-                            Arduino Uno
-                        </span>
+                        <span class="tag">3D Printing</span>
+                        <span class="tag">CAD</span>
+                        <span class="tag">Arduino Uno</span>
 
                     </div>
 
                 </div>
-
 
                 <div class="year">
                     2023
@@ -1737,10 +1169,7 @@ footer {
         </a>
 
 
-        <!-- ==================================
-             PROJECT 004
-             MP3 PLAYER
-        ================================== -->
+        <!-- PROJECT 004 -->
 
         <a
             href="mp3-player.html"
@@ -1754,18 +1183,15 @@ footer {
                     alt="MP3 Player"
                 >
 
-
                 <div class="project-number">
                     004 / HARDWARE
                 </div>
-
 
                 <div class="project-arrow">
                     ↗
                 </div>
 
             </div>
-
 
             <div class="project-text">
 
@@ -1777,28 +1203,18 @@ footer {
 
                     <p>
                         I was bored one day so I decided
-                        that making an MP3 would be cool.
+                        that making an MP3 player would be cool.
                     </p>
-
 
                     <div class="tags">
 
-                        <span class="tag">
-                            Arduino IDE
-                        </span>
-
-                        <span class="tag">
-                            ESP32
-                        </span>
-
-                        <span class="tag">
-                            Perfbaord
-                        </span>
+                        <span class="tag">Arduino IDE</span>
+                        <span class="tag">ESP32</span>
+                        <span class="tag">Perfboard</span>
 
                     </div>
 
                 </div>
-
 
                 <div class="year">
                     2025
@@ -1809,10 +1225,7 @@ footer {
         </a>
 
 
-        <!-- ==================================
-             PROJECT 005
-             ALTIMETER
-        ================================== -->
+        <!-- PROJECT 005 -->
 
         <a
             href="altimeter.html"
@@ -1826,18 +1239,15 @@ footer {
                     alt="Altimeter"
                 >
 
-
                 <div class="project-number">
                     005 / HARDWARE
                 </div>
-
 
                 <div class="project-arrow">
                     ↗
                 </div>
 
             </div>
-
 
             <div class="project-text">
 
@@ -1852,25 +1262,16 @@ footer {
                         It features an ESP32 and BMP180
                         sensor.
                     </p>
-                    
+
                     <div class="tags">
 
-                        <span class="tag">
-                            ESP32
-                        </span>
-
-                        <span class="tag">
-                            Arduino IDE
-                        </span>
-
-                        <span class="tag">
-                            CAD
-                        </span>
+                        <span class="tag">ESP32</span>
+                        <span class="tag">Arduino IDE</span>
+                        <span class="tag">CAD</span>
 
                     </div>
 
                 </div>
-
 
                 <div class="year">
                     2024
@@ -1881,10 +1282,7 @@ footer {
         </a>
 
 
-        <!-- ==================================
-             PROJECT 006
-             GILBERT SYSTEM
-        ================================== -->
+        <!-- PROJECT 006 -->
 
         <a
             href="gilbert-system.html"
@@ -1898,11 +1296,9 @@ footer {
                     alt="Gilbert"
                 >
 
-
                 <div class="project-number">
                     006 / HARDWARE-SOFTWARE-TELEMETRY
                 </div>
-
 
                 <div class="project-arrow">
                     ↗
@@ -1910,13 +1306,13 @@ footer {
 
             </div>
 
-
             <div class="project-text">
 
                 <div>
 
                     <h3>
-                        Gilbert System (Steering Wheel PCB system)
+                        Gilbert System
+                        (Steering Wheel PCB System)
                     </h3>
 
                     <p>
@@ -1927,26 +1323,14 @@ footer {
 
                     <div class="tags">
 
-                        <span class="tag">
-                            Python
-                        </span>
-
-                        <span class="tag">
-                            Arduino IDE
-                        </span>
-
-                        <span class="tag">
-                            Telemetry
-                        </span>
-
-                        <span class="tag">
-                            Arduino
-                        </span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Arduino IDE</span>
+                        <span class="tag">Telemetry</span>
+                        <span class="tag">Arduino</span>
 
                     </div>
 
                 </div>
-
 
                 <div class="year">
                     2026
@@ -1957,10 +1341,7 @@ footer {
         </a>
 
 
-        <!-- ==================================
-             PROJECT 007
-             CUSTOM DRONE ESC
-        ================================== -->
+        <!-- PROJECT 007 -->
 
         <a
             href="drone-esc.html"
@@ -1974,11 +1355,9 @@ footer {
                     alt="ESC"
                 >
 
-
                 <div class="project-number">
                     007 / HARDWARE
                 </div>
-
 
                 <div class="project-arrow">
                     ↗
@@ -1986,13 +1365,12 @@ footer {
 
             </div>
 
-
             <div class="project-text">
 
                 <div>
 
                     <h3>
-                        Custom drone ESC
+                        Custom Drone ESC
                     </h3>
 
                     <p>
@@ -2004,18 +1382,12 @@ footer {
 
                     <div class="tags">
 
-                        <span class="tag">
-                            Hardware
-                        </span>
-
-                        <span class="tag">
-                            STM32
-                        </span>
+                        <span class="tag">Hardware</span>
+                        <span class="tag">STM32</span>
 
                     </div>
 
                 </div>
-
 
                 <div class="year">
                     2026
@@ -2026,10 +1398,7 @@ footer {
         </a>
 
 
-        <!-- ==================================
-             PROJECT 008
-             CUBESAT
-        ================================== -->
+        <!-- PROJECT 008 -->
 
         <a
             href="cubesat.html"
@@ -2043,18 +1412,15 @@ footer {
                     alt="EPS"
                 >
 
-
                 <div class="project-number">
                     008 / HARDWARE
                 </div>
-
 
                 <div class="project-arrow">
                     ↗
                 </div>
 
             </div>
-
 
             <div class="project-text">
 
@@ -2066,26 +1432,20 @@ footer {
 
                     <p>
                         The image above only shows the EPS
-                        (Electrical Power System) on KiCad. I am 
-                        still designing the other boards
+                        (Electrical Power System) on KiCad.
+                        I am still designing the other boards
                         that will stack on top of this board.
                         (WIP)
                     </p>
 
                     <div class="tags">
 
-                        <span class="tag">
-                            Hardware
-                        </span>
-
-                        <span class="tag">
-                            STM32
-                        </span>
+                        <span class="tag">Hardware</span>
+                        <span class="tag">STM32</span>
 
                     </div>
 
                 </div>
-
 
                 <div class="year">
                     2026
@@ -2096,11 +1456,7 @@ footer {
         </a>
 
 
-
-        <!-- ==================================
-             PROJECT 009
-             FACE TRACKER AI
-        ================================== -->
+        <!-- PROJECT 009 -->
 
         <a
             href="Model-Aim9.html"
@@ -2111,13 +1467,12 @@ footer {
 
                 <img
                     src="images/AIM9.JPG"
-                    alt="Full_Missile"
+                    alt="Full Missile"
                 >
 
                 <div class="project-number">
                     009 / HARDWARE-SOFTWARE-AI
                 </div>
-
 
                 <div class="project-arrow">
                     ↗
@@ -2125,49 +1480,33 @@ footer {
 
             </div>
 
-
             <div class="project-text">
 
                 <div>
 
                     <h3>
-                         Non-functional Model Aim-9 Missile
+                        Non-functional Model AIM-9 Missile
                     </h3>
 
                     <p>
-                        A scaled model of the AIM-9 air to air 
-                        missile that has a camera in the front for 
-                        browser based object detection. There are
+                        A scaled model of the AIM-9 air-to-air
+                        missile that has a camera in the front for
+                        browser-based object detection. There are
                         four functional fins/canards in the front
-                        of the missile powered by SG90 servos
+                        of the missile powered by SG90 servos.
                     </p>
 
                     <div class="tags">
 
-                        <span class="tag">
-                            ESP32
-                        </span>
-
-                        <span class="tag">
-                            AI
-                        </span>
-
-                        <span class="tag">
-                            Computer Vision
-                        </span>
-
-                        <span class="tag">
-                            Embedded
-                        </span>
-                        
-                        <span class="tag">
-                            CAD
-                        </span>
+                        <span class="tag">ESP32</span>
+                        <span class="tag">AI</span>
+                        <span class="tag">Computer Vision</span>
+                        <span class="tag">Embedded</span>
+                        <span class="tag">CAD</span>
 
                     </div>
 
                 </div>
-
 
                 <div class="year">
                     2026
@@ -2177,10 +1516,8 @@ footer {
 
         </a>
 
-        <!-- ==================================
-             PROJECT 010
-             Gilbert-system-V3.0
-        ================================== -->
+
+        <!-- PROJECT 010 -->
 
         <a
             href="Gilber-system-V3.0.html"
@@ -2198,56 +1535,40 @@ footer {
                     010 / HARDWARE-SOFTWARE
                 </div>
 
-
                 <div class="project-arrow">
                     ↗
                 </div>
 
             </div>
 
-
             <div class="project-text">
 
                 <div>
 
                     <h3>
-                         Gilbert PCB system V3.0 (Solar car 12V subsystem)
+                        Gilbert PCB System V3.0
+                        (Solar Car 12V Subsystem)
                     </h3>
 
                     <p>
                         The latest version of the PCB system that
-                        will be implemented in the TCHS Advanced solar
-                        car that competes in the Solar Car Challenge.
-                        The system consists of 5 different 2 layer PCBs, each
-                        with their own function.
+                        will be implemented in the TCHS Advanced Solar
+                        Car that competes in the Solar Car Challenge.
+                        The system consists of 5 different 2-layer PCBs,
+                        each with its own function.
                     </p>
 
                     <div class="tags">
 
-                        <span class="tag">
-                            STM32
-                        </span>
-
-                        <span class="tag">
-                            PCB
-                        </span>
-
-                        <span class="tag">
-                            KiCad
-                        </span>
-
-                        <span class="tag">
-                            Embedded
-                        </span>
-                        
-                        <span class="tag">
-                            C
-                        </span>
+                        <span class="tag">STM32</span>
+                        <span class="tag">PCB</span>
+                        <span class="tag">KiCad</span>
+                        <span class="tag">Embedded</span>
+                        <span class="tag">C</span>
 
                     </div>
 
                 </div>
-
 
                 <div class="year">
                     2026
@@ -2257,11 +1578,9 @@ footer {
 
         </a>
 
+
     </div>
 
-    <!-- ==================================
-         FUTURE
-    ================================== -->
 
     <div class="philosophy">
 
@@ -2269,37 +1588,34 @@ footer {
             The Future
         </div>
 
-
         <h2 class="reveal">
             MANY MORE PROJECTS
-            WILL BE BUILT (If
-            I have the funding...)
+            WILL BE BUILT
+            (If I have the funding...)
         </h2>
-
 
         <div class="philosophy-bottom reveal">
 
             <p>
                 I plan on building more
                 projects for as long as
-                my creativity lasts (or until
-                my funding runs out).
+                my creativity lasts
+                (or until my funding runs out).
 
-                In the future, I want to build and participate in 
-                projects that can change the lives 
+                In the future, I want to build and participate in
+                projects that can change the lives
                 of others.
             </p>
 
-
             <p>
-                I plan to pursure a career in electrical
+                I plan to pursue a career in electrical
                 engineering, though I still haven't settled
                 on a specific subcategory.
 
-                Hopefully before the time I graduate high
-                school I can figure out which subcategory
-                of electrical engineering I want to pursure.
-                Though, until then, I will be exploring different
+                Hopefully before I graduate high school
+                I can figure out which subcategory
+                of electrical engineering I want to pursue.
+                Until then, I will be exploring different
                 fields until I find which one I want to pursue
                 in the future!
             </p>
@@ -2310,10 +1626,6 @@ footer {
 
 </main>
 
-
-<!-- ==================================
-     CONTACT
-================================== -->
 
 <section
     class="contact"
@@ -2326,13 +1638,11 @@ footer {
             Want to talk?
         </div>
 
-
         <h2 class="reveal">
             LET'S<br>
             MAKE<br>
             SOMETHING.
         </h2>
-
 
         <div class="contact-links reveal">
 
@@ -2343,7 +1653,6 @@ footer {
                 Email
             </a>
 
-
             <a
                 class="button"
                 href="https://github.com/Stanleyqiu1"
@@ -2351,14 +1660,12 @@ footer {
                 GitHub ↗
             </a>
 
-
             <a
                 class="button"
                 href="https://www.linkedin.com/in/stanley-qiu-92088b377/"
             >
                 LinkedIn ↗
             </a>
-
 
             <a
                 class="button"
@@ -2373,10 +1680,6 @@ footer {
 
 </section>
 
-
-<!-- ==================================
-     FOOTER
-================================== -->
 
 <footer>
 
@@ -2397,16 +1700,7 @@ footer {
 </footer>
 
 
-<!-- ==================================
-     JAVASCRIPT
-================================== -->
-
 <script>
-
-
-/* ==================================
-   SCROLL REVEAL
-================================== */
 
 const observer =
 new IntersectionObserver(
@@ -2433,7 +1727,6 @@ new IntersectionObserver(
 
 );
 
-
 document
 .querySelectorAll(".reveal")
 .forEach(element => {
@@ -2442,10 +1735,6 @@ document
 
 });
 
-
-/* ==================================
-   SCROLL PROGRESS
-================================== */
 
 window.addEventListener(
 
@@ -2456,17 +1745,14 @@ window.addEventListener(
         const scroll =
             document.documentElement.scrollTop;
 
-
         const height =
             document.documentElement.scrollHeight -
             document.documentElement.clientHeight;
-
 
         const percentage =
             height > 0
             ? scroll / height * 100
             : 0;
-
 
         document
             .getElementById("progress")
@@ -2478,13 +1764,8 @@ window.addEventListener(
 );
 
 
-/* ==================================
-   CURSOR GLOW
-================================== */
-
 const glow =
 document.querySelector(".cursor-glow");
-
 
 window.addEventListener(
 
@@ -2502,10 +1783,7 @@ window.addEventListener(
 
 );
 
-
 </script>
 
-
 </body>
-
 </html>
