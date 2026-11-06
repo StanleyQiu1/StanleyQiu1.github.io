@@ -60,14 +60,9 @@
     <div class="hero-bottom reveal">
 
         <p class="hero-description">
-            A steering wheel PCB and telemetry
-            system designed as part of a solar car
-            team that I am apart of. I led the development
-            of this system. The system acted as the
-            control systems for the newest car of 
-            the team, which will be racing during
-            the summer of 2027 at the Texas Motor
-            Speedway.
+            This is the newest version of the 12V
+            system that is going to be implemented in
+            the TCHS Heliotech Advanced Car.
         </p>
 
 
@@ -93,8 +88,8 @@
 <div class="hero-image reveal">
 
     <img
-        src="images/GILBERT.PNG"
-        alt="Gilbert steering wheel PCB system"
+        src="images/GilbertV3.0.png"
+        alt="3D model image"
     >
 
 </div>
@@ -116,31 +111,30 @@
             </h2>
 
             <p>
-                Gilbert utilizes an Arduino Nano (I shouldn't
-                have used it) which is connected to a buck converter,
-                MAX485 module to read data from the MPPT (Maximum
-                Power Point Tracker) and display that data. There is also 
-                7 buttons that the driver uses. This includes left turn,
-                right turn, horn, hazard, toggle next screen, toggle back
-                screen, and headlights.
+                There are a total of 5 different PCB boards that
+                are going to be connected through RS485 (was going
+                to use CAN but the mppt data is through RS485 so
+                I decided to use it for the whole system instead).
+                4 of the PCB's have MCUs, all of the STM32 family.
+                The system is going to be powered through Milwaukee
+                M18 batteries bucked down to 12V.
             </p>
 
             <p>
-                The system was a basic PCB, using mainly through-hole
-                components and devmodules. The next version of Gilbert
-                that I will be developing in the upcoming year will
-                consist of mainly SMD components and ICs. There will be many
-                changes coming to this system to make it more advance and 
-                driver-friendly.
+                The main difference between this system and the
+                previous system is that this version includes
+                5 boards instead of 2 and uses mostly SMD components
+                and not through hole. I used direct ICs not devmodules.
             </p>
 
 
             <div class="tags">
 
                 <span class="tag">Python</span>
-                <span class="tag">Arduino IDE</span>
+                <span class="tag">STM32CubeIDE</span>
                 <span class="tag">Telemetry</span>
-                <span class="tag">Arduino</span>
+                <span class="tag">STM32</span>
+                <span class="tag">RS485</span>
 
             </div>
 
@@ -158,17 +152,17 @@
 
         <div class="fact">
             <span class="fact-label">System</span>
-            <span class="fact-value">Steering Wheel PCB</span>
+            <span class="fact-value">12V PCB System</span>
         </div>
 
         <div class="fact">
             <span class="fact-label">Software</span>
-            <span class="fact-value">Python / Arduino</span>
+            <span class="fact-value">Python / STM32CubeIDE</span>
         </div>
 
         <div class="fact">
             <span class="fact-label">Focus</span>
-            <span class="fact-value">Telemetry</span>
+            <span class="fact-value">Telemetry-RS485</span>
         </div>
 
     </div>
@@ -193,17 +187,21 @@
             </h2>
 
             <p>
-                Working on a system that belongs inside a
-                vehicle means the electronics cannot be
-                designed completely independently.
+                The system has to work around the limited space
+                that is available in the car (the car was designed
+                with only aerodynamics in mind, leaving little room
+                inside the car). This year, the system will be implemented
+                in the front/nose of the vehicle.
             </p>
 
             <p>
-                The system reads and displays data to 
-                the driver, displaying data such as
-                the PV (Photovoltaic) Voltage, Battery
-                voltage, Battery State of Charge, Speed,
-                etc.
+                The system reads data from one of the 2 MPPTs,
+                2 IMUs, and 1 temp sensor (to detect overheating).
+                There is one board for the main calculations, 1
+                acting as a backup (detecting main battery voltage)
+                that runs off of a seperate M18 battery from the main
+                two M18s in parallel, 1 on the steering wheel, 1 acting
+                as a screen, and 1 that contains 14 switches.
             </p>
 
         </div>
@@ -247,27 +245,27 @@
 
 <div class="project-navigation">
 
-    <a class="project-nav-link" href="altimeter.html">
+    <a class="project-nav-link" href="Model-Aim9.html">
 
         <span class="project-nav-small">
             ← Previous Project
         </span>
 
         <span class="project-nav-title">
-            ALTIMETER
+            Model Aim9 Missile
         </span>
 
     </a>
 
 
-    <a class="project-nav-link" href="drone-esc.html">
+    <a class="project-nav-link" href="projects.html">
 
         <span class="project-nav-small">
-            Next Project →
+            ALL Projects →
         </span>
 
         <span class="project-nav-title">
-            DRONE ESC
+            Projects
         </span>
 
     </a>
