@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Gilbert System (Backup-Board) — Stanley Qiu</title>
+
+<link rel="icon" href="images/Q logo.png">
+<link rel="stylesheet" href="project-detail.css">
+
+</head>
+
+
+<body>
+
+
+<div id="progress"></div>
+<div class="cursor-glow"></div>
+
+
+<nav>
+
+    <a href="index.html" class="logo">
+        Stanley Qiu / 2026
+    </a>
+
+    <div class="nav-links">
+
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="#contact">Contact</a>
+
+    </div>
+
+</nav>
+
+
+<header class="project-hero">
+
+    <div class="project-kicker reveal">
+        012 / HARDWARE + SOFTWARE
+    </div>
+
+
+    <h1 class="reveal">
+        GILBERT SYSTEM<br>
+        <span class="outline">
+            BACKUP-BOARD
+        </span>
+    </h1>
+
+
+    <div class="hero-bottom reveal">
+
+        <p class="hero-description">
+            This is the Backup-Board PCB of the Gilbert System.
+        </p>
+
+
+        <div class="hero-meta">
+
+            <div>
+                <span class="meta-label">Year</span>
+                <span class="meta-value">2026</span>
+            </div>
+
+            <div>
+                <span class="meta-label">Project</span>
+                <span class="meta-value">Solar Car</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<div class="hero-image reveal">
+
+    <img
+        src="images/IMG_2262.JPG"
+        alt="3D model image"
+    >
+
+</div>
+
+
+<section class="project-section">
+
+    <div class="section-border section-grid reveal">
+
+        <div class="section-label">
+            Overview
+        </div>
+
+        <div class="section-content">
+
+            <h2>
+                ELECTRONICS FOR
+                A SOLAR CAR.
+            </h2>
+
+            <p>
+                This board contains an STM32G030F6P6, two AP63203WU buck converter (12V-3V3),
+                a INA226 Current+Voltage monitor, and an ISO1540 isolator. There also it a screen and buttons,
+              which are able to run the dinosaur game (I added it for fun).
+            </p>
+
+            <p>
+                The main function of this board is to monitoir the voltage coming from
+              the main 12V power source and rings an alarm if the detected voltage
+              is below the safe threshold or detects no voltage. It also distributes power
+              to other essential system that are required to power the car, such as powering
+              the contactors (enable power to flow from power to go from solar panels to battery
+              and battery to motor controller).
+            </p>
+
+
+            <div class="tags">
+
+                <span class="tag">STM32CubeIDE</span>
+                <span class="tag">KiCAD</span>
+                <span class="tag">STM32</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="facts reveal">
+
+        <div class="fact">
+            <span class="fact-label">Application</span>
+            <span class="fact-value">Solar Car</span>
+        </div>
+
+        <div class="fact">
+            <span class="fact-label">System</span>
+            <span class="fact-value">12V PCB System</span>
+        </div>
+
+        <div class="fact">
+            <span class="fact-label">Software</span>
+            <span class="fact-value">STM32CubeIDE</span>
+        </div>
+
+        <div class="fact">
+            <span class="fact-label">Focus</span>
+            <span class="fact-value">Power the Car</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="project-section">
+
+    <div class="section-border section-grid reveal">
+
+        <div class="section-label">
+            System
+        </div>
+
+    </div>
+
+
+    <div class="gallery reveal">
+
+        <div class="gallery-item image-placeholder">
+
+                <img
+                    src="images/Backup Board (SCH).jpg"
+                    alt="SCH Backup Board"
+                >
+
+        </div>
+
+        <div class="gallery-item image-placeholder">
+
+            <img
+                src="images/Backup Board Layout.png"
+                alt="Backup Board Layout"
+            >   
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<div class="project-navigation">
+
+    <a class="project-nav-link" href="Steering-Wheel.html">
+
+        <span class="project-nav-small">
+            ← Previous Project
+        </span>
+
+        <span class="project-nav-title">
+            Steering Wheel
+        </span>
+
+    </a>
+
+
+    <a class="project-nav-link" href="projects.html">
+
+        <span class="project-nav-small">
+            ALL Projects →
+        </span>
+
+        <span class="project-nav-title">
+            Projects
+        </span>
+
+    </a>
+
+</div>
+
+
+<section class="contact" id="contact">
+
+    <h2 class="reveal">
+        LET'S BUILD<br>
+        SOMETHING.
+    </h2>
+
+    <div class="contact-links reveal">
+
+        <a class="button" href="mailto:Stanleyqiu11@gmail.com">
+            Email
+        </a>
+
+        <a class="button" href="https://github.com/Stanleyqiu1">
+            GitHub ↗
+        </a>
+
+        <a class="button" href="projects.html">
+            ← Projects
+        </a>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <span>Stanley Qiu</span>
+    <span>Engineering / Electronics / Robotics</span>
+    <span>© 2026</span>
+
+</footer>
+
+
+<script>
+
+const observer =
+new IntersectionObserver(
+    entries => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            }
+        });
+    },
+    { threshold: .08 }
+);
+
+document
+.querySelectorAll(".reveal")
+.forEach(element => observer.observe(element));
+
+
+window.addEventListener("scroll", () => {
+
+    const scroll =
+        document.documentElement.scrollTop;
+
+    const height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+    document
+        .getElementById("progress")
+        .style.width =
+        (height > 0 ? scroll / height * 100 : 0)
+        + "%";
+
+});
+
+
+const glow =
+document.querySelector(".cursor-glow");
+
+
+window.addEventListener("mousemove", event => {
+
+    glow.style.left =
+        event.clientX + "px";
+
+    glow.style.top =
+        event.clientY + "px";
+
+});
+
+</script>
+
+
+</body>
+</html>
