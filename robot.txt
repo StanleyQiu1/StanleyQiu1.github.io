@@ -1,0 +1,5 @@
+
+User-agent: *
+Allow: /
+
+Sitemap: https://stanleyqiu1.github.io/sitemap.xml
