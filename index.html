@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,35 +6,19 @@
 
 <meta charset="UTF-8">
 
-<meta name="google-site-verification" content="MpGPq9zQdGLKVC3GUyQ-u9DPw22hzLqna6W6MSzBSJM" />
+<meta name="google-site-verification" content="MpGPq9zQdGLKVC3GUyQ-u9DPw22hzLqna6W6MSzBSJM">
 
-<meta name="description"
-      content="Explore Stanley Qiu's engineering portfolio featuring STM32 microcontrollers, PCB design, embedded systems, robotics, solar car electronics, and software projects.">
+<meta name="description" content="Explore Stanley Qiu's engineering portfolio featuring STM32 microcontrollers, PCB design, embedded systems, robotics, solar car electronics, and software projects.">
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Stanley Qiu | Electrical Engineering, PCB Design & Robotics</title>
 
-<link
-    rel="icon"
-    type="image/png"
-    href="images/Q logo.png"
->
-
-<link
-    rel="shortcut icon"
-    href="images/Q logo.png"
->
-
-<link rel="canonical"
-      href="https://stanleyqiu1.github.io/">
-
+<link rel="icon" type="image/png" href="images/Q logo.png">
+<link rel="shortcut icon" href="images/Q logo.png">
+<link rel="canonical" href="https://stanleyqiu1.github.io/">
 
 <style>
-
 
 /* ==================================
    COLORS
@@ -48,7 +33,6 @@
     --panel: #111111;
 }
 
-
 /* ==================================
    RESET
 ================================== */
@@ -59,30 +43,21 @@
     box-sizing: border-box;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
 
-
 body {
     background: var(--bg);
     color: var(--text);
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
+    font-family: Arial, Helvetica, sans-serif;
     overflow-x: hidden;
 }
-
 
 a {
     color: inherit;
     text-decoration: none;
 }
-
 
 /* ==================================
    SCROLL PROGRESS
@@ -90,18 +65,13 @@ a {
 
 #progress {
     position: fixed;
-
     top: 0;
     left: 0;
-
     width: 0;
     height: 3px;
-
     background: var(--accent);
-
     z-index: 9999;
 }
-
 
 /* ==================================
    CURSOR GLOW
@@ -109,27 +79,20 @@ a {
 
 .cursor-glow {
     position: fixed;
-
     width: 420px;
     height: 420px;
-
     border-radius: 50%;
-
     pointer-events: none;
 
-    background:
-        radial-gradient(
-            circle,
-            rgba(255, 122, 0, .08),
-            transparent 65%
-        );
+    background: radial-gradient(
+        circle,
+        rgba(255, 122, 0, .08),
+        transparent 65%
+    );
 
-    transform:
-        translate(-50%, -50%);
-
+    transform: translate(-50%, -50%);
     z-index: 0;
 }
-
 
 /* ==================================
    NAVIGATION
@@ -137,76 +100,55 @@ a {
 
 nav {
     position: fixed;
-
     top: 0;
     left: 0;
-
     width: 100%;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    padding:
-        24px
-        4vw;
-
+    padding: 24px 4vw;
     z-index: 1000;
 
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(11,11,11,.82),
-            transparent
-        );
+    background: linear-gradient(
+        to bottom,
+        rgba(11,11,11,.82),
+        transparent
+    );
 }
-
 
 .logo {
     font-weight: 900;
     letter-spacing: -.04em;
 }
 
-
 .nav-links {
     display: flex;
-
     gap: 28px;
-
     font-size: .78rem;
-
     text-transform: uppercase;
     letter-spacing: .12em;
 }
-
 
 .nav-links a {
     position: relative;
 }
 
-
 .nav-links a::after {
     content: "";
-
     position: absolute;
-
     left: 0;
     bottom: -6px;
-
     width: 0;
     height: 1px;
-
     background: var(--accent);
-
-    transition:
-        width .3s ease;
+    transition: width .3s ease;
 }
-
 
 .nav-links a:hover::after {
     width: 100%;
 }
-
 
 /* ==================================
    HERO
@@ -219,18 +161,12 @@ nav {
     flex-direction: column;
     justify-content: flex-end;
 
-    padding:
-        150px
-        4vw
-        55px;
+    padding: 150px 4vw 55px;
 
     position: relative;
-
     overflow: hidden;
-
     isolation: isolate;
 }
-
 
 /* ==================================
    KEEP HERO TEXT ABOVE PHOTO
@@ -241,53 +177,33 @@ nav {
 .hero-subtext,
 .hero-bottom {
     position: relative;
-
     z-index: 3;
 }
 
-
 .hero-label {
     color: var(--accent);
-
     font-size: .75rem;
-
     text-transform: uppercase;
     letter-spacing: .2em;
-
     margin-bottom: 25px;
 }
 
-
 .hero h1 {
-    font-size:
-        clamp(
-            4.8rem,
-            14vw,
-            13rem
-        );
-
+    font-size: clamp(4.8rem, 14vw, 13rem);
     line-height: .77;
-
     letter-spacing: -.08em;
-
     font-weight: 900;
-
     max-width: 1450px;
 }
 
-
 /* ==================================
-   THINGS THAT OUTLINE
+   THINGS / THAT SOLID DARK FILL
 ================================== */
 
 .hero-outline {
-    color: transparent;
-
-    -webkit-text-stroke:
-        1px
-        var(--text);
+    color: #3a3a3a;
+    -webkit-text-stroke: 0;
 }
-
 
 /* ==================================
    DO STUFF OUTLINE + ORANGE HOVER
@@ -298,9 +214,7 @@ nav {
 
     color: transparent;
 
-    -webkit-text-stroke:
-        1px
-        var(--text);
+    -webkit-text-stroke: 1px var(--text);
 
     transition:
         color .3s ease,
@@ -308,15 +222,10 @@ nav {
         transform .3s ease;
 }
 
-
 .hero-do-stuff:hover {
     color: var(--accent);
-
-    -webkit-text-stroke:
-        1px
-        var(--accent);
+    -webkit-text-stroke: 1px var(--accent);
 }
-
 
 .hero-subtext {
     margin-top: 18px;
@@ -333,59 +242,39 @@ nav {
     opacity: .75;
 }
 
-
 /* ==================================
    HERO BOTTOM
 ================================== */
 
 .hero-bottom {
     display: grid;
-
-    grid-template-columns:
-        1fr
-        1fr;
+    grid-template-columns: 1fr 1fr;
 
     gap: 50px;
-
     margin-top: 95px;
-
     padding-top: 25px;
 
-    border-top:
-        1px solid
-        var(--line);
+    border-top: 1px solid var(--line);
 }
-
 
 .hero-bottom p {
     max-width: 580px;
-
     color: #b8b8b3;
-
     font-size: 1.05rem;
-
     line-height: 1.8;
-
     font-weight: 600;
 }
 
-
 .hero-scroll {
     text-align: right;
-
     color: var(--muted);
-
     font-size: .75rem;
-
     text-transform: uppercase;
     letter-spacing: .16em;
 }
 
-
 /* ==================================
    PERSONAL SOLAR CAR IMAGE
-
-   EXTENDS ALMOST TO BOTTOM
 ================================== */
 
 .hero-portrait {
@@ -400,38 +289,32 @@ nav {
     z-index: 1;
 
     pointer-events: none;
-
     overflow: hidden;
 
-    -webkit-mask-image:
-        linear-gradient(
-            to right,
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(0,0,0,.10) 3%,
+        rgba(0,0,0,.28) 6%,
+        rgba(0,0,0,.50) 9%,
+        rgba(0,0,0,.72) 12%,
+        rgba(0,0,0,.90) 15%,
+        black 18%,
+        black 100%
+    );
 
-            transparent 0%,
-            rgba(0,0,0,.10) 3%,
-            rgba(0,0,0,.28) 6%,
-            rgba(0,0,0,.50) 9%,
-            rgba(0,0,0,.72) 12%,
-            rgba(0,0,0,.90) 15%,
-            black 18%,
-            black 100%
-        );
-
-    mask-image:
-        linear-gradient(
-            to right,
-
-            transparent 0%,
-            rgba(0,0,0,.10) 3%,
-            rgba(0,0,0,.28) 6%,
-            rgba(0,0,0,.50) 9%,
-            rgba(0,0,0,.72) 12%,
-            rgba(0,0,0,.90) 15%,
-            black 18%,
-            black 100%
-        );
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(0,0,0,.10) 3%,
+        rgba(0,0,0,.28) 6%,
+        rgba(0,0,0,.50) 9%,
+        rgba(0,0,0,.72) 12%,
+        rgba(0,0,0,.90) 15%,
+        black 18%,
+        black 100%
+    );
 }
-
 
 .hero-portrait img {
     width: 100%;
@@ -440,16 +323,13 @@ nav {
     display: block;
 
     object-fit: cover;
-
-    object-position:
-        28% center;
+    object-position: 28% center;
 
     filter:
         brightness(.90)
         contrast(1.04)
         saturate(.95);
 }
-
 
 /* ==================================
    PHOTO DARK BLENDING
@@ -459,31 +339,24 @@ nav {
     content: "";
 
     position: absolute;
-
     inset: 0;
 
     pointer-events: none;
 
-    background:
-
-        linear-gradient(
-            to bottom,
-
-            rgba(11,11,11,.92) 0%,
-            rgba(11,11,11,.62) 5%,
-            rgba(11,11,11,.25) 10%,
-            rgba(11,11,11,.05) 17%,
-
-            transparent 24%,
-            transparent 78%,
-
-            rgba(11,11,11,.05) 84%,
-            rgba(11,11,11,.18) 90%,
-            rgba(11,11,11,.42) 96%,
-            var(--bg) 100%
-        );
+    background: linear-gradient(
+        to bottom,
+        rgba(11,11,11,.92) 0%,
+        rgba(11,11,11,.62) 5%,
+        rgba(11,11,11,.25) 10%,
+        rgba(11,11,11,.05) 17%,
+        transparent 24%,
+        transparent 78%,
+        rgba(11,11,11,.05) 84%,
+        rgba(11,11,11,.18) 90%,
+        rgba(11,11,11,.42) 96%,
+        var(--bg) 100%
+    );
 }
-
 
 /* ==================================
    SPINNING DECAP IMAGE
@@ -505,10 +378,8 @@ nav {
     pointer-events: none;
 
     z-index: 5;
-
     isolation: isolate;
 }
-
 
 /* ==================================
    SMALLER CENTERED BLACK BUBBLE
@@ -525,28 +396,23 @@ nav {
     width: 190px;
     height: 190px;
 
-    transform:
-        translate(-50%, -50%);
-
+    transform: translate(-50%, -50%);
     border-radius: 50%;
 
-    background:
-        radial-gradient(
-            circle,
-            rgba(0,0,0,.96) 0%,
-            rgba(0,0,0,.88) 28%,
-            rgba(0,0,0,.58) 50%,
-            rgba(0,0,0,.24) 68%,
-            rgba(0,0,0,.06) 80%,
-            transparent 88%
-        );
+    background: radial-gradient(
+        circle,
+        rgba(0,0,0,.96) 0%,
+        rgba(0,0,0,.88) 28%,
+        rgba(0,0,0,.58) 50%,
+        rgba(0,0,0,.24) 68%,
+        rgba(0,0,0,.06) 80%,
+        transparent 88%
+    );
 
-    filter:
-        blur(5px);
+    filter: blur(5px);
 
     z-index: -1;
 }
-
 
 /* ==================================
    BUBBLE FADE INTO PHOTO
@@ -563,68 +429,51 @@ nav {
     width: 320px;
     height: 230px;
 
-    transform:
-        translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 
     border-radius: 50%;
 
-    background:
-        radial-gradient(
-            ellipse at center,
-            rgba(0,0,0,.90) 0%,
-            rgba(0,0,0,.70) 26%,
-            rgba(0,0,0,.42) 48%,
-            rgba(0,0,0,.18) 67%,
-            rgba(0,0,0,.06) 78%,
-            transparent 88%
-        );
+    background: radial-gradient(
+        ellipse at center,
+        rgba(0,0,0,.90) 0%,
+        rgba(0,0,0,.70) 26%,
+        rgba(0,0,0,.42) 48%,
+        rgba(0,0,0,.18) 67%,
+        rgba(0,0,0,.06) 78%,
+        transparent 88%
+    );
 
-    filter:
-        blur(14px);
+    filter: blur(14px);
 
     z-index: -2;
 }
-
 
 .cross img {
     width: 100%;
     height: 100%;
 
     display: block;
-
     object-fit: contain;
 
     position: relative;
-
     z-index: 2;
 
     opacity: .88;
 
-    transform-origin:
-        center center;
+    transform-origin: center center;
 
-    animation:
-        rotateCross
-        20s
-        linear
-        infinite;
+    animation: rotateCross 20s linear infinite;
 }
 
-
 @keyframes rotateCross {
-
     from {
-        transform:
-            rotate(0);
+        transform: rotate(0);
     }
 
     to {
-        transform:
-            rotate(360deg);
+        transform: rotate(360deg);
     }
-
 }
-
 
 /* ==================================
    MARQUEE
@@ -633,31 +482,17 @@ nav {
 .marquee {
     overflow: hidden;
 
-    border-top:
-        1px solid
-        var(--line);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
 
-    border-bottom:
-        1px solid
-        var(--line);
-
-    padding:
-        17px 0;
+    padding: 17px 0;
 }
-
 
 .marquee-track {
     display: flex;
-
     width: max-content;
-
-    animation:
-        marquee
-        26s
-        linear
-        infinite;
+    animation: marquee 26s linear infinite;
 }
-
 
 .marquee span {
     margin-right: 70px;
@@ -665,46 +500,34 @@ nav {
     white-space: nowrap;
 
     font-size: .85rem;
-
     text-transform: uppercase;
     letter-spacing: .13em;
 }
-
 
 .marquee b {
     color: var(--accent);
 }
 
-
 @keyframes marquee {
-
     from {
-        transform:
-            translateX(0);
+        transform: translateX(0);
     }
 
     to {
-        transform:
-            translateX(-50%);
+        transform: translateX(-50%);
     }
-
 }
-
 
 /* ==================================
    GENERAL
 ================================== */
 
 section {
-    padding:
-        130px
-        4vw;
+    padding: 130px 4vw;
 }
-
 
 .eyebrow {
     color: var(--accent);
-
     font-size: .72rem;
 
     text-transform: uppercase;
@@ -713,22 +536,12 @@ section {
     margin-bottom: 30px;
 }
 
-
 .big-heading {
-    font-size:
-        clamp(
-            3rem,
-            8vw,
-            7rem
-        );
-
+    font-size: clamp(3rem, 8vw, 7rem);
     line-height: .88;
-
     letter-spacing: -.06em;
-
     max-width: 1150px;
 }
-
 
 /* ==================================
    ABOUT
@@ -736,70 +549,44 @@ section {
 
 .about-grid {
     display: grid;
-
-    grid-template-columns:
-        1.25fr
-        .75fr;
-
+    grid-template-columns: 1.25fr .75fr;
     gap: 100px;
-
     margin-top: 85px;
 }
 
-
 .about-main {
-    font-size:
-        clamp(
-            1.5rem,
-            2.8vw,
-            2.6rem
-        );
-
+    font-size: clamp(1.5rem, 2.8vw, 2.6rem);
     line-height: 1.35;
-
     letter-spacing: -.03em;
 }
-
 
 .about-main strong {
     color: var(--accent);
 }
 
-
 .about-side {
-    border-left:
-        1px solid
-        var(--line);
-
+    border-left: 1px solid var(--line);
     padding-left: 35px;
 }
-
 
 .about-side-title {
     color: #b8b8b3;
 
     font-size: 1rem;
-
     font-weight: 800;
 
     text-transform: uppercase;
-
     letter-spacing: .15em;
 
     margin-bottom: 22px;
 }
 
-
 .about-side p {
     color: #b8b8b3;
-
     line-height: 1.9;
-
     margin-bottom: 35px;
-
     font-weight: 600;
 }
-
 
 /* ==================================
    SKILLS
@@ -807,26 +594,16 @@ section {
 
 .skills {
     display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
 
     margin-top: 80px;
 
-    border-top:
-        1px solid
-        var(--line);
-
-    border-bottom:
-        1px solid
-        var(--line);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
 }
 
-
 .skill {
-    padding:
-        30px
-        25px;
+    padding: 30px 25px;
 
     min-height: 180px;
 
@@ -834,9 +611,7 @@ section {
     flex-direction: column;
     justify-content: space-between;
 
-    border-right:
-        1px solid
-        var(--line);
+    border-right: 1px solid var(--line);
 
     transition:
         background .3s ease,
@@ -844,65 +619,42 @@ section {
         transform .3s ease;
 }
 
-
 .skill:last-child {
     border-right: 0;
 }
 
-
 .skill:hover {
     background: var(--accent);
-
     color: #080808;
-
-    transform:
-        translateY(-6px);
+    transform: translateY(-6px);
 }
-
 
 .skill-number {
     font-size: .7rem;
-
     opacity: .6;
-
     letter-spacing: .12em;
 }
 
-
 .skill h3 {
     font-size: 1.5rem;
-
     letter-spacing: -.04em;
 }
-
 
 /* ==================================
    PROJECTS ENTRY
 ================================== */
 
 .projects-entry {
-    border-top:
-        1px solid
-        var(--line);
-
-    border-bottom:
-        1px solid
-        var(--line);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
 }
-
 
 .projects-entry-link {
     display: grid;
-
-    grid-template-columns:
-        1.2fr
-        .8fr;
+    grid-template-columns: 1.2fr .8fr;
 
     gap: 70px;
-
-    padding:
-        35px
-        0;
+    padding: 35px 0;
 
     transition:
         padding .4s ease,
@@ -910,69 +662,41 @@ section {
         color .4s ease;
 }
 
-
 .projects-entry-link:hover {
-    background:
-        var(--accent);
-
-    color:
-        #080808;
-
-    padding-left:
-        35px;
-
-    padding-right:
-        35px;
+    background: var(--accent);
+    color: #080808;
+    padding-left: 35px;
+    padding-right: 35px;
 }
-
 
 .projects-entry-title {
-    font-size:
-        clamp(
-            4rem,
-            10vw,
-            9rem
-        );
-
+    font-size: clamp(4rem, 10vw, 9rem);
     line-height: .78;
-
     letter-spacing: -.075em;
 }
-
 
 .projects-entry-right {
     min-height: 320px;
 
     display: flex;
-
     flex-direction: column;
-
     justify-content: space-between;
-
     align-items: stretch;
 
     gap: 40px;
 }
 
-
 .projects-entry-right p {
     color: #b8b8b3;
-
     max-width: 500px;
-
     font-size: 1.05rem;
-
     line-height: 1.8;
-
     font-weight: 600;
 }
 
-
-.projects-entry-link:hover
-.projects-entry-right p {
+.projects-entry-link:hover .projects-entry-right p {
     color: #2c2c2c;
 }
-
 
 /* ==================================
    BIG PROJECT ARROW
@@ -980,34 +704,20 @@ section {
 
 .huge-arrow {
     align-self: flex-end;
-
     flex-shrink: 0;
 
-    font-size:
-        clamp(
-            5rem,
-            10vw,
-            9rem
-        );
-
+    font-size: clamp(5rem, 10vw, 9rem);
     line-height: .7;
 
     margin-top: auto;
-
     padding-top: 20px;
 
-    transition:
-        transform .4s ease;
+    transition: transform .4s ease;
 }
 
-
-.projects-entry-link:hover
-.huge-arrow {
-    transform:
-        rotate(45deg)
-        translateY(-10px);
+.projects-entry-link:hover .huge-arrow {
+    transform: rotate(45deg) translateY(-10px);
 }
-
 
 /* ==================================
    PROCESS
@@ -1015,69 +725,47 @@ section {
 
 .process {
     background: var(--text);
-
     color: var(--bg);
 }
-
 
 .process .eyebrow {
     color: #8b4e16;
 }
 
-
 .steps {
     display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
+    grid-template-columns: repeat(4, 1fr);
     margin-top: 85px;
 }
 
-
 .step {
     min-height: 300px;
-
     padding: 30px;
 
     display: flex;
-
     flex-direction: column;
-
     justify-content: space-between;
 
-    border-left:
-        1px solid
-        #cacac2;
+    border-left: 1px solid #cacac2;
 }
-
 
 .step-number {
     color: #777;
-
     font-size: .7rem;
-
     letter-spacing: .14em;
 }
 
-
 .step h3 {
     font-size: 2rem;
-
     letter-spacing: -.04em;
-
     margin-bottom: 15px;
 }
 
-
 .step p {
     color: #555;
-
     line-height: 1.7;
-
     font-weight: 600;
 }
-
 
 /* ==================================
    CONTACT
@@ -1087,109 +775,62 @@ section {
     min-height: 85vh;
 
     display: flex;
-
     flex-direction: column;
-
     justify-content: space-between;
 }
 
-
 .contact-title {
-    font-size:
-        clamp(
-            4.5rem,
-            13vw,
-            12rem
-        );
-
+    font-size: clamp(4.5rem, 13vw, 12rem);
     line-height: .77;
-
     letter-spacing: -.08em;
 }
 
-
 .contact-bottom {
     display: grid;
-
-    grid-template-columns:
-        1fr
-        1fr;
+    grid-template-columns: 1fr 1fr;
 
     gap: 50px;
-
     margin-top: 70px;
-
     padding-top: 25px;
 
-    border-top:
-        1px solid
-        var(--line);
+    border-top: 1px solid var(--line);
 }
-
 
 .contact-bottom p {
     max-width: 500px;
-
     color: #b8b8b3;
-
     line-height: 1.8;
-
     font-weight: 600;
 }
-
 
 .contact-links {
     display: flex;
-
     justify-content: flex-end;
-
     align-items: flex-start;
-
     flex-wrap: wrap;
-
     gap: 12px;
 }
 
-
 .contact-button {
-    padding:
-        15px
-        22px;
+    padding: 15px 22px;
 
-    border:
-        1px solid
-        var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 100px;
 
-    border-radius:
-        100px;
-
-    background:
-        var(--accent);
-
-    color:
-        #0b0b0b;
+    background: var(--accent);
+    color: #0b0b0b;
 
     font-weight: 600;
-
-    transition:
-        .25s ease;
+    transition: .25s ease;
 }
-
 
 .contact-button:hover {
-    background:
-        var(--accent);
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #0b0b0b;
 
-    border-color:
-        var(--accent);
-
-    color:
-        #0b0b0b;
-
-    transform:
-        translateY(-4px);
+    transform: translateY(-4px);
 }
-
 
 /* ==================================
    FOOTER
@@ -1197,26 +838,16 @@ section {
 
 footer {
     display: flex;
-
     justify-content: space-between;
 
-    padding:
-        28px
-        4vw;
-
-    border-top:
-        1px solid
-        var(--line);
+    padding: 28px 4vw;
+    border-top: 1px solid var(--line);
 
     color: var(--muted);
-
     font-size: .72rem;
-
     text-transform: uppercase;
-
     letter-spacing: .08em;
 }
-
 
 /* ==================================
    SCROLL REVEAL
@@ -1225,27 +856,17 @@ footer {
 .reveal {
     opacity: 0;
 
-    transform:
-        translateY(60px);
+    transform: translateY(60px);
 
     transition:
-        opacity
-        .9s
-        cubic-bezier(.2,.7,.2,1),
-
-        transform
-        .9s
-        cubic-bezier(.2,.7,.2,1);
+        opacity .9s cubic-bezier(.2,.7,.2,1),
+        transform .9s cubic-bezier(.2,.7,.2,1);
 }
-
 
 .reveal.visible {
     opacity: 1;
-
-    transform:
-        translateY(0);
+    transform: translateY(0);
 }
-
 
 /* ==================================
    TABLET
@@ -1257,20 +878,16 @@ footer {
         gap: 15px;
     }
 
-
     .hero-bottom,
     .about-grid,
     .projects-entry-link,
     .contact-bottom {
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
     }
-
 
     .hero-scroll {
         text-align: left;
     }
-
 
     .hero-portrait {
         left: 28%;
@@ -1282,63 +899,45 @@ footer {
         opacity: .50;
     }
 
-
     .hero-bottom {
         margin-top: 80px;
     }
 
-
     .cross {
         right: 8vw;
-
         top: 15%;
     }
 
-
     .about-side {
         border-left: 0;
-
-        border-top:
-            1px solid
-            var(--line);
+        border-top: 1px solid var(--line);
 
         padding-left: 0;
-
         padding-top: 30px;
     }
 
-
     .skills,
     .steps {
-        grid-template-columns:
-            1fr
-            1fr;
+        grid-template-columns: 1fr 1fr;
     }
-
 
     .skill:nth-child(2) {
         border-right: 0;
     }
 
-
     .projects-entry-right {
         min-height: 230px;
-
         gap: 30px;
     }
-
 
     .huge-arrow {
         align-self: flex-end;
     }
 
-
     .contact-links {
         justify-content: flex-start;
     }
-
 }
-
 
 /* ==================================
    MOBILE
@@ -1347,23 +946,16 @@ footer {
 @media(max-width: 550px) {
 
     section {
-        padding:
-            90px
-            5vw;
+        padding: 90px 5vw;
     }
-
 
     nav {
-        padding:
-            20px
-            5vw;
+        padding: 20px 5vw;
     }
-
 
     .nav-links a:first-child {
         display: none;
     }
-
 
     .hero-portrait {
         left: 18%;
@@ -1375,86 +967,64 @@ footer {
         opacity: .28;
     }
 
-
     .hero-bottom {
         margin-top: 65px;
     }
-
 
     .cross {
         width: 60px;
         height: 60px;
 
         right: 7vw;
-
         top: 16%;
     }
-
 
     .cross::before {
         width: 145px;
         height: 145px;
     }
 
-
     .cross::after {
         width: 240px;
         height: 170px;
     }
 
-
     .skills,
     .steps {
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
     }
-
 
     .skill {
         border-right: 0;
-
-        border-bottom:
-            1px solid
-            var(--line);
+        border-bottom: 1px solid var(--line);
     }
-
 
     .projects-entry-right {
         min-height: 200px;
     }
 
-
     .projects-entry-right p {
         max-width: 100%;
     }
-
 
     .huge-arrow {
         font-size: 5rem;
     }
 
-
     footer {
         flex-direction: column;
-
         gap: 10px;
     }
-
 }
-
 
 </style>
 
 </head>
 
-
 <body>
 
-
 <div id="progress"></div>
-
 <div class="cursor-glow"></div>
-
 
 <!-- ==================================
      NAVIGATION
@@ -1462,47 +1032,27 @@ footer {
 
 <nav>
 
-
-    <a
-        href="index.html"
-        class="logo"
-    >
-
+    <a href="index.html" class="logo">
         Stanley Qiu / 2026
-
     </a>
-
 
     <div class="nav-links">
 
+        <a href="#about">About</a>
 
-        <a href="#about">
-            About
-        </a>
+        <a href="projects.html">Projects</a>
 
-
-        <a href="projects.html">
-            Projects
-        </a>
-
-
-        <a href="#contact">
-            Contact
-        </a>
-
+        <a href="#contact">Contact</a>
 
     </div>
 
-
 </nav>
-
 
 <!-- ==================================
      HERO
 ================================== -->
 
 <header class="hero">
-
 
     <div class="hero-portrait">
 
@@ -1512,7 +1062,6 @@ footer {
         >
 
     </div>
-
 
     <div class="cross">
 
@@ -1524,7 +1073,6 @@ footer {
 
     </div>
 
-
     <div class="hero-label reveal">
 
         Engineering /
@@ -1533,23 +1081,17 @@ footer {
 
     </div>
 
-
     <h1 class="reveal">
 
         I BUILD<br>
 
-        <span class="hero-outline">
-            THINGS THAT
-        </span>
+        <span class="hero-outline">THINGS</span><br>
 
-        <br>
+        <span class="hero-outline">THAT</span><br>
 
-        <span class="hero-do-stuff">
-            DO STUFF.
-        </span>
+        <span class="hero-do-stuff">DO STUFF.</span>
 
     </h1>
-
 
     <p class="hero-subtext reveal">
 
@@ -1557,9 +1099,7 @@ footer {
 
     </p>
 
-
     <div class="hero-bottom reveal">
-
 
         <p>
 
@@ -1574,19 +1114,15 @@ footer {
 
         </p>
 
-
         <div class="hero-scroll">
 
             Scroll to explore ↓
 
         </div>
 
-
     </div>
 
-
 </header>
-
 
 <!-- ==================================
      MOVING MARQUEE
@@ -1594,75 +1130,35 @@ footer {
 
 <div class="marquee">
 
-
     <div class="marquee-track">
 
+        <span>PCB DESIGN <b>+</b></span>
 
-        <span>
-            PCB DESIGN <b>+</b>
-        </span>
+        <span>EMBEDDED SYSTEMS <b>+</b></span>
 
+        <span>STM32 <b>+</b></span>
 
-        <span>
-            EMBEDDED SYSTEMS <b>+</b>
-        </span>
+        <span>SOFTWARE <b>+</b></span>
 
+        <span>PROTOTYPING <b>+</b></span>
 
-        <span>
-            STM32 <b>+</b>
-        </span>
+        <span>ENGINEERING <b>+</b></span>
 
+        <span>PCB DESIGN <b>+</b></span>
 
-        <span>
-            SOFTWARE <b>+</b>
-        </span>
+        <span>EMBEDDED SYSTEMS <b>+</b></span>
 
+        <span>STM32 <b>+</b></span>
 
-        <span>
-            PROTOTYPING <b>+</b>
-        </span>
+        <span>SOFTWARE <b>+</b></span>
 
+        <span>PROTOTYPING <b>+</b></span>
 
-        <span>
-            ENGINEERING <b>+</b>
-        </span>
-
-
-        <span>
-            PCB DESIGN <b>+</b>
-        </span>
-
-
-        <span>
-            EMBEDDED SYSTEMS <b>+</b>
-        </span>
-
-
-        <span>
-            STM32 <b>+</b>
-        </span>
-
-
-        <span>
-            SOFTWARE <b>+</b>
-        </span>
-
-
-        <span>
-            PROTOTYPING <b>+</b>
-        </span>
-
-
-        <span>
-            ENGINEERING <b>+</b>
-        </span>
-
+        <span>ENGINEERING <b>+</b></span>
 
     </div>
 
-
 </div>
-
 
 <!-- ==================================
      ABOUT
@@ -1670,13 +1166,11 @@ footer {
 
 <section id="about">
 
-
     <div class="eyebrow reveal">
 
         01 / About
 
     </div>
-
 
     <h2 class="big-heading reveal">
 
@@ -1685,17 +1179,13 @@ footer {
 
     </h2>
 
-
     <div class="about-grid">
-
 
         <div class="about-main reveal">
 
             I like learning by
 
-            <strong>
-                building things.
-            </strong>
+            <strong>building things.</strong>
 
             Instead of stopping at the idea,
             I want to understand how the hardware,
@@ -1712,9 +1202,7 @@ footer {
 
         </div>
 
-
         <div class="about-side reveal">
-
 
             <div class="about-side-title">
 
@@ -1722,23 +1210,16 @@ footer {
 
             </div>
 
-
             <p>
 
                 STM32 Microcontrollers<br>
-
                 PCB Design<br>
-
                 Embedded C / C++<br>
-
                 Electronics<br>
-
                 Robotics<br>
-
                 Drones
 
             </p>
-
 
             <div class="about-side-title">
 
@@ -1746,13 +1227,11 @@ footer {
 
             </div>
 
-
             <p>
 
                 Temple City, California
 
             </p>
-
 
             <div class="about-side-title">
 
@@ -1760,80 +1239,53 @@ footer {
 
             </div>
 
-
             <p>
 
-                Developing the 2026-2027 Heliotech Advanced Car (Solar Car) 12V electrical system and learning FPGA engineering (Developing a FPGA PCB stack the trades stocks).
+                Developing the 2026-2027 Heliotech Advanced Car (Solar Car) 12V electrical system and learning FPGA engineering (Developing a PCB stack that uses FPGAs trades stocks).
 
             </p>
 
-
         </div>
 
-
     </div>
-
 
     <div class="skills reveal">
 
-
         <div class="skill">
 
-            <div class="skill-number">
-                01
-            </div>
+            <div class="skill-number">01</div>
 
-            <h3>
-                Hardware
-            </h3>
+            <h3>Hardware</h3>
 
         </div>
 
-
         <div class="skill">
 
-            <div class="skill-number">
-                02
-            </div>
+            <div class="skill-number">02</div>
 
-            <h3>
-                Embedded
-            </h3>
+            <h3>Embedded</h3>
 
         </div>
 
-
         <div class="skill">
 
-            <div class="skill-number">
-                03
-            </div>
+            <div class="skill-number">03</div>
 
-            <h3>
-                Software
-            </h3>
+            <h3>Software</h3>
 
         </div>
 
-
         <div class="skill">
 
-            <div class="skill-number">
-                04
-            </div>
+            <div class="skill-number">04</div>
 
-            <h3>
-                Prototyping
-            </h3>
+            <h3>Prototyping</h3>
 
         </div>
-
 
     </div>
 
-
 </section>
-
 
 <!-- ==================================
      PROJECTS / WORK
@@ -1841,22 +1293,15 @@ footer {
 
 <section class="projects-entry">
 
-
     <div class="eyebrow reveal">
 
         02 / Work
 
     </div>
 
-
-    <a
-        href="projects.html"
-        class="projects-entry-link reveal"
-    >
-
+    <a href="projects.html" class="projects-entry-link reveal">
 
         <div>
-
 
             <h2 class="projects-entry-title">
 
@@ -1866,12 +1311,9 @@ footer {
 
             </h2>
 
-
         </div>
 
-
         <div class="projects-entry-right">
-
 
             <p>
 
@@ -1889,22 +1331,17 @@ footer {
 
             </p>
 
-
             <div class="huge-arrow">
 
                 ↗
 
             </div>
 
-
         </div>
-
 
     </a>
 
-
 </section>
-
 
 <!-- ==================================
      PROCESS
@@ -1912,13 +1349,11 @@ footer {
 
 <section class="process">
 
-
     <div class="eyebrow reveal">
 
         03 / Process
 
     </div>
-
 
     <h2 class="big-heading reveal">
 
@@ -1927,128 +1362,122 @@ footer {
 
     </h2>
 
-
     <div class="steps">
-
 
         <div class="step reveal">
 
             <div class="step-number">
+
                 01 / QUESTION
+
             </div>
 
             <div>
 
-                <h3>
-                    Start
-                </h3>
+                <h3>Start</h3>
 
                 <p>
+
                     Find something interesting
                     enough that makes me want to
                     build it.
+
                 </p>
 
             </div>
 
         </div>
 
-
         <div class="step reveal">
 
             <div class="step-number">
+
                 02 / DESIGN
+
             </div>
 
             <div>
 
-                <h3>
-                    Plan
-                </h3>
+                <h3>Plan</h3>
 
                 <p>
+
                     Research the problem,
                     choose components, find the cost,
                     and through it all together.
+
                 </p>
 
             </div>
 
         </div>
 
-
         <div class="step reveal">
 
             <div class="step-number">
+
                 03 / BUILD
+
             </div>
 
             <div>
 
-                <h3>
-                    Make
-                </h3>
+                <h3>Make</h3>
 
                 <p>
+
                     Turn the idea into
                     something physical,
                     programmable, testable,
                     and practical.
+
                 </p>
 
             </div>
 
         </div>
-
 
         <div class="step reveal">
 
             <div class="step-number">
+
                 04 / ITERATE
+
             </div>
 
             <div>
 
-                <h3>
-                    Improve
-                </h3>
+                <h3>Improve</h3>
 
                 <p>
+
                     Find the weak points,
                     understand why mistakes happened,
                     then make the next version better.
+
                 </p>
 
             </div>
 
         </div>
 
-
     </div>
 
-
 </section>
-
 
 <!-- ==================================
      CONTACT
 ================================== -->
 
-<section
-    class="contact"
-    id="contact"
->
-
+<section class="contact" id="contact">
 
     <div>
-
 
         <div class="eyebrow reveal">
 
             04 / Contact
 
         </div>
-
 
         <h2 class="contact-title reveal">
 
@@ -2058,12 +1487,9 @@ footer {
 
         </h2>
 
-
     </div>
 
-
     <div class="contact-bottom reveal">
-
 
         <p>
 
@@ -2077,58 +1503,41 @@ footer {
 
         </p>
 
-
         <div class="contact-links">
-
 
             <a
                 class="contact-button"
                 href="mailto:Stanleyqiu11@gmail.com"
             >
-
                 Email
-
             </a>
-
 
             <a
                 class="contact-button"
                 href="https://github.com/Stanleyqiu1"
             >
-
                 GitHub ↗
-
             </a>
-
 
             <a
                 class="contact-button"
                 href="https://www.linkedin.com/in/stanley-qiu-92088b377/"
             >
-
                 LinkedIn ↗
-
             </a>
-
 
             <a
                 class="contact-button"
                 href="projects.html"
             >
-
                 Projects ↗
-
             </a>
-
 
         </div>
 
-
     </div>
 
-
 </section>
-
 
 <!-- ==================================
      FOOTER
@@ -2136,24 +1545,13 @@ footer {
 
 <footer>
 
+    <span>Stanley Qiu</span>
 
-    <span>
-        Stanley Qiu
-    </span>
+    <span>DESIGNED + BUILT BY ME</span>
 
-
-    <span>
-        DESIGNED + BUILT BY ME
-    </span>
-
-
-    <span>
-        © 2026
-    </span>
-
+    <span>© 2026</span>
 
 </footer>
-
 
 <!-- ==================================
      JAVASCRIPT
@@ -2161,13 +1559,11 @@ footer {
 
 <script>
 
-
 /* ==================================
    SCROLL REVEAL
 ================================== */
 
-const observer =
-new IntersectionObserver(
+const observer = new IntersectionObserver(
 
     entries => {
 
@@ -2175,9 +1571,7 @@ new IntersectionObserver(
 
             if(entry.isIntersecting) {
 
-                entry.target
-                    .classList
-                    .add("visible");
+                entry.target.classList.add("visible");
 
             }
 
@@ -2191,78 +1585,49 @@ new IntersectionObserver(
 
 );
 
-
-document
-.querySelectorAll(".reveal")
-.forEach(element => {
+document.querySelectorAll(".reveal").forEach(element => {
 
     observer.observe(element);
 
 });
 
-
 /* ==================================
    SCROLL PROGRESS
 ================================== */
 
-window.addEventListener(
+window.addEventListener("scroll", () => {
 
-    "scroll",
+    const scroll = document.documentElement.scrollTop;
 
-    () => {
+    const height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
 
-        const scroll =
-            document.documentElement.scrollTop;
+    const percentage =
+        height > 0
+        ? scroll / height * 100
+        : 0;
 
+    document.getElementById("progress").style.width =
+        percentage + "%";
 
-        const height =
-            document.documentElement.scrollHeight -
-            document.documentElement.clientHeight;
-
-
-        const percentage =
-            height > 0
-            ? scroll / height * 100
-            : 0;
-
-
-        document
-            .getElementById("progress")
-            .style.width =
-            percentage + "%";
-
-    }
-
-);
-
+});
 
 /* ==================================
    CURSOR GLOW
 ================================== */
 
-const glow =
-document.querySelector(".cursor-glow");
+const glow = document.querySelector(".cursor-glow");
 
+window.addEventListener("mousemove", event => {
 
-window.addEventListener(
+    glow.style.left = event.clientX + "px";
 
-    "mousemove",
+    glow.style.top = event.clientY + "px";
 
-    event => {
-
-        glow.style.left =
-            event.clientX + "px";
-
-        glow.style.top =
-            event.clientY + "px";
-
-    }
-
-);
-
+});
 
 </script>
-
 
 </body>
 
